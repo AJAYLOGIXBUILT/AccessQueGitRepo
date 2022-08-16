@@ -26,7 +26,7 @@ public class LoginTestCases
 		ajdriver.findElement(By.id("password")).sendKeys(Passowrd);
 		ajdriver.findElement(By.xpath("//button[contains(text(),'Log In')]")).click();
 
-
+		//Login Test cases
 
 		if(Scenario.equals("BothCorrect"))
 		{
