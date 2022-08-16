@@ -16,8 +16,9 @@ public class AdmiLoginLIVE
 		
 		WebDriver mydriver = new ChromeDriver();
 				
-		//mydriver.get("https://accessque.com");
-		mydriver.get("https://services.accessque.com/home");
+		mydriver.get("https://accessque.com");
+
+		//mydriver.get("https://services.accessque.com/home");
 		
 		mydriver.manage().window().maximize();
 		
