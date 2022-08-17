@@ -7,14 +7,10 @@ import org.testng.annotations.Test;
 
 public class RestAssuredAPITesting 
 {
-
 	@Test
 	void loginTest()
-	{
-	  
-		RestAssured.o
-		
-	  Response myresponse = get("https://services.accessque.com/api/v1/templateByName/passwordverification");
+	{	  		
+	  Response myresponse = RestAssured.get("https://services.accessque.com/api/v1/templateByName/passwordverification");
 	  
 	  //Response myresponse = (Response) RestAssured.get("https://services.accessque.com/api/v1/templateByName/passwordverification");
 	  
@@ -30,8 +26,5 @@ public class RestAssuredAPITesting
 	  System.out.println(myresponse.getHeader("content-type"));
 	    
 	  
-	 }
-	
-	
-	
+	 }	
 }
