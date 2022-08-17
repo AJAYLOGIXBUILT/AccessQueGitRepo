@@ -70,11 +70,8 @@ public class AdmiLoginLIVE
 	 * 
 	 * System.out.println(myresponse.getCookies());
 	 * System.out.println(myresponse.getHeaders());
-	 * 
-	 * 
+	 *  
 	 * System.out.println(myresponse.getHeader("content-type"));
-	 * 
-	 * 
 	 * 
 	 * }
 	 */
