@@ -1,8 +1,15 @@
 package PackageAccessQue;
 
-import static io.restassured.RestAssured.*;
-
-import org.asynchttpclient.Response;
+import io.restassured.RestAssured.*;
+import io.restassured.response.Response;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+ 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List; 
+import org.testng.annotations.Test;
+import io.restassured.RestAssured;
+//import io.restassured.path.json.JsonPath;
 import org.testng.annotations.Test;
 
 public class RestAssuredAPITesting 
@@ -10,10 +17,9 @@ public class RestAssuredAPITesting
 	@Test
 	void loginTest()
 	{	  		
-	  Response myresponse = RestAssured.get("https://services.accessque.com/api/v1/templateByName/passwordverification");
-	  
-	  //Response myresponse = (Response) RestAssured.get("https://services.accessque.com/api/v1/templateByName/passwordverification");
-	  
+		
+	Response myresponse = RestAssured.get("https://services.accessque.com/api/v1/templateByName/passwordverification");
+			  
 	  System.out.println(myresponse.getContentType());
 	  System.out.println(myresponse.toString());
 	  //System.out.println(myresponse.getBody().asString());
