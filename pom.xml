@@ -107,8 +107,6 @@
 			<version>4.3.1</version>
 		</dependency>
 
-
-
 	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools -->
 	<dependency>
 		<groupId>org.seleniumhq.selenium</groupId>
@@ -123,10 +121,6 @@
 		<artifactId>selenium-devtools-v104</artifactId>
 		<version>4.4.0</version>
 	</dependency>
-
-		
-		
-
 
 	</dependencies>
 

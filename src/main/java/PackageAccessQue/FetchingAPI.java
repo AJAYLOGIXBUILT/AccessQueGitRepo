@@ -60,9 +60,6 @@ public class FetchingAPI
 	    ajDriver.get("https://services.accessque.com"); 
 	    ajDriver.findElement(By.xpath("//body/app-root[1]/app-landingpage[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/a[1]/img[1]")).click();
 	    
-	    
-		
-		
 	}
 
 }

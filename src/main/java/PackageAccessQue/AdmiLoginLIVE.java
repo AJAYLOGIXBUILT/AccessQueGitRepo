@@ -43,7 +43,7 @@ public class AdmiLoginLIVE
 		String alrtms =mydriver.switchTo().alert().getText();
 		System.out.println(alrtms);
 		myalert.accept();	
-		
+		//admin
 		//mydriver.navigate().refresh();								
 		System.out.println("ADMIN LOGIN SUCCESSFULLY");
 		mydriver.close();
