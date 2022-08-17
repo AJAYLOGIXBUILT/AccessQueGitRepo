@@ -9,7 +9,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class AdmiLoginLIVE 
 {
-
 	public static void main(String[] args) throws InterruptedException 
 	{
 		System.setProperty("webdriver.chrome.driver","E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver104\\chromedriver.exe");
@@ -17,7 +16,6 @@ public class AdmiLoginLIVE
 		WebDriver mydriver = new ChromeDriver();
 				
 		mydriver.get("https://accessque.com");
-		//New login sss
 		//mydriver.get("https://services.accessque.com/home");
 		
 		mydriver.manage().window().maximize();
@@ -48,8 +46,7 @@ public class AdmiLoginLIVE
 		
 		//mydriver.navigate().refresh();								
 		System.out.println("ADMIN LOGIN SUCCESSFULLY");
-						
-		//mydriver.close();
+		mydriver.close();
 	}	
 }
 
