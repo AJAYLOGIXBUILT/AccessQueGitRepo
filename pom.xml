@@ -23,6 +23,14 @@
 			<version>4.3.0</version>
 		</dependency>
 
+	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools -->
+	<dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-devtools</artifactId>
+		<version>4.0.0-rc-1</version>
+	</dependency>
+
+
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
 		<dependency>
@@ -63,13 +71,14 @@
 
 
 
-		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
-		<dependency>
-			<groupId>io.rest-assured</groupId>
-			<artifactId>rest-assured</artifactId>
-			<version>5.1.1</version>
-			<scope>test</scope>
-		</dependency>
+	<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+	<dependency>
+		<groupId>io.rest-assured</groupId>
+		<artifactId>rest-assured</artifactId>
+		<version>5.1.1</version>
+		<scope>test</scope>
+	</dependency>
+
 		
 		<dependency>
 			<groupId>io.rest-assured</groupId>

@@ -2,46 +2,52 @@ package PackageAccessQue;
 
 import java.util.Optional;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.idealized.Network;
+
+import org.openqa.selenium.devtools.CdpEndpointFinder;
+import org.openqa.selenium.devtools.CdpInfo;
+import org.openqa.selenium.devtools.CdpVersionFinder;
+import org.openqa.selenium.devtools.Connection;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
  
 public class FetchingAPI
 {
 
 	public static void main(String[] args)
 	{
-		System.setProperty("webdriver.chrome.driver","E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver104\\chromedriver.exe");
-
-		ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
+		WebDriverManager.chromedriver().setup();
 		
+		//System.setProperty("webdriver.chrome.driver","E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver104\\chromedriver.exe");
 		
+		ChromeOptions chromeOptions = new ChromeOptions();
+		chromeOptions.setCapability("browserVersion", "104");
+		chromeOptions.setCapability("platformName", "Windows 10");
+	
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://services.accessque.com");
+				
 		ChromeDriver ajDriver = new ChromeDriver();
-		ajDriver.get("https://services.accessque.com");
-	    Thread.sleep(2000);
-	    
-	    DevTools mytools=ajDriver.getDevTools();
-	    
-	    
-	    ajDriver.getDevTools().send(Network.clearBrowserCache());
-	   
-	    ajDriver.get("https://services.accessque.com");
-	    Thread.sleep(5000);
+		ajDriver.manage().window().maximize();
 		
-		DevTools 				 
-	    //To send Command to ChromeDevTools 
-		devToolss.send(Network.enable(Optional.empty(),Optional.empty(),Optional.empty()));
-	    
-	    /*devTools.addListener(Network.requestWillBeSent(), entry -> {
-	                System.out.println("Request (id) URL      : (" + entry.getRequestId() + ") " 
-	                        + entry.getRequest().getUrl()
-	                        + " (" + entry.getRequest().getMethod() + ")");
-	            });*/
-	    
-		devToolss.addListener(Network.responseReceived(), response->
+				
+		
+		DevTools devTools = ajDriver.getDevTools();		
+		devTools.createSession();
+		
+		devTools.send(log.enable());
+        
+                        
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+        devTools.send(Network.clearBrowserCache());
+        		
+	  //To send Command to ChromeDevTools 
+        devTools.addListener(Network.responseReceived(), response->
 		{
 			
 			Response resp = response.getResponse();
@@ -51,7 +57,10 @@ public class FetchingAPI
 			//System.out.println("Response (Req id) URL : (" +resp.getRequestId() + ") "  resp.getResponse().getUrl()+ " (" + resp.getResponse().getStatus() + ")");
 	    }); 
 	    
-		ajdriver.get("https://services.accessque.com"); 
+	    ajDriver.get("https://services.accessque.com"); 
+	    ajDriver.findElement(By.xpath("//body/app-root[1]/app-landingpage[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/a[1]/img[1]")).click();
+	    
+	    
 		
 		
 	}
