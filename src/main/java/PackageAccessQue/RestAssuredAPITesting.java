@@ -24,10 +24,13 @@ public class RestAssuredAPITesting
 	  	System.out.println(myresponse.getBody().asString());
 	  	
 	  	int statuscode= myresponse.getStatusCode();
+	  	
 	  	System.out.println("STATUS CODE IS  = " +statuscode);
 	  	
 	  	String statuscodeline = myresponse.getStatusLine();
+	  	
 	  	System.out.println("STATUS CODE LINE IS  = "+statuscodeline);
+	  		  	
 	  	Assert.assertEquals(statuscodeline, "HTTP/1.1 200 OK");
 	  	
 	  	System.out.println(myresponse.getHeader("content-type"));
