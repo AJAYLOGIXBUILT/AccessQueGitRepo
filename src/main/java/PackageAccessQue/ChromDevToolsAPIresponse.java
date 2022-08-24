@@ -8,17 +8,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.idealized.Network;
-
-import org.openqa.selenium.devtools.CdpEndpointFinder;
-import org.openqa.selenium.devtools.CdpInfo;
-import org.openqa.selenium.devtools.CdpVersionFinder;
-import org.openqa.selenium.devtools.Connection;
+import org.openqa.selenium.devtools.v104.browser.Browser;
+import org.openqa.selenium.devtools.v104.log.Log;
+import org.openqa.selenium.devtools.v104.V104Network;
+import org.openqa.selenium.devtools.v104.network.model.Response;
+import org.openqa.selenium.mobile.NetworkConnection;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
  
-public class FetchingAPI
+public class ChromDevToolsAPIresponse
 {
 
+	
 	public static void main(String[] args)
 	{
 		WebDriverManager.chromedriver().setup();
@@ -30,23 +31,23 @@ public class FetchingAPI
 		chromeOptions.setCapability("platformName", "Windows 10");
 	
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://services.accessque.com");
+		driver.get("https://www.gradbusinesstest.accessque.com/document");
 				
 		ChromeDriver ajDriver = new ChromeDriver();
 		ajDriver.manage().window().maximize();
 		
-				
-		
-		DevTools devTools = ajDriver.getDevTools();		
+		//USING CRHOME DEVTOOLS access 		
+		DevTools devTools= ((ChromeDriver)ajDriver).getDevTools();
 		devTools.createSession();
 		
-		devTools.send(log.enable());
-        
+				
+		devTools.send(Log.enable());
+		
                         
         devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
-        devTools.send(Network.clearBrowserCache());
+        //devTools.send(Network.clearBrowserCache());
         		
-	  //To send Command to ChromeDevTools 
+        //To send Command to ChromeDevTools 
         devTools.addListener(Network.responseReceived(), response->
 		{
 			

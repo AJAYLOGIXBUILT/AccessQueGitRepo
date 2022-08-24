@@ -1,5 +1,10 @@
 package PackageAccessQue;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -17,59 +22,21 @@ import com.google.j2objc.annotations.ReflectionSupport.Level;
 public class AfterLoginAllAPI 
 {
 
-	public static void main(String[] args) 
+	public static void main(String[] args) throws MalformedURLException, IOException, InterruptedException 
 	{
-		// TODO Auto-generated method stub
-
-		//System.setProperty("webdriver.chrome.driver","E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver104\\chromedriver.exe");
-				
+		System.setProperty("webdriver.chrome.driver","E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver104\\chromedriver.exe");
 		
-		WebDriver driver;
-	    Properties prop;
-
-	    public AfterLoginAllAPI2() 
-	    {
-
-	        prop = null;
-	        try {
-	            FileInputStream ip = new FileInputStream("E:\\Nitin_Workspace\\FreeCRMTest\\src\\main\\java\\com\\crm\\qa\\config\\config.properties");
-
-	            prop.load(ip);
-
-	        } catch (FileNotFoundException e) {
-
-	            e.printStackTrace();
-	        } catch (IOException e) {
-
-	            e.printStackTrace();
-	        }   
-
-	    }
-
-	    public static void initialization(){
-
-	        String browserName = prop.getProperty("browser");
-	        String chromePath = prop.getProperty("chromePath");
-	        String FFPath = prop.getProperty("FFPath");
-
-	        if(browserName.equals("chrome")){
-
-	            System.setProperty("webdriver.chrome.driver", chromePath);
-	            driver = new ChromeDriver();
-	        }else if(browserName.equals("FireFox")){
-
-	            System.setProperty("webdriver.chrome.driver", FFPath);
-	            driver = new FirefoxDriver();
-	        }
-
-	        driver.manage().window().maximize();
-	        driver.manage().deleteAllCookies();
-	        driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
-	        driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-
-	        driver.get(prop.getProperty("url"));
-
-	    }
+		WebDriver mydriver = new ChromeDriver();
+		mydriver.manage().window().maximize();
+		Thread.sleep(2000);
+		
+				
+		HttpURLConnection c=(HttpURLConnection)new URL("https://www.gradbusinesstest.accessque.com/document").openConnection();
+				c.setRequestMethod("HEAD");
+				c.connect();
+				//int r = c.getResponseCode();
+				String res=c.getResponseMessage();
+				System.out.println(res);
 
 
 	}

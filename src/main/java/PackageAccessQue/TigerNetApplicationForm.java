@@ -1,21 +1,34 @@
 package PackageAccessQue;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
+//import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.mashape.unirest.http.Unirest;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import org.openqa.selenium.devtools.v104.network.Network;
+
 
 public class TigerNetApplicationForm 
 {
+	static WebDriver mydriver;
 	
 	@Test
-	public static void main(String[] args) throws InterruptedException
+	public static void main(String[] args) throws InterruptedException, MalformedURLException, IOException
 	{		
 		//System.setProperty("webdriver.chrome.driver","E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver104\\chromedriver.exe");
 		WebDriverManager.chromedriver().setup();
@@ -26,19 +39,23 @@ public class TigerNetApplicationForm
 		mydriver.manage().window().maximize();
 		Thread.sleep(3000);
 		
+		//Click on GRADUATE 
 		mydriver.findElement(By.xpath("//body/div[@id='siteWrapper']/form[@id='MAINFORM']/div[@id='mainLayout']/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[2]/li[1]/label[1]")).click();
 		Thread.sleep(2000);
 				
-		mydriver.findElement(By.xpath("//body/div[@id='siteWrapper']/form[@id='MAINFORM']/div[@id='mainLayout']/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[2]/li[1]/ul[1]/li[1]/a[1]/div[1]")).click();
+		//Click on MAIN CAMPUS sub menu
+		mydriver.findElement(By.xpath("//body/div[@id='siteWrapper']/form[@id='MAINFORM']/div[@id='mainLayout']/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[2]/li[1]/ul[1]/li[2]/a[1]/div[1]")).click();
 		Thread.sleep(3000);
 		
-        JavascriptExecutor js = (JavascriptExecutor) mydriver;
-		js.executeScript("window.scrollBy(0,450)");
+		//Scroll down page 
+		JavascriptExecutor js = (JavascriptExecutor) mydriver;
+		js.executeScript("window.scrollBy(0,500)");
 		
-		
+		//Click on YES Radio button
 		mydriver.findElement(By.xpath("//input[@id='CheckBox2947d5c1-5d40-4f45-92d8-303eeedafcad|Y']")).click();
 		Thread.sleep(1000);
 		
+		//Click on CHECKBOX UNDERSTAND 
 		mydriver.findElement(By.xpath("//input[@id='Button691e8b08-2f58-40ec-b864-aca7e58b2928']")).click();
 		Thread.sleep(3000);
 		
@@ -46,10 +63,10 @@ public class TigerNetApplicationForm
 		//NAME INFORMATION STEP 2 TAB
 		
 		WebElement fname =mydriver.findElement(By.xpath("//input[@id='Textbox1a693b98-224c-4773-93a9-e529538f7adc']"));
-		fname.sendKeys("QA");
+		fname.sendKeys("TESTQA");
 		
 		WebElement lname =mydriver.findElement(By.xpath("//input[@id='Textbox01cd5d7a-d97a-4486-bf62-2f211086340c']"));
-		lname.sendKeys("TESTER");
+		lname.sendKeys("TEST");
 
 		
 		WebElement midname =mydriver.findElement(By.xpath("//input[@id='Textbox28596d2e-5a32-4522-bcd1-39c977ad8182']"));
@@ -78,122 +95,231 @@ public class TigerNetApplicationForm
 		nxt1.click();
 		Thread.sleep(4000);
 		
-		//BIOGRAPHICAL INFRORMATION STEP 3 TAB
-		
+		//BIOGRAPHICAL INFRORMATION STEP 3 TAB		
 		JavascriptExecutor jss = (JavascriptExecutor) mydriver;
-		jss.executeScript("window.scrollBy(0,450)");
-		
-		// USA CITIZEN YES  
-		WebElement ctzn=mydriver.findElement(By.xpath("//input[@id='RadioButton2aea8b98-72e1-4c81-91eb-ff8468507ff1|C']"));
-		ctzn.click();
-		Thread.sleep(1000);
-		
-		//WebElement ctzn=mydriver.findElement(By.xpath("//input[@id='RadioButton2aea8b98-72e1-4c81-91eb-ff8468507ff1|N']"));
-		//ctzn.click();
-		
-		WebElement SSNo =mydriver.findElement(By.xpath("//input[@id='Textbox8ec8076d-120c-480d-803c-287c466af729']"));
-		SSNo.clear();
-		SSNo.sendKeys("177123821");
-		Thread.sleep(1000);
-		
-		WebElement male=mydriver.findElement(By.xpath("//input[@id='RadioButtone13705b4-abf7-464f-a33c-2ae2f11acd39|M']"));
-		male.click();
-		Thread.sleep(1000);		
-		
-		
-		//Click on calendar icon and open the Date Picker
-		mydriver.findElement(By.xpath("//body/div[@id='siteWrapper']/form[@id='MAINFORM']/div[@id='mainLayout']/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[4]/div[1]/div[3]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]")).click();
-		Thread.sleep(1000);
-
-		mydriver.findElement(By.xpath("//body/div[@id='ui-datepicker-div']/div[1]/div[1]/select[1]")).click();
-		Thread.sleep(1000);
-		
-		//Select Year first 
-		Select years =new Select(mydriver.findElement(By.xpath("//body/div[@id='ui-datepicker-div']/div[1]/div[1]/select[1]")));
-		years.selectByValue("1995");
-		Thread.sleep(1000);
-		
-		//----------------------------------------
-		String Currentmonthname = mydriver.findElement(By.xpath("//span[contains(text(),'August')]")).getText();
-		String expectedTitle = "August"; //We can change here according to month
+		jss.executeScript("window.scrollBy(0,500)");
 				
-		//Assert.assertEquals(Currentmonthname,"August");
+		// USA CITIZEN YES		
+		/*
+		 
+		 WebElement radioBtnElement = mydriver.findElement(By.id("RadioButton2aea8b98-72e1-4c81-91eb-ff8468507ff1|C"));
+		 boolean selectState = radioElement.isSelected();
 		
-		System.out.println("MONTH NAME =" +Currentmonthname);
-		
-		if(Currentmonthname.equals(expectedTitle))
-		{
-			System.out.println("MONTH NAME =" +Currentmonthname);
-			//Click once to go back on JULY 
-			mydriver.findElement(By.xpath("//span[contains(text(),'Prev')]")).click();
+		//performing click operation only if element is not selected
+		if(selectState == false)
+		 {
+				radioElement.click();
 			
-			//Select Date 
-			mydriver.findElement(By.xpath("//a[contains(text(),'17')]")).click();
+		}		  
+		 */				
+			
+		//YES Citizen  
+			WebElement radioBtnElementYES = mydriver.findElement(By.xpath("//input[@id='RadioButton2aea8b98-72e1-4c81-91eb-ff8468507ff1|C']"));
+		radioBtnElementYES.click();			
+		boolean selectCitizenYES = radioBtnElementYES.isSelected();
+		
+		/*
+		 * //NO Citizen WebElement radioBtnElementNO = mydriver.findElement(By.xpath(
+		 * "//input[@id='RadioButton2aea8b98-72e1-4c81-91eb-ff8468507ff1|C']"));
+		 * radioBtnElementNO.click(); boolean selectCitizenNO =
+		 * radioBtnElementNO.isSelected();
+		 * 
+		 * System.out.println("CITIZEN="+selectCitizenYES+"     "+selectCitizenNO);
+		 */
+						
+		if(selectCitizenYES == true) 
+		{
+			//radioBtnElement.click();
+			WebElement SSNo =mydriver.findElement(By.xpath("//input[@id='Textbox8ec8076d-120c-480d-803c-287c466af729']"));
+			SSNo.clear();
+			SSNo.sendKeys("177123821");
 			Thread.sleep(1000);
 			
-		}
-		else
-		{
-			System.out.println("CURRENT MONTH IS NOT AUGUST");
-		}	
-		
-		//----------------------------------------
-		
+			
+			WebElement male=mydriver.findElement(By.xpath("//input[@id='RadioButtone13705b4-abf7-464f-a33c-2ae2f11acd39|M']"));
+			male.click();
+			Thread.sleep(1000);		
+			
+			
+			//Click on calendar icon and open the Date Picker
+			mydriver.findElement(By.xpath("//body/div[@id='siteWrapper']/form[@id='MAINFORM']/div[@id='mainLayout']/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[4]/div[1]/div[3]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]")).click();
+			Thread.sleep(1000);
+
+			mydriver.findElement(By.xpath("//body/div[@id='ui-datepicker-div']/div[1]/div[1]/select[1]")).click();
+			Thread.sleep(1000);
+			
+			//----------------------------------------
+			//Select Year first month and date 
+			Select years =new Select(mydriver.findElement(By.xpath("//body/div[@id='ui-datepicker-div']/div[1]/div[1]/select[1]")));
+			years.selectByValue("1995");
+			Thread.sleep(1000);
+			
+			
+			String Currentmonthname = mydriver.findElement(By.xpath("//span[contains(text(),'August')]")).getText();
+			String expectedTitle = "August"; //We can change here according to month
 					
-		//Marrital status 
-		mydriver.findElement(By.xpath("//input[@id='RadioButton456ffce8-b076-4d9f-8ff5-3b3b93def15f|S']")).click();
-		Thread.sleep(2000);
+			//Assert.assertEquals(Currentmonthname,"August");
+			
+			System.out.println("MONTH NAME =" +Currentmonthname);
+			
+			if(Currentmonthname.equals(expectedTitle))
+			{
+				System.out.println("MONTH NAME =" +Currentmonthname);
+				//Click once to go back on JULY 
+				mydriver.findElement(By.xpath("//span[contains(text(),'Prev')]")).click();
+				
+				//Select Date 
+				mydriver.findElement(By.xpath("//a[contains(text(),'17')]")).click();
+				Thread.sleep(1000);
+				
+			}
+			else
+			{
+				System.out.println("CURRENT MONTH IS NOT AUGUST");
+			}	
+			
+			//----------------------------------------
+			
+			//Marrital status 
+			mydriver.findElement(By.xpath("//input[@id='RadioButton456ffce8-b076-4d9f-8ff5-3b3b93def15f|S']")).click();
+			Thread.sleep(2000);
+			
+			//mydriver.findElement(By.xpath("//select[@id='DropDowne0def3d0-45b2-45fb-9207-baae3573e682']")).click();
+			Select region = new Select(mydriver.findElement(By.xpath("//select[@id='DropDowne0def3d0-45b2-45fb-9207-baae3573e682']")));
+			region.selectByValue("HIND");
+			Thread.sleep(1000);
+			
+			WebElement Ethnicity=mydriver.findElement(By.xpath("//input[@id='RadioButton849963e4-a422-45de-ab26-652b97f75b3c|-2']"));
+			Ethnicity.click();
+			Thread.sleep(1000);
+			
+			WebElement Race =mydriver.findElement(By.xpath("//input[@id='CheckBox65904fca-dd77-492d-8cff-417cde544d87|-2']"));
+			Race.click();
+			
+			WebElement nxt2 =mydriver.findElement(By.xpath("//input[@id='Button884d1f48-8859-4a6c-9b3f-1c13e436f1b3']"));
+			nxt2.click();
+			Thread.sleep(4000);
+			
+			//ADDRESS INFORMATION STEP 4 TAB
+			 myaddressInfo();
+			 Thread.sleep(4000);
+			
+				/*
+				 * //ADDRESS INFORMATION STEP 4 TAB JavascriptExecutor jssk =
+				 * (JavascriptExecutor) mydriver; jssk.executeScript("window.scrollBy(0,500)");
+				 * //Thread.sleep(2000);
+				 * 
+				 * //Select mycounty = new Select (mydriver.findElement(By.xpath(
+				 * "//select[@id='DropDown3df7778f-9746-4fcb-9662-f3a17638ef47']"))); Select
+				 * mycounty = new Select
+				 * (mydriver.findElement(By.id("DropDown3df7778f-9746-4fcb-9662-f3a17638ef47")))
+				 * ; mycounty.selectByVisibleText("UNITED STATES OF AMERICA");
+				 * Thread.sleep(2000);
+				 * 
+				 * //Select mystate = new Select (mydriver.findElement(By.xpath(
+				 * "//select[@id='DropDown8958e8b9-43b0-46e5-878a-488bfe9b3f0c']"))); Select
+				 * mystate = new Select
+				 * (mydriver.findElement(By.id("DropDown8958e8b9-43b0-46e5-878a-488bfe9b3f0c")))
+				 * ; mystate.selectByVisibleText("California"); Thread.sleep(2000);
+				 * 
+				 * WebElement mycity =mydriver.findElement(By.xpath(
+				 * "//input[@id='Textbox2960223c-1f16-40ff-b422-64b06118b9b7']"));
+				 * mycity.sendKeys("Los Angeles"); Thread.sleep(2000);
+				 * 
+				 * WebElement myaddress =mydriver.findElement(By.xpath(
+				 * "//input[@id='Textbox3dec4b57-8915-4c94-a81c-6ffdf2a0192a']"));
+				 * myaddress.sendKeys("65th floor, LODHA BUILDING , MUMVAI.");
+				 * Thread.sleep(2000);
+				 * 
+				 * WebElement zip =mydriver.findElement(By.xpath(
+				 * "//input[@id='Textbox9fd0756a-e0c3-442d-ad64-8730cc3a8b3f']"));
+				 * zip.sendKeys("400047"); Thread.sleep(2000);
+				 * 
+				 * WebElement nxt3 =mydriver.findElement(By.xpath(
+				 * "//input[@id='Button4683f16b-6d19-4174-a1e7-bc57b8692e86']")); nxt3.click();
+				 * Thread.sleep(4000);
+				 */
+		}
+		else 
+		{
+			/*
+			 * //IF NO USA CITIZEN WebElement ctzn=mydriver.findElement(By.xpath(
+			 * "//input[@id='RadioButton2aea8b98-72e1-4c81-91eb-ff8468507ff1|N']"));
+			 * ctzn.click(); Thread.sleep(2000);
+			 */
+			
+			
+			//PROVIDE CITIZEN INFO
+			Select countyctzn=new Select(mydriver.findElement(By.xpath("//select[@id='DropDownd3201591-bca2-4d73-8afb-6f724a3fac94']")));
+			countyctzn.selectByVisibleText("INDIA");
+			Thread.sleep(1000);
+			
+			Select countyBirth=new Select(mydriver.findElement(By.xpath("//select[@id='DropDown3d019390-08d6-475e-ba6a-b4657287a5dd']")));
+			countyBirth.selectByVisibleText("INDIA");
+			Thread.sleep(1000);
+						
+			//If Do you have a current U.S. VISA?
+			WebElement radioBtnUSA = mydriver.findElement(By.xpath("//input[@id='RadioButton2aea8b98-72e1-4c81-91eb-ff8468507ff1|C']"));
+			radioBtnUSA.click();
+			
+			boolean selectUSAvia = radioBtnUSA.isSelected();
+			
+			if(selectUSAvia == true) 
+			{
+				Select visaType=new Select(mydriver.findElement(By.xpath("//select[@id='DropDown443ebbbe-fcf6-4180-b0a2-e7750780171b']")));
+				visaType.selectByVisibleText("H-1B");
+				
+				mydriver.findElement(By.xpath("//body/div[@id='siteWrapper']/form[@id='MAINFORM']/div[@id='mainLayout']/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[4]/div[1]/div[4]/div[5]/div[2]/div[1]/div[2]/div[1]/div[1]/span[1]"));
+				Thread.sleep(1000);
+				
+				Select VisaExpYear =new Select(mydriver.findElement(By.xpath("//body/div[@id='ui-datepicker-div']/div[1]/div[1]/select[1]")));
+				VisaExpYear.selectByValue("2024");
+				Thread.sleep(1000);
+					
+				mydriver.findElement(By.xpath("//span[contains(text(),'Next')]")).click();
+				Thread.sleep(1000);
+				mydriver.findElement(By.xpath("//span[contains(text(),'Next')]")).click();
+				Thread.sleep(1000);
+					
+				//Select Date 
+				mydriver.findElement(By.xpath("//a[contains(text(),'31')]")).click();
+				Thread.sleep(1000);
+				
+				WebElement nochild=mydriver.findElement(By.xpath("//input[@id='RadioButton6e0d6d52-acbb-49b8-a34c-ee70d4fd45c2|N']"));
+				nochild.click();
+				
+				
+				WebElement next777=mydriver.findElement(By.xpath("//input[@id='Buttonc4008512-432a-4244-ba6a-87b6a285640c']"));
+				next777.click();
+				Thread.sleep(3000);
+				
+				myaddressInfo();
+				Thread.sleep(5000);
+				
+				
+				//--IF NO CITIZEN			
+				
+				//ADDRESS CODE WILL BE HERE 		
+				
+				
+				
+			}	
+			
+			
+		}
 		
-		//mydriver.findElement(By.xpath("//select[@id='DropDowne0def3d0-45b2-45fb-9207-baae3573e682']")).click();
-		Select region = new Select(mydriver.findElement(By.xpath("//select[@id='DropDowne0def3d0-45b2-45fb-9207-baae3573e682']")));
-		region.selectByValue("HIND");
-		Thread.sleep(1000);
 		
-		WebElement Ethnicity=mydriver.findElement(By.xpath("//input[@id='RadioButton849963e4-a422-45de-ab26-652b97f75b3c|-2']"));
-		Ethnicity.click();
-		Thread.sleep(1000);
+		/*
+		 * WebElement SSNo =mydriver.findElement(By.xpath(
+		 * "//input[@id='Textbox8ec8076d-120c-480d-803c-287c466af729']")); SSNo.clear();
+		 * SSNo.sendKeys("177123821"); Thread.sleep(1000);
+		 */
+				
 		
-		WebElement Race =mydriver.findElement(By.xpath("//input[@id='CheckBox65904fca-dd77-492d-8cff-417cde544d87|-2']"));
-		Race.click();
-		
-		WebElement nxt2 =mydriver.findElement(By.xpath("//input[@id='Button884d1f48-8859-4a6c-9b3f-1c13e436f1b3']"));
-		nxt2.click();
-		Thread.sleep(4000);
-		
-		//ADDRESS INFORMATION STEP 4 TAB
-		JavascriptExecutor jssk = (JavascriptExecutor) mydriver;
-		jssk.executeScript("window.scrollBy(0,400)");
-		//Thread.sleep(2000);
-		
-		//Select mycounty = new Select (mydriver.findElement(By.xpath("//select[@id='DropDown3df7778f-9746-4fcb-9662-f3a17638ef47']")));
-		Select mycounty = new Select (mydriver.findElement(By.id("DropDown3df7778f-9746-4fcb-9662-f3a17638ef47")));
-		mycounty.selectByVisibleText("UNITED STATES OF AMERICA");
-		Thread.sleep(2000);
-		
-		//Select mystate = new Select (mydriver.findElement(By.xpath("//select[@id='DropDown8958e8b9-43b0-46e5-878a-488bfe9b3f0c']")));
-		Select mystate = new Select (mydriver.findElement(By.id("DropDown8958e8b9-43b0-46e5-878a-488bfe9b3f0c")));
-		mystate.selectByVisibleText("California");
-		Thread.sleep(2000);
-		
-		WebElement mycity =mydriver.findElement(By.xpath("//input[@id='Textbox2960223c-1f16-40ff-b422-64b06118b9b7']"));
-		mycity.sendKeys("Los Angeles");
-		Thread.sleep(2000);
-	
-		WebElement myaddress =mydriver.findElement(By.xpath("//input[@id='Textbox3dec4b57-8915-4c94-a81c-6ffdf2a0192a']"));
-		myaddress.sendKeys("65th floor, LODHA BUILDING , MUMVAI.");
-		Thread.sleep(2000);
-		
-		WebElement zip =mydriver.findElement(By.xpath("//input[@id='Textbox3dec4b57-8915-4c94-a81c-6ffdf2a0192a']"));
-		zip.sendKeys("400047");
-		Thread.sleep(2000);
-		
-		WebElement nxt3 =mydriver.findElement(By.xpath("//input[@id='Button4683f16b-6d19-4174-a1e7-bc57b8692e86']"));
-		nxt3.click();
-		Thread.sleep(4000);
 		
 		//CANDIDACY STEP 5 TAB
 		JavascriptExecutor jss45 = (JavascriptExecutor) mydriver;
-		jss45.executeScript("window.scrollBy(0,450)");
+		jss45.executeScript("window.scrollBy(0,550)");
 		Thread.sleep(1000);		
 		
 		Select enrollyear = new Select (mydriver.findElement(By.xpath("//select[@id='DropDownb0889429-231a-4008-89b7-baba3dfe3b85']")));
@@ -216,9 +342,9 @@ public class TigerNetApplicationForm
 		nxt4.click();
 		Thread.sleep(4000);
 				
-		//ACADAMIC INFORMATION
+		//ACADAMIC INFORMATION on STEP 6 TAB
 		JavascriptExecutor jss4 = (JavascriptExecutor) mydriver;
-		jss4.executeScript("window.scrollBy(0,450)");
+		jss4.executeScript("window.scrollBy(0,500)");
 		Thread.sleep(1000);
 				
 		Select stateInfo = new Select (mydriver.findElement(By.id("DropDown9de5914a-37b2-4f92-9694-0f52761fa0ec")));
@@ -257,7 +383,7 @@ public class TigerNetApplicationForm
 		if(GCurrentmonthname.equals(GexpectedTitle))
 		{
 			System.out.println("MONTH NAME =" +GCurrentmonthname);
-			//Click once to go back on JULY 
+			//Click once to go next on DECEMBER  
 			mydriver.findElement(By.xpath("//span[contains(text(),'Next')]")).click();
 			Thread.sleep(1000);
 			mydriver.findElement(By.xpath("//span[contains(text(),'Next')]")).click();
@@ -276,10 +402,119 @@ public class TigerNetApplicationForm
 			System.out.println("CURRENT MONTH IS NOT AUGUST");
 		}	
 		
-		//WebElement Addbtn=mydriver.findElement(By.xpath("//input[@id='Buttonc461c9c0-6aba-48d7-870f-50b75e61f62e']"));
-		//Addbtn.click();
+		
+		WebElement Addbtn=mydriver.findElement(By.xpath("//input[@id='Buttonc461c9c0-6aba-48d7-870f-50b75e61f62e']"));
+		Addbtn.click();
+		Thread.sleep(3000);	
+		
+		
+		WebElement nxt55=mydriver.findElement(By.xpath("//input[@id='Button368d6c16-85e1-4b88-82d1-933e8c4037de']"));
+		nxt55.click();
+		Thread.sleep(4000);		
+		
+		
+		//EMEGENCY CONTACT STEP 8 TAB
+		WebElement EmFname=mydriver.findElement(By.xpath("//input[@id='Textbox5741be23-234c-42d7-8dc1-d9a5cdcc0eb0']"));
+		EmFname.sendKeys("TESTING1");
+		Thread.sleep(2000);
+		
+		WebElement EmLname=mydriver.findElement(By.xpath("//input[@id='Textbox9a52be94-2f9e-4c77-bdf2-3c0ed10deb0b']"));
+		EmLname.sendKeys("TESTING2");
+		Thread.sleep(2000);
+		
+		
+		WebElement EmPhone=mydriver.findElement(By.xpath("//input[@id='Textbox0b669676-e630-4c4b-9990-8e10e8cc4768']"));
+		EmPhone.sendKeys("+18046101470");
+		Thread.sleep(2000);
+		
+		WebElement EmRelName=mydriver.findElement(By.xpath("//input[@id='Textbox28e86457-7d8d-422f-9d31-e5bcaf400df3']"));
+		EmRelName.sendKeys("FRIENDS");
+		Thread.sleep(3000);
+		
+		WebElement nxt77=mydriver.findElement(By.xpath("//input[@id='Button6271bea0-2a3f-4ef4-b6f0-36b31bf6c9fa']"));
+		nxt77.click();
+		Thread.sleep(7000);	
+		
+		
+		//ACKNOWLEDGEMENT STEPS 9 TAB
+		
+		
+		WebElement felonyYES=mydriver.findElement(By.xpath("//input[@id='RadioButton9cf70ec3-a4ab-4d8f-858f-b397a50b51aa|Y']"));
+		felonyYES.click();
+		Thread.sleep(2000);	
+		
+		WebElement felonyExpln=mydriver.findElement(By.xpath("//textarea[@id='Essaye1514cdc-5f36-4dec-8921-ccc4ad20ddf8']"));
+		felonyExpln.sendKeys("Philadelphia's new Ordinance prohibits any covered employer, either in an application or during a first interview,");
+		Thread.sleep(2000);	
+		
+		WebElement felonyAgree=mydriver.findElement(By.xpath("//input[@id='CheckBox0140c78e-62ac-4d73-ab07-a350cbc25e53|Y']"));
+		felonyAgree.click();
+		Thread.sleep(2000);	
+		
+		
+		WebElement FinaSubmit=mydriver.findElement(By.xpath("//input[@id='Button2c86681c-c83e-4902-9465-a30ba0233cb7']"));
+		FinaSubmit.click();
+		Thread.sleep(8000);	
+		
+		//REDIRCTED FROM HERE ON GRADBUSINESS 		
+		String strUrl = mydriver.getCurrentUrl();
+		System.out.println("GRABUSINESS URL IS ="+strUrl);
+		Thread.sleep(8000);	
+		
+			
+		///END FORM SUBMITTED 
+		
+		HttpURLConnection c=(HttpURLConnection)new URL("https://www.gradbusinesstest.accessque.com/document").openConnection();
+		c.setRequestMethod("HEAD");
+		c.connect();
+		int stcode = c.getResponseCode();
+		//String res=c.getRequestProperty();
+		//c.getRequestProperties();
+		System.out.println(stcode);
+		
+		
+		Response myresponse = RestAssured.get("https://www.gradbusinesstest.accessque.com/document");
+		System.out.println(myresponse.toString());
+		System.out.println(myresponse.getBody().asString());
+		
 		
 		//mydriver.close();
+		
+	}
+	
+	//ADDRESS INFORMATION CODE 
+	public static void myaddressInfo() throws InterruptedException
+	{
+		//ADDRESS INFORMATION STEP 5 TAB
+		JavascriptExecutor jssk = (JavascriptExecutor) mydriver;
+		jssk.executeScript("window.scrollBy(0,500)");
+		//Thread.sleep(2000);
+		
+		//Select mycounty = new Select (mydriver.findElement(By.xpath("//select[@id='DropDown3df7778f-9746-4fcb-9662-f3a17638ef47']")));
+		Select mycounty = new Select (mydriver.findElement(By.id("DropDown3df7778f-9746-4fcb-9662-f3a17638ef47")));
+		mycounty.selectByVisibleText("UNITED STATES OF AMERICA");
+		Thread.sleep(2000);
+		
+		//Select mystate = new Select (mydriver.findElement(By.xpath("//select[@id='DropDown8958e8b9-43b0-46e5-878a-488bfe9b3f0c']")));
+		Select mystate = new Select (mydriver.findElement(By.id("DropDown8958e8b9-43b0-46e5-878a-488bfe9b3f0c")));
+		mystate.selectByVisibleText("California");
+		Thread.sleep(2000);
+		
+		WebElement mycity =mydriver.findElement(By.xpath("//input[@id='Textbox2960223c-1f16-40ff-b422-64b06118b9b7']"));
+		mycity.sendKeys("Los Angeles");
+		Thread.sleep(2000);
+	
+		WebElement myaddress =mydriver.findElement(By.xpath("//input[@id='Textbox3dec4b57-8915-4c94-a81c-6ffdf2a0192a']"));
+		myaddress.sendKeys("66th floor, ANTALIA BUILDING ,NEW MUMBAI.");
+		Thread.sleep(2000);
+		
+		WebElement zip =mydriver.findElement(By.xpath("//input[@id='Textbox9fd0756a-e0c3-442d-ad64-8730cc3a8b3f']"));
+		zip.sendKeys("400047");
+		Thread.sleep(2000);
+		
+		WebElement nxt777 =mydriver.findElement(By.xpath("//input[@id='Button4683f16b-6d19-4174-a1e7-bc57b8692e86']"));
+		nxt777.click();
+		Thread.sleep(5000);		
 		
 	}
 

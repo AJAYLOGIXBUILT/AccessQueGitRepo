@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="PackageAccessQue.LoginTestCases">
+      <class name="PackageAccessQue.testapi">
         <methods>
-          <include name="loginCondtions" invocation-numbers="0 1 2 3"/>
+          <include name="TC07_Login"/>
         </methods>
-      </class> <!-- PackageAccessQue.LoginTestCases -->
+      </class> <!-- PackageAccessQue.testapi -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
