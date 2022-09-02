@@ -15,10 +15,8 @@
 		<artifactId>selenium-java</artifactId>
 		<version>4.4.0</version>
 	</dependency>
-
-
 		
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-chrome-driver</artifactId>
@@ -33,56 +31,46 @@
 		<version>4.4.0</version>
 	</dependency>
 		
-		
-		
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
+	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-firefox-driver</artifactId>
 			<version>4.3.0</version>
 		</dependency>
 		
-		
 
 	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools -->
-	<dependency>
-		<groupId>org.seleniumhq.selenium</groupId>
-		<artifactId>selenium-devtools</artifactId>
-		<version>4.0.0-rc-1</version>
-	</dependency>
-
-	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v104 -->
-	<dependency>
-		<groupId>org.seleniumhq.selenium</groupId>
-		<artifactId>selenium-devtools-v104</artifactId>
-		<version>4.4.0</version>
-	</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-devtools</artifactId>
+			<version>4.0.0-rc-1</version>
+		</dependency>
 
 	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-	<dependency>
-		<groupId>org.slf4j</groupId>
-		<artifactId>slf4j-api</artifactId>
-		<version>2.0.0</version>
-	</dependency>
-
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>2.0.0</version>
+		</dependency>
 
 	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
-	<dependency>
-		<groupId>org.slf4j</groupId>
-		<artifactId>slf4j-simple</artifactId>
-		<version>2.0.0-beta1</version>
-		<scope>test</scope>
-	</dependency>
+		<dependency>
+    		<groupId>org.slf4j</groupId>
+    		<artifactId>slf4j-simple</artifactId>
+    		<version>2.0.0</version>
+    		<scope>test</scope>
+		</dependency>
+
 	
-	<dependency>
-	    <groupId>org.slf4j</groupId>
-	    <artifactId>slf4j-jdk14</artifactId>
-	    <version>1.7.25</version>
-	</dependency>
-
-
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-jdk14 -->
+		<dependency>
+    		<groupId>org.slf4j</groupId>
+    		<artifactId>slf4j-jdk14</artifactId>
+    		<version>2.0.0</version>
+    		<scope>test</scope>
+		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+	<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
@@ -91,22 +79,19 @@
 		</dependency>
 
 	<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
-	<dependency>
-		<groupId>com.googlecode.json-simple</groupId>
-		<artifactId>json-simple</artifactId>
-		<version>1.1.1</version>
-	</dependency>
-
-
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
 
 	<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
-	<dependency>
-		<groupId>io.rest-assured</groupId>
-		<artifactId>rest-assured</artifactId>
-		<version>5.1.1</version>
-	</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>5.1.1</version>
+		</dependency>
 
-		
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>json-path</artifactId>
@@ -121,73 +106,74 @@
       		<scope>test</scope>
 		</dependency>
 
-	<dependency>
-		<groupId>io.rest-assured</groupId>
-		<artifactId>json-schema-validator</artifactId>
-		<version>5.1.1</version>
-		<scope>test</scope>
-	</dependency>
-	
-	<dependency>
-      <groupId>io.rest-assured</groupId>
-      <artifactId>spring-web-test-client</artifactId>
-      <version>5.1.1</version>
-      <scope>test</scope>
-	</dependency>
-	
-		
-		<!-- https://mvnrepository.com/artifact/com.mashape.unirest/unirest-java -->
-<dependency>
-    <groupId>com.mashape.unirest</groupId>
-    <artifactId>unirest-java</artifactId>
-    <version>1.4.9</version>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured-common -->
+		<dependency>
+		    <groupId>io.rest-assured</groupId>
+		    <artifactId>rest-assured-common</artifactId>
+		    <version>5.1.1</version>
+		</dependency>
 
-	<dependency>
-		<groupId>org.jtwig</groupId>
-		<artifactId>jtwig-core</artifactId>
-		<version>5.87.0.RELEASE</version>
-	</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>5.1.1</version>
+			<scope>test</scope>
+		</dependency>
+	
+		<dependency>
+      		<groupId>io.rest-assured</groupId>
+      		<artifactId>spring-web-test-client</artifactId>
+      		<version>5.1.1</version>
+      		<scope>test</scope>
+		</dependency>
+			
+	<!-- https://mvnrepository.com/artifact/com.mashape.unirest/unirest-java -->
+		<dependency>
+	    	<groupId>com.mashape.unirest</groupId>
+	    	<artifactId>unirest-java</artifactId>
+	    	<version>1.4.9</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>org.jtwig</groupId>
+			<artifactId>jtwig-core</artifactId>
+			<version>5.87.0.RELEASE</version>
+		</dependency>
 				
-		
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
 			<version>4.3.1</version>
 		</dependency>
 
-	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools -->
-	<dependency>
-		<groupId>org.seleniumhq.selenium</groupId>
-		<artifactId>selenium-devtools</artifactId>
-		<version>4.0.0-rc-1</version>
-	</dependency>
-
-
 	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v104 -->
-	<dependency>
-		<groupId>org.seleniumhq.selenium</groupId>
-		<artifactId>selenium-devtools-v104</artifactId>
-		<version>4.4.0</version>
-	</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-devtools-v104</artifactId>
+			<version>4.4.0</version>
+		</dependency>
 
-
-	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-	<dependency>
-		<groupId>org.apache.poi</groupId>
-		<artifactId>poi</artifactId>
-		<version>5.2.2</version>
-	</dependency>
-
-	<!-- https://mvnrepository.com/artifact/org.webjars.npm/webdriver-manager -->
-	<dependency>
-		<groupId>org.webjars.npm</groupId>
-		<artifactId>webdriver-manager</artifactId>
-		<version>13.0.0-beta</version>
-	</dependency>
-
+	<!-- https://mvnrepository.com/artifact/org.apache.maven/maven-artifact-manager -->
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-artifact-manager</artifactId>
+			<version>2.2.1</version>
+		</dependency>
 	
-	
+	<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+    		<groupId>com.aventstack</groupId>
+    		<artifactId>extentreports</artifactId>
+    		<version>5.0.9</version>
+		</dependency>
+
+	<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+		<dependency>
+			<groupId>com.relevantcodes</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>2.41.2</version>
+		</dependency>
+		
 
 	</dependencies>
 

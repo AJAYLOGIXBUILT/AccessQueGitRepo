@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="PackageAccessQue.testapi">
+      <class name="PackageAccessQue.fileUploadDoc">
         <methods>
-          <include name="TC07_Login"/>
+          <include name="uploadFileBachlor"/>
         </methods>
-      </class> <!-- PackageAccessQue.testapi -->
+      </class> <!-- PackageAccessQue.fileUploadDoc -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

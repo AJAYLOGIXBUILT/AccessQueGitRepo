@@ -39,8 +39,6 @@ public class ChromDevToolsAPIresponse
 		//USING CRHOME DEVTOOLS access 		
 		DevTools devTools= ((ChromeDriver)ajDriver).getDevTools();
 		devTools.createSession();
-		
-				
 		devTools.send(Log.enable());
 		
                         

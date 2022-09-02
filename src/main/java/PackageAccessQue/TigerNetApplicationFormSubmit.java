@@ -1,11 +1,13 @@
 package PackageAccessQue;
 
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URL;
+import static org.testng.Assert.assertTrue;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.util.List;
+
+import org.json.simple.JSONObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -16,15 +18,13 @@ import org.openqa.selenium.support.ui.Select;
 //import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.mashape.unirest.http.Unirest;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.openqa.selenium.devtools.v104.network.Network;
+import io.restassured.specification.RequestSpecification;
 
 
-public class TigerNetApplicationWithoutMethod 
+public class TigerNetApplicationFormSubmit extends gradBussinessAPI
 {
 	static WebDriver mydriver;
 
@@ -85,19 +85,20 @@ public class TigerNetApplicationWithoutMethod
 		//Preferred name 
 		WebElement prefname =mydriver.findElement(By.xpath("//input[@id='Textbox1743a95f-c7b0-49c6-a3b7-02aaa6dd8758']"));
 		prefname.sendKeys("TESTER");
-
+		Thread.sleep(2000);
 
 
 		WebElement mobile =mydriver.findElement(By.xpath("//input[@id='Textbox58479ac0-4bbd-4ba7-ac6e-d540f59431fc']"));
 		mobile.clear();
-		mobile.sendKeys("8527834283");
+		Thread.sleep(2000);
+		//mobile.sendKeys("8527834283");  //8527834283 mobile number is EMPTY NOW
 
 		WebElement email =mydriver.findElement(By.xpath("//input[@id='Textbox6e7315dc-8c5a-4c08-9362-81e627e6e5e3']"));
-		email.sendKeys("ajaytestuser@spambox.xyz");
+		email.sendKeys("testajaytestuser@spambox.xyz");
 		Thread.sleep(2000);
 
 		WebElement CnfEmail =mydriver.findElement(By.xpath("//input[@id='Textbox0d380c62-aa89-470b-a459-aba5dd90ff44']"));
-		CnfEmail.sendKeys("ajaytestuser@spambox.xyz");
+		CnfEmail.sendKeys("testajaytestuser@spambox.xyz");  //testajaytestuser@spambox.xyz
 		Thread.sleep(2000);
 
 		WebElement nxt1 =mydriver.findElement(By.xpath("//input[@id='Buttoncea6edc9-beb4-4465-8b12-40a49715fb73']"));
@@ -385,26 +386,61 @@ public class TigerNetApplicationWithoutMethod
 			felonyAgree.click();
 			Thread.sleep(2000);	
 			
+			//CLOSE HERE 
+			//mydriver.close();
 			
-			WebElement FinaSubmit=mydriver.findElement(By.id("Buttonb336e053-6ddd-4b0d-af49-711fb146e3a0"));
-			FinaSubmit.click();
-			Thread.sleep(15000);	
-
+			WebElement FinalSubmit=mydriver.findElement(By.id("Buttonb336e053-6ddd-4b0d-af49-711fb146e3a0"));
+			FinalSubmit.click();
+			
+			
+			try
+			{
+				WebElement actulerror=mydriver.findElement(By.xpath("//body/div[@id='siteWrapper']/form[@id='MAINFORM']/div[@id='mainLayout']/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]"));		
+				System.out.println("ERROR MESSAGE ="+actulerror);
+				String erromessg="Please answer all required questions before submitting the form.";
+			
+				if(actulerror.equals(erromessg))
+				{
+					System.out.println("SOME OF REQUIRED FIELDS ARE MISSING INSIDE FORM,PLEASE CHECK ALL REQUIRED FIELDS ONCE TO MOVE ON NEXT PAGE !");
+					//CLOSE HERE 
+					mydriver.close();
+				}
+			}
+			catch(Exception e)
+			{
+				System.out.println("SOME REQUIRED FIELDS ARE MISSING,PLEASE CHECK ONCE !"); 
+			}
+				
+			Thread.sleep(15000);
+			
 			//REDIRCTED ON GRADBUSINESS 		
 			String strUrl = mydriver.getCurrentUrl();
 			System.out.println("GRABUSINESS URL IS ="+strUrl);
 			Thread.sleep(15000);	
-			
-			
+			System.out.println("APPLICATION FORM SUBMITTED SUCCESSFULLY");
 			//3rd leads URL live
 			//GRABUSINESS URL IS =https://tigernet.campbellsville.edu/ICS/Apply/Apply_Now.jnz?portlet=EX_FormFlow_-_Forms&screen=FormView&screenType=change&form=49c44628-1423-46e0-bf97-568bd4e34a07
-
+						
+		/*	//Call gradbussiness method
+			fileUploadDoc graddocuuplod=new fileUploadDoc();
+			graddocuuplod.uploadFileBachlor();
+			Thread.sleep(3000);	
+			graddocuuplod.uploadFileMaster();
+			Thread.sleep(3000);
+			graddocuuplod.uploadFileI20() ;
+			Thread.sleep(3000);
+			graddocuuplod.uploadFileCredEvelution();
+			Thread.sleep(3000);
+			graddocuuplod.uploadFileIELTS();
+			Thread.sleep(3000);
 			
-			//split 
-			//String gUID = strUrl.substring(strUrl.length() - 10);
-				
+			*/			
+			/*
+			 * gradBussinessAPI myfile=new gradBussinessAPI(); myfile.getAllDOcumentList();
+			 * Thread.sleep(15000);
+			 */
+			//System.out.println("GRADBUSSINESS METHOD CALLED SUCCESSFULLY");
 			
-			System.out.println("APPLICATION FORM SUBMITTED SUCCESSFULLY ");
 			
 			//GRABUSINESS URL IS =https://tigernet.campbellsville.edu/ICS/Apply/Apply_Now.jnz?portlet=EX_FormFlow_-_Forms&screen=FormView&screenType=change&form=49c44628-1423-46e0-bf97-568bd4e34a07
 			//GUID =49c44628-1423-46e0-bf97-568bd4e34a07
@@ -425,11 +461,81 @@ public class TigerNetApplicationWithoutMethod
 			Thread.sleep(6000);	
 			System.out.println("BACHELOR  TRANSCRIPT DOC uploaded Successfully");
 			
-		
 		}	
 		
 	//mydriver.close();
 	}
-
 	
 }
+
+/*
+public void uploadFileBachlor() throws InterruptedException 
+{
+	
+	//REDIRCTED ON GRADBUSINESS 		
+	String strUrl = mydriver.getCurrentUrl();
+	System.out.println("GRABUSINESS URL IS ="+strUrl);
+	Thread.sleep(3000);	
+	
+	
+	List<WebElement> allheaders=mydriver.findElements(By.xpath("//th[contains(text(),'Document Name')]"));
+	
+	//Click on Upload Documents 
+	WebElement BacTrn=mydriver.findElement(By.xpath("//tbody/tr[1]/td[4]/button[1]/img[1]"));
+	BacTrn.click();
+	Thread.sleep(4000);
+	
+	WebElement BachlorTrnscpt= mydriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
+	BachlorTrnscpt.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
+	Thread.sleep(4000);
+	//Click on Upload button 
+	mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
+	Thread.sleep(6000);	
+	System.out.println("BACHELOR  TRANSCRIPT DOC uploaded Successfully");
+	
+	
+        File file = new File("E:\\A\\Dummy_Images\\AMAZON.png");
+
+        RequestSpecification httprequest = RestAssured.given();
+        JSONObject requestpara = new JSONObject();
+		requestpara.put("mailid","admin.uh@accessque.com");
+		requestpara.put("password", "University@Hub1");
+        httprequest.header("x-auth-token","asseccque");
+        Response response =httprequest
+                .given()
+                .multiPart("document", file, "multipart/form-data")
+                .formParam("studentdocid", "14113")
+                .formParam("Platform", "Student")
+                .formParam("MailId", "ajaytestuser@spambox.xyz")
+                .post("https://www.services.accessque.com/api/v1/UploadDocument");
+               
+        System.out.println(response.prettyPrint());
+        
+        int statuscode = response.getStatusCode();	
+        System.out.println("Actual Status Code=" +statuscode);
+//       
+        
+//        String sMessag = response.jsonPath().get("message");
+			//AssertJUnit.assertEquals(sMessag,"Uploaded the file successfully: ");
+        // Assert.assertEquals(bodyAsString.contains("message","Uploaded the file successfully:") ;
+        
+		if(statuscode==200 || statuscode==201 || statuscode==304 )
+		{
+			System.out.println("Bachloar document uploaded API success");
+		}
+		else
+		{
+			System.out.println("API NOT WORKING");
+		}
+
+		assertTrue(response.asString().contains("Uploaded the file successfully:"));
+
+
+    }
+
+
+
+}
+*/
+
+

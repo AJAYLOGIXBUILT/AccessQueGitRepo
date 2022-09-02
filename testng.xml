@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="AccessqueApiResponseReport">
+    <classes>
+      <class name="PackageAccessQue.allPagesAPIresponse"/>
+      <class name="PackageAccessQue.campBellsVilleDashboardAPI"/>
+      <class name="PackageAccessQue.TigerNetApplicationForm"/>
+      <class name="PackageAccessQue.fileUploadDocs"/>
+      <class name="PackageAccessQue.multipleTestCases"/>
+      <class name="PackageAccessQue.gradBussinessAPI"/>
+      <class name="PackageAccessQue.RestAssuredAPITesting"/>
+      <class name="PackageAccessQue.simpleclass"/>
+      <class name="PackageAccessQue.TigerNetApplicationForm2"/>
+      <class name="PackageAccessQue.AfterLoginAllAPI2"/>
+      <class name="PackageAccessQue.simple"/>
+      <class name="PackageAccessQue.MyNewSite"/>
+      <class name="PackageAccessQue.SignInAPI"/>
+      <class name="PackageAccessQue.TigerNetApplicationWithoutMethod"/>
+      <class name="PackageAccessQue.LoginTestCases"/>
+      <class name="PackageAccessQue.LoginPageTest"/>
+      
+    </classes>
+  </test> <!-- AccessqueApiResponseReport -->
+</suite> <!-- Suite -->

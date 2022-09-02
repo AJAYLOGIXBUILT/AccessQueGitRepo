@@ -26,12 +26,30 @@ public class gradBussinessLive
 				//3rd Leads created 
 				graddriver.get("https://www.gradbusiness.campbellsville.edu/document/724fed04-9c5d-4e45-b793-de6a86710f0c/MSCS/N");
 				Thread.sleep(3000);
+				
+				
+				//Click on ADD FILE BUTTON and Uploaded BACHELOR TRANSCRPT Doc 
+				WebElement BacTrn=graddriver.findElement(By.xpath("//tbody/tr[1]/td[4]/button[1]/img[1]"));
+				BacTrn.click();
+				Thread.sleep(4000);
+				
+				WebElement BachlorTrnscpt= graddriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
+				BachlorTrnscpt.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
+				Thread.sleep(4000);
+				//Click on Upload button 
+				graddriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
+				Thread.sleep(6000);	
+				System.out.println("BACHELOR  TRANSCRIPT DOC uploaded Successfully");
+				
+				//Refresh page 
+				graddriver.navigate().refresh();
+				Thread.sleep(2000);	
 					
+				
 				//Click on ADD FILE BUTTON and Uploaded I20 Doc 
 				WebElement i2o1=graddriver.findElement(By.xpath("//tbody/tr[1]/td[4]/button[1]/img[1]"));
 				i2o1.click();
-				Thread.sleep(2000);
-								
+				Thread.sleep(4000);								
 				
 				String newWindow = graddriver.getWindowHandle();
 				graddriver.switchTo().window(newWindow);
@@ -63,7 +81,6 @@ public class gradBussinessLive
 				WebElement CredEve=graddriver.findElement(By.xpath("//tbody/tr[1]/td[4]/button[1]/img[1]"));
 				CredEve.click();
 				Thread.sleep(2000);
-				
 				WebElement CredEvoDoc = graddriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
 				CredEvoDoc.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
 				Thread.sleep(4000);				
@@ -81,7 +98,6 @@ public class gradBussinessLive
 				WebElement masTrn=graddriver.findElement(By.xpath("//tbody/tr[3]/td[4]/button[1]/img[1]"));
 				masTrn.click();
 				Thread.sleep(4000);
-				
 				WebElement MastrTrnscpt= graddriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]"));
 				MastrTrnscpt.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
 				Thread.sleep(4000);
@@ -95,7 +111,6 @@ public class gradBussinessLive
 				WebElement BacTrn=graddriver.findElement(By.xpath("//tbody/tr[1]/td[4]/button[1]/img[1]"));
 				BacTrn.click();
 				Thread.sleep(4000);
-				
 				WebElement BachlorTrnscpt= graddriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
 				BachlorTrnscpt.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
 				Thread.sleep(4000);

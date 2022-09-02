@@ -51,6 +51,7 @@ public class AccessQueResponseAPI {
        
         DevTools devTools = mydriverss.getDevTools();
         devTools.createSession();
+        
         devTools.send(Network.clclearBrowserCache());
         devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.of(100000000)));
         devTools.send(Network.setCacheDisabled(true));

@@ -1,67 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-08-24T13:56:22 IST" name="Default suite" finished-at="2022-08-24T13:56:22 IST" duration-ms="54">
+  <suite started-at="2022-09-02T14:13:04 IST" name="Default suite" finished-at="2022-09-02T14:13:24 IST" duration-ms="19651">
     <groups>
     </groups>
-    <test started-at="2022-08-24T13:56:22 IST" name="Default test" finished-at="2022-08-24T13:56:22 IST" duration-ms="54">
-      <class name="PackageAccessQue.testapi">
-        <test-method signature="TC07_Login()[pri:1, instance:PackageAccessQue.testapi@5d0a1059]" started-at="2022-08-24T13:56:22 IST" name="TC07_Login" finished-at="2022-08-24T13:56:22 IST" duration-ms="12" status="FAIL">
-          <exception class="java.lang.Error">
-            <message>
-              <![CDATA[Unresolved compilation problems: 
-The method toJSONString() is undefined for the type JSONObject
-Method cannot be resolved to a variable
-The method getBody() is undefined for the type Response
-The method getStatusCode() is undefined for the type Response
-The method jsonPath() is undefined for the type Response
-The method header(String) is undefined for the type Response
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Error: Unresolved compilation problems: 
-The method toJSONString() is undefined for the type JSONObject
-Method cannot be resolved to a variable
-The method getBody() is undefined for the type Response
-The method getStatusCode() is undefined for the type Response
-The method jsonPath() is undefined for the type Response
-The method header(String) is undefined for the type Response
-
-at PackageAccessQue.testapi.TC07_Login(testapi.java:25)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Error -->
+    <test started-at="2022-09-02T14:13:04 IST" name="Default test" finished-at="2022-09-02T14:13:24 IST" duration-ms="19651">
+      <class name="PackageAccessQue.APIaccessque">
+        <test-method signature="AgentSIgnIn()[pri:1, instance:PackageAccessQue.APIaccessque@61001b64]" started-at="2022-09-02T14:13:04 IST" name="AgentSIgnIn" finished-at="2022-09-02T14:13:08 IST" duration-ms="3341" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC07_Login -->
-      </class> <!-- PackageAccessQue.testapi -->
+        </test-method> <!-- AgentSIgnIn -->
+        <test-method signature="SerachOnCampBellsvilleDashboard()[pri:2, instance:PackageAccessQue.APIaccessque@61001b64]" started-at="2022-09-02T14:13:08 IST" name="SerachOnCampBellsvilleDashboard" finished-at="2022-09-02T14:13:09 IST" duration-ms="1308" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SerachOnCampBellsvilleDashboard -->
+        <test-method signature="GetLeadsVIEW()[pri:3, instance:PackageAccessQue.APIaccessque@61001b64]" started-at="2022-09-02T14:13:09 IST" name="GetLeadsVIEW" finished-at="2022-09-02T14:13:10 IST" duration-ms="1269" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetLeadsVIEW -->
+        <test-method signature="AddCustomDocCreated()[pri:4, instance:PackageAccessQue.APIaccessque@61001b64]" started-at="2022-09-02T14:13:10 IST" name="AddCustomDocCreated" finished-at="2022-09-02T14:13:11 IST" duration-ms="1144" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddCustomDocCreated -->
+        <test-method signature="AddCustomDocUploaded()[pri:5, instance:PackageAccessQue.APIaccessque@61001b64]" started-at="2022-09-02T14:13:11 IST" name="AddCustomDocUploaded" finished-at="2022-09-02T14:13:15 IST" duration-ms="3708" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddCustomDocUploaded -->
+        <test-method signature="ValidateDocument2()[pri:6, instance:PackageAccessQue.APIaccessque@61001b64]" started-at="2022-09-02T14:13:15 IST" name="ValidateDocument2" finished-at="2022-09-02T14:13:16 IST" duration-ms="1191" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateDocument2 -->
+        <test-method signature="ReValidateDocument2()[pri:7, instance:PackageAccessQue.APIaccessque@61001b64]" started-at="2022-09-02T14:13:16 IST" name="ReValidateDocument2" finished-at="2022-09-02T14:13:18 IST" duration-ms="1185" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReValidateDocument2 -->
+        <test-method signature="SendNotifications()[pri:8, instance:PackageAccessQue.APIaccessque@61001b64]" started-at="2022-09-02T14:13:18 IST" name="SendNotifications" finished-at="2022-09-02T14:13:19 IST" duration-ms="1208" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SendNotifications -->
+        <test-method signature="AddComments()[pri:9, instance:PackageAccessQue.APIaccessque@61001b64]" started-at="2022-09-02T14:13:19 IST" name="AddComments" finished-at="2022-09-02T14:13:22 IST" duration-ms="2895" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddComments -->
+        <test-method signature="LeadsUnDifined()[pri:10, instance:PackageAccessQue.APIaccessque@61001b64]" started-at="2022-09-02T14:13:22 IST" name="LeadsUnDifined" finished-at="2022-09-02T14:13:23 IST" duration-ms="1166" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LeadsUnDifined -->
+        <test-method signature="CommentSendNotification()[pri:11, instance:PackageAccessQue.APIaccessque@61001b64]" started-at="2022-09-02T14:13:23 IST" name="CommentSendNotification" finished-at="2022-09-02T14:13:24 IST" duration-ms="1156" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CommentSendNotification -->
+      </class> <!-- PackageAccessQue.APIaccessque -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
