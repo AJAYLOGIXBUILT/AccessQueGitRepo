@@ -104,9 +104,9 @@ public class TigerNetApplicationFormSubmit extends MyNewSite
 
 		WebElement nxt1 =mydriver.findElement(By.xpath("//input[@id='Buttoncea6edc9-beb4-4465-8b12-40a49715fb73']"));
 		nxt1.click();
-		Thread.sleep(5000);
-		
 		System.out.println("NAME INFORMATION EXECUTED SUCCESSFULLY ");
+		Thread.sleep(5000);		
+		
 		
 		
 		//BIO GRAPHIC TEST 
@@ -118,7 +118,7 @@ public class TigerNetApplicationFormSubmit extends MyNewSite
 		radioBtnElementNO.click();			
 		boolean selectCitizenNO = radioBtnElementNO.isSelected();
 		
-		//YES Citizen  
+		//NO  reside in the US
 		WebElement residUSANo = mydriver.findElement(By.xpath("//input[@id='RadioButton8fde6ddc-8d10-4e69-aeba-cd7df3a21073|N']"));
 		residUSANo.click();			
 		//boolean selectCitizenYES = residUSA.isSelected();
@@ -140,20 +140,19 @@ public class TigerNetApplicationFormSubmit extends MyNewSite
 
 			//Click on calendar icon and open the Date Picker
 			mydriver.findElement(By.xpath("//body/div[@id='siteWrapper']/form[@id='MAINFORM']/div[@id='mainLayout']/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[4]/div[1]/div[3]/div[7]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]")).click();
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 
 			mydriver.findElement(By.xpath("//body/div[@id='ui-datepicker-div']/div[1]/div[1]/select[1]")).click();
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 
 			//---------------------------------------
 			//Select Year first month and date 
 			Select years =new Select(mydriver.findElement(By.xpath("//body/div[@id='ui-datepicker-div']/div[1]/div[1]/select[1]")));
 			years.selectByValue("1995");
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 
-
-			String Currentmonthname = mydriver.findElement(By.xpath("//span[contains(text(),'August')]")).getText();
-			String expectedTitle = "August"; //We can change here according to month
+			String Currentmonthname = mydriver.findElement(By.xpath("//span[contains(text(),'September')]")).getText();
+			String expectedTitle = "September"; //We can change here according to month
 
 			//Assert.assertEquals(Currentmonthname,"August");
 
@@ -170,7 +169,7 @@ public class TigerNetApplicationFormSubmit extends MyNewSite
 			}
 			else
 			{
-				System.out.println("CURRENT MONTH IS NOT AUGUST");
+				System.out.println("CURRENT MONTH IS NOT SEPTEMBER");
 			}	
 
 			//----------------------------------------
@@ -452,21 +451,22 @@ public class TigerNetApplicationFormSubmit extends MyNewSite
 			//GRABUSINESS URL IS =https://tigernet.campbellsville.edu/ICS/Apply/Apply_Now.jnz?portlet=EX_FormFlow_-_Forms&screen=FormView&screenType=change&form=49c44628-1423-46e0-bf97-568bd4e34a07
 			//GUID =49c44628-1423-46e0-bf97-568bd4e34a07
 			
-			
+		
 			//---------------------------------------------GRADBUSINESS CODE WILL EXECUTE--------------------------------------------------------
 			
-			//Click on ADD FILE BUTTON and Uploaded BACHELOR TRANSCRPT Doc 
-			WebElement BacTrn=mydriver.findElement(By.xpath("//tbody/tr[1]/td[4]/button[1]/img[1]"));
-			BacTrn.click();
-			Thread.sleep(4000);
-			
-			WebElement BachlorTrnscpt= mydriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
-			BachlorTrnscpt.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
-			Thread.sleep(4000);
-			//Click on Upload button 
-			mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
-			Thread.sleep(6000);	
-			System.out.println("BACHELOR  TRANSCRIPT DOC uploaded Successfully");
+			/*
+			 * //Click on ADD FILE BUTTON and Uploaded BACHELOR TRANSCRPT Doc WebElement
+			 * BacTrn=mydriver.findElement(By.xpath("//tbody/tr[1]/td[4]/button[1]/img[1]"))
+			 * ; BacTrn.click(); Thread.sleep(4000);
+			 * 
+			 * WebElement BachlorTrnscpt= mydriver.findElement(By.xpath(
+			 * "/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"
+			 * )); BachlorTrnscpt.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the
+			 * file using sendKeys Thread.sleep(4000); //Click on Upload button
+			 * mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click()
+			 * ; Thread.sleep(6000);
+			 * System.out.println("BACHELOR  TRANSCRIPT DOC uploaded Successfully");
+			 */
 			
 		}	
 		
