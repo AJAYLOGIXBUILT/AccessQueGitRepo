@@ -24,12 +24,12 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 
-public class TigerNetApplicationFormSubmit extends gradBussinessAPI
+public class TigerNetApplicationFormSubmit extends MyNewSite
 {
 	static WebDriver mydriver;
 
 	@Test
-	public static void main(String[] args) throws InterruptedException, MalformedURLException, IOException
+	public static void main(String[] args) throws InterruptedException, MalformedURLException, IOException, NoSuchFieldException, SecurityException
 	{		
 		//System.setProperty("webdriver.chrome.driver","E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver104\\chromedriver.exe");
 		WebDriverManager.chromedriver().setup();
@@ -404,7 +404,7 @@ public class TigerNetApplicationFormSubmit extends gradBussinessAPI
 				{
 					System.out.println("SOME OF REQUIRED FIELDS ARE MISSING INSIDE FORM,PLEASE CHECK ALL REQUIRED FIELDS ONCE TO MOVE ON NEXT PAGE !");
 					//CLOSE HERE 
-					mydriver.close();
+					//mydriver.close();
 				}
 			}
 			catch(Exception e)
@@ -422,7 +422,13 @@ public class TigerNetApplicationFormSubmit extends gradBussinessAPI
 			//3rd leads URL live
 			//GRABUSINESS URL IS =https://tigernet.campbellsville.edu/ICS/Apply/Apply_Now.jnz?portlet=EX_FormFlow_-_Forms&screen=FormView&screenType=change&form=49c44628-1423-46e0-bf97-568bd4e34a07
 						
+			MyNewSite calltograd=new MyNewSite();
+			calltograd.gradUploadFile();
+			Thread.sleep(2000);
+			
 		/*	//Call gradbussiness method
+		 * 
+		 * 
 			fileUploadDoc graddocuuplod=new fileUploadDoc();
 			graddocuuplod.uploadFileBachlor();
 			Thread.sleep(3000);	

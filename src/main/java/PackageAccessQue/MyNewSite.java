@@ -19,10 +19,10 @@ import org.testng.annotations.Test;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class MyNewSite
+public class MyNewSite extends allPagesAPIresponse
 {
 	@Test
-	public static void main(String[] args) throws InterruptedException, MalformedURLException, IOException
+	public void gradUploadFile() throws InterruptedException, MalformedURLException, IOException, NoSuchFieldException, SecurityException
 	{		
 		//NEED TO TEST JENKIN SERVER
 		//System.setProperty("webdriver.chrome.driver","E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver104\\chromedriver.exe");
@@ -171,16 +171,15 @@ public class MyNewSite
 				}
 		  }
 		  
-		  SignInAPI AccessQueLogin = new SignInAPI();
-		  AccessQueLogin.LiveAccessque_Login();
-		  
-		  mydriver.manage().window().maximize();
-		  Thread.sleep(3000);
+			
+			allPagesAPIresponse accQAPI = new allPagesAPIresponse();
+			accQAPI.TC01_AgentSIgnIn();
+			Thread.sleep(3000);
+
 		  // mydriver.close();
 	}
-	
-}
 			
+}			
 			/*
 			AccessQueAdminLogin redirctonlive =new AccessQueAdminLogin();
 			redirctonlive.liveadminLOGIN();

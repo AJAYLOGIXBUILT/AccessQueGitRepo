@@ -23,124 +23,77 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.List;
 
-public class fileUploadDocs 
+public class fileUploadDocsGradBusiness 
 {
+	//ONLY  API WISE FILE UPLOADNING  WORKING 
 	@Test
-	public static void main(String[] args) throws InterruptedException, MalformedURLException, IOException
-	//public void uploadFileBachlor() throws InterruptedException 
+	public void StudenloginData()
 	{
-		
-		WebDriverManager.chromedriver().setup();
-		WebDriver mydriver = new ChromeDriver();
-		Thread.sleep(3000);
-
-		mydriver.manage().deleteAllCookies();
-		Thread.sleep(3000);
-		
-		//mydriver.get("https://accessque.com");
-		mydriver.get("https://www.gradbusinesstest.accessque.com/redirect/49c44628-1423-46e0-bf97-568bd4e34a07/MSCS/N");
-		mydriver.manage().window().maximize();
-		Thread.sleep(3000);
+			//specify base URI
+			RestAssured.baseURI="https://services.accessque.com/api/v1";
+			//Request object
 			
-		//REDIRCTED ON GRADBUSINESS 		
-		String strUrl = mydriver.getCurrentUrl();
-		System.out.println("GRABUSINESS URL IS ="+strUrl);
-		Thread.sleep(3000);	
-		
+			//Request sending payload data 
+			JSONObject requestpara = new JSONObject();
+			requestpara.put("Mailid","admin.uh@accessque.com");
+			requestpara.put("password", "University@Hub1");
 			
-		
-		//Getting all the Document Name 
-		WebElement MsterTrn=mydriver.findElement(By.xpath("//td[text()=' Masters Transcript ']"));
-		Assert.assertTrue(MsterTrn.isDisplayed());
-		
-		
-		
-		String Docname2 =MsterTrn.getText();
-		System.out.println(Docname2);
-		
-		WebElement i20doc=mydriver.findElement(By.xpath("//td[text()=' I-20 ']"));
-		String Docname3 =i20doc.getText();
-		System.out.println(Docname3);
-		
-		WebElement BachTrn=mydriver.findElement(By.xpath("//td[text()=' Bachelors Transcript ']"));
-		String Docname4 =BachTrn.getText();
-		System.out.println(Docname4);
-		
-		WebElement english=mydriver.findElement(By.xpath("//td[text()=' English Proficiency  ']"));
-		String Docname5 =english.getText();
-		System.out.println(Docname5);
-		
-		WebElement credEvl=mydriver.findElement(By.xpath("//td[text()=' Credential Evaluation ']"));
-		String Docname1 =credEvl.getText();
-		System.out.println(Docname1);
-		Thread.sleep(2000);
-		
-		WebElement clickImport=mydriver.findElement(By.xpath("//tbody//tr[1]//td[4]//button//img[1]"));
-		clickImport.click();
-		Thread.sleep(2000);
+			//Request object
+			RequestSpecification httprequest=RestAssured.given();
+		    
+			httprequest.header("x-auth-token","asseccque");
+			httprequest.header("Content-type","application/json");
+			httprequest.body(requestpara.toJSONString());  //Attach data to the request
 			
-		Actions myact=new Actions(mydriver);
-		
-		WebElement BachlorTrnscpt= mydriver.findElement(By.xpath("//button[contains(text(),' Select Files ')]"));
-		//BachlorTrnscpt.click();
-		myact.moveToElement(BachlorTrnscpt).perform();
-		
-		//Runtime.getRuntime().exec("E:\\A\\SOFTWARE\\AutoIt\\AccessqueAutoIt\\TigerNetFileUpload.au3");			
-		Thread.sleep(4000);
-		
-		BachlorTrnscpt.sendKeys("C:\\Users\\Admin\\Desktop\\Aston-Martin.jpg"); //Uploading the file using sendKeys
-		Thread.sleep(4000);
-		
-		
-		mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
-		Thread.sleep(6000);	
-		System.out.println("BACHELOR  TRANSCRIPT DOC uploaded Successfully");
-		mydriver.close();
-	}
-
-	//mydriver.close();
-
-}	
-
-		
-
-
+			//Response object
+	    	Response myResponse=httprequest.request(Method.POST,"/agentsignin");
+			
+	    	//print response in console window
+			String responsebody=myResponse.getBody().asString();
+			System.out.println("RESPONSE BODY IS 1: "+responsebody);
+			
+			//status code validation
+			int statuscode = myResponse.getStatusCode();
+			System.out.println("Actual Status Code 1 =" +statuscode);
+			
+			int loadtime = (int) myResponse.getTime();
+			System.out.println("API LOADING TIME: = "+loadtime);
+			//Assert.assertEquals(statuscode,200);
+			
+			if(statuscode==200 || statuscode==201 || statuscode==304 )
+			{
+				System.out.println("PASSED: SIGNIN API");
+			}
+			else
+			{
+				System.out.println("FAILED: SIGNIN API");
+				
+			}
+			
+			//validating headers from response
+			String ContentType=myResponse.header("Content-Type");
+			AssertJUnit.assertEquals(ContentType,"application/json; charset=utf-8");
+	        
+		}
 	
-/*	
+	
 	@Test
-	public void uploadFileBachlor() 
+	public void uploadFileBachlor()
 	{
-		WebDriverManager.chromedriver().setup();
-		WebDriver mydriver = new ChromeDriver();
-
-		mydriver.manage().deleteAllCookies();
-		Thread.sleep(3000);
-
-		//mydriver.get("https://accessque.com");
-		mydriver.get("https://tigernet.campbellsville.edu/ICS/Apply/");
-		mydriver.manage().window().maximize();
-		Thread.sleep(3000);
-
+				
 		
-		WebElement BacTrn=mydriver.findElement(By.xpath("//tbody/tr[1]/td[4]/button[1]/img[1]"));
-		BacTrn.click();
-		Thread.sleep(4000);
-		
-		WebElement BachlorTrnscpt= mydriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
-		BachlorTrnscpt.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
-		Thread.sleep(4000);
-		//Click on Upload button 
-		mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
-		Thread.sleep(6000);	
-		System.out.println("BACHELOR  TRANSCRIPT DOC uploaded Successfully");
+		//Request sending payload data 
+		JSONObject requestpara = new JSONObject();
+		requestpara.put("Mailid","admin.uh@accessque.com");
+		requestpara.put("password", "University@Hub1");
 		
 		
 	        File file = new File("E:\\A\\Dummy_Images\\AMAZON.png");
 
 	        RequestSpecification httprequest = RestAssured.given();
-	        JSONObject requestpara = new JSONObject();
-			requestpara.put("mailid","admin.uh@accessque.com");
-			requestpara.put("password", "University@Hub1");
+	        JSONObject requestpara1 = new JSONObject();
+			requestpara1.put("mailid","admin.uh@accessque.com");
+			requestpara1.put("password", "University@Hub1");
 	        httprequest.header("x-auth-token","asseccque");
 	        Response response =httprequest
 	                .given()
@@ -343,4 +296,4 @@ public class fileUploadDocs
 	    }
 	
 	}
-	*/
+	
