@@ -119,7 +119,7 @@ public class MyNewSite extends allPagesAPIresponse
 						WebElement masTrn=mydriver.findElement(By.xpath("//td[text()=' Masters Transcript ']//following-sibling::td/following-sibling::td/button[1]//img"));
 						masTrn.click();
 						Thread.sleep(4000);
-						WebElement MastrTrnscpt= mydriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
+						WebElement MastrTrnscpt= mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
 						MastrTrnscpt.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
 						Thread.sleep(4000);
 						//Click on Upload button 
@@ -137,7 +137,7 @@ public class MyNewSite extends allPagesAPIresponse
 						WebElement i20doc=mydriver.findElement(By.xpath("//td[text()=' I-20 ']//following-sibling::td/following-sibling::td/button[1]//img"));
 						i20doc.click();
 						Thread.sleep(4000);
-						WebElement i20document= mydriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
+						WebElement i20document= mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
 						i20document.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
 						Thread.sleep(4000);
 						//Click on Upload button 
@@ -155,7 +155,7 @@ public class MyNewSite extends allPagesAPIresponse
 						WebElement ENGLISH=mydriver.findElement(By.xpath("//td[text()=' English Proficiency  ']//following-sibling::td/following-sibling::td/button[1]//img"));
 						ENGLISH.click();
 						Thread.sleep(4000);
-						WebElement englishDoc= mydriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]"));
+						WebElement englishDoc= mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
 						englishDoc.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
 						Thread.sleep(4000);
 						//Click on Upload button 
