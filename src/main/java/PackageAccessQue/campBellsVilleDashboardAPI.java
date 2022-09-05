@@ -1,5 +1,10 @@
 package PackageAccessQue;
 
+import static org.testng.Assert.assertTrue;
+
+import java.io.File;
+import java.util.HashMap;
+
 import org.json.simple.JSONObject;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
@@ -42,6 +47,7 @@ public class campBellsVilleDashboardAPI
 			//status code validation
 			int statuscode = myResponse.getStatusCode();
 			System.out.println("Actual Status Code 1 =" +statuscode);
+			
 			int loadtime = (int) myResponse.getTime();
 			System.out.println("API LOADING TIME: = "+loadtime);
 			//Assert.assertEquals(statuscode,200);
@@ -63,43 +69,54 @@ public class campBellsVilleDashboardAPI
 		}
 				
 	@Test
-	public void TC0001_SerachOnCampBellsvilleDashboard()
-	{	
-		//specify base URI
-		RestAssured.baseURI="https://services.accessque.com/api/v1";
-					
-		//Request object
-		JSONObject requestpara = new JSONObject();
-		requestpara.put("admin","false");
-		requestpara.put("companyId","14");
-		requestpara.put("userId","25");
-							
-								
-		RequestSpecification httprequest=RestAssured.given();	            	        
-		httprequest.header("x-auth-token","asseccque");
-		httprequest.header("Content-type","application/json");
-		httprequest.body(requestpara.toJSONString());
-			       			
-		//Response object
-		Response response=httprequest.request(Method.POST,"/dashboardprojects");
-		//print response in console window
-		String responsebody=response.getBody().asString();
-		System.out.println("Response Body is 1st:"+responsebody);
-		
-		//status code validation
-		int statuscode = response.getStatusCode();	
-		System.out.println("Actual Status Code 1st =" +statuscode);  //Run time 200 received
-		//AssertJUnit.assertEquals(statuscode,201);
-		if(statuscode==200 || statuscode==201 || statuscode==304 )
-		{
-			System.out.println("Searching on dashboard API = PASSED");
-		}
-		else
-		{
-			System.out.println("Searching on dashboard API = FAILED");
-		}
-			
-	}
+	public void uploadFileI20() 
+	{
+	        File file = new File("E:\\A\\Dummy_Images\\AMAZON.png");
+
+	        RequestSpecification httprequest = RestAssured.given();
+	        JSONObject requestpara = new JSONObject();
+			requestpara.put("mailid","admin.uh@accessque.com");
+			requestpara.put("password", "University@Hub1");
+	        httprequest.header("x-auth-token","asseccque");
+	        Response response =httprequest
+	                .given()
+	                .multiPart("document", file, "multipart/form-data")
+	                .formParam("studentdocid", "14874")
+	                .formParam("Platform", "CRM")
+	                .formParam("MailId", "admin.uh@accessque.com")
+	                .post("https://www.services.accessque.com/api/v1/addCustomDocUpload");
+	        	        
+	        // System.out.println(response.prettyPrint());
+	        
+	        int statuscode = response.getStatusCode();	
+	        System.out.println("Actual Status Code=" +statuscode);
+	       
+	        
+	        String sMessag= ((HashMap) response).get("message").toString();
+	        System.out.println("MY MSG ="+sMessag);
+	        
+	        //Object data=requestpara.get("message");
+	        //System.out.println("MY MSG ="+data);
+	        
+	        //String sMessag=response.jsonPath().get("message");
+	        assertTrue(response.asString().contains("Uploaded the file successfully:"));
+		    //String bodyAsString = response.getContentType("Uploaded the file successfully:");
+	    	// Assert.assertEquals(bodyAsString.contains("bodyAsString","Uploaded the file successfully:") ;
+	        
+			if(statuscode==200 || statuscode==201 || statuscode==304 )
+			{
+				System.out.println("I20  document uploaded API success");
+			}
+			else
+			{
+				System.out.println("API NOT WORKING");
+			}
+
+			assertTrue(response.asString().contains("Uploaded the file successfully:"));
+
+
+	    }
+	
 		
 	
 

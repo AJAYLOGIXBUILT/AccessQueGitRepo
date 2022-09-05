@@ -6,12 +6,15 @@ import io.restassured.response.ResponseBody;
 import io.restassured.response.ResponseOptions;
 import io.restassured.specification.RequestSpecification;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.AssertJUnit;
 //import static io.restassured.matcher.RestAssuredMatchers.*;
 import org.testng.annotations.Test;
 
 import groovyjarjarasm.asm.commons.Method;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import io.restassured.RestAssured;
 
 import org.testng.annotations.Test;
@@ -20,9 +23,21 @@ import io.restassured.http.Method.*;
 public class RestAssuredAPITesting 
 {
 	@Test
-	void loginTest()
+	void loginTest() throws InterruptedException
 	{		
 		//Response myresponse = RestAssured.get("https://services.accessque.com/api/v1/templateByName/passwordverification");
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver mydriver = new ChromeDriver();
+
+		//mydriver.manage().deleteAllCookies();
+		Thread.sleep(3000);
+
+		//mydriver.get("https://accessque.com");
+		mydriver.get("https://www.gradbusinesstest.accessque.com/redirect/49c44628-1423-46e0-bf97-568bd4e34a07/MSCS/N");
+		mydriver.manage().window().maximize();
+		Thread.sleep(3000);
+		
 		
 		RestAssured.baseURI="https://accessque.com";
 		

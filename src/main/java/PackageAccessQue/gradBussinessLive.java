@@ -91,9 +91,6 @@ public class gradBussinessLive
 				
 				
 				
-				
-				
-				
 				//Click on ADD FILE BUTTON and Upload MASTER TRANSCRPT Doc 
 				WebElement masTrn=graddriver.findElement(By.xpath("//tbody/tr[3]/td[4]/button[1]/img[1]"));
 				masTrn.click();
@@ -105,19 +102,6 @@ public class gradBussinessLive
 				graddriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
 				Thread.sleep(6000);						
 				System.out.println("MASTER TRANSCRIPT DOC uploaded Successfully");
-				
-				
-				//Click on ADD FILE BUTTON and Uploade BACHELOR TRANSCRPT Doc 
-				WebElement BacTrn=graddriver.findElement(By.xpath("//tbody/tr[1]/td[4]/button[1]/img[1]"));
-				BacTrn.click();
-				Thread.sleep(4000);
-				WebElement BachlorTrnscpt= graddriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
-				BachlorTrnscpt.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
-				Thread.sleep(4000);
-				//Click on Upload button 
-				graddriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
-				Thread.sleep(6000);	
-				System.out.println("BACHELOR  TRANSCRIPT DOC uploaded Successfully");
 				
 				
 						

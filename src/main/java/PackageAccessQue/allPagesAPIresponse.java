@@ -9,6 +9,8 @@ import org.testng.AssertJUnit;
 import static org.testng.Assert.assertTrue;
 
 import java.io.File;
+import java.lang.reflect.Field;
+import java.sql.Driver;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -39,7 +41,7 @@ public class allPagesAPIresponse
 	
 		//LIVE ACCESSQUE ALL API STATUS 
 		@Test(priority=1)
-		public void TC01_AgentSIgnIn()
+		public void TC01_AgentSIgnIn() throws NoSuchFieldException, SecurityException
 		{
 			//specify base URI
 			RestAssured.baseURI="https://services.accessque.com/api/v1";
@@ -64,7 +66,8 @@ public class allPagesAPIresponse
 			String responsebody=myResponse.getBody().asString();
 			System.out.println("RESPONSE BODY IS 1: "+responsebody);
 			
-			//status code validation
+						
+			//status code validationss
 			int statuscode = myResponse.getStatusCode();
 			System.out.println("Actual Status Code 1 =" +statuscode);
 			int loadtime = (int) myResponse.getTime();
@@ -86,435 +89,7 @@ public class allPagesAPIresponse
 	        
 		}
 		
-		//Searched with "ajay" on campbellsville dashbaord 
-		@Test(priority=001)
-		public void TC0001_SerachOnCampBellsvilleDashboard()
-		{	
-			//specify base URI
-			RestAssured.baseURI="https://services.accessque.com/api/v1";
-						
-			//Request object
-			JSONObject requestpara = new JSONObject();
-			requestpara.put("ProjectId","9");
-			requestpara.put("admin","true");
-			requestpara.put("callStatus","All");
-			requestpara.put("course","All");
-			requestpara.put("end","2022-08-03 09:40:25+00");
-			requestpara.put("enrollmentTerm","All");
-			requestpara.put("enrollmentYear","All");
-			requestpara.put("export","false");
-			requestpara.put("leadType","All");
-			requestpara.put("mail","All");
-			requestpara.put("page","1");
-			requestpara.put("search","ajay");
-			requestpara.put("start","2021-08-02 09:40:25+00");
-								
-									
-			RequestSpecification httprequest=RestAssured.given();	            	        
-			httprequest.header("x-auth-token","asseccque");
-			httprequest.header("Content-type","application/json");
-			httprequest.body(requestpara.toJSONString());
-				       			
-			//Response object
-			Response response=httprequest.request(Method.POST,"/campbellsville/getSearchDashboardLeads");
-			//print response in console window
-			String responsebody=response.getBody().asString();
-			System.out.println("Response Body is 1st:"+responsebody);
-			
-			//status code validation
-			int statuscode = response.getStatusCode();	
-			System.out.println("Actual Status Code 1st =" +statuscode);  //Run time 200 received
-			//AssertJUnit.assertEquals(statuscode,201);
-			if(statuscode==200 || statuscode==201 || statuscode==304 )
-			{
-				System.out.println("Searching on Campbellsville dashboard API = PASSED");
-			}
-			else
-			{
-				System.out.println("Searching on Campbellsville  API = FAILED");
-			}
-			
-		}
-		
-		//Searched with "ajay" on campbellsville dashbaord and click on VIEW button
-				@Test(priority=002)
-				public void TC0002_GetLeadsVIEW()
-				{	
-					//specify base URI
-					RestAssured.baseURI="https://services.accessque.com/api/v1";
-								
-					//Request object
-					JSONObject requestpara = new JSONObject();
-											
-					RequestSpecification httprequest=RestAssured.given();	            	        
-					httprequest.header("x-auth-token","asseccque");
-					httprequest.header("Content-type","application/json");
-					httprequest.body(requestpara.toJSONString());
-						       			
-					//Response object
-					Response response=httprequest.request(Method.GET,"/campbellsville/getLead1/2554");
-					//print response in console window
-					String responsebody=response.getBody().asString();
-					System.out.println("Response Body is 1st:"+responsebody);
-					
-					//status code validation
-					int statuscode = response.getStatusCode();	
-					System.out.println("Actual Status Code 1st =" +statuscode);  //Run time 200 received
-					//AssertJUnit.assertEquals(statuscode,201);
-					if(statuscode==200 || statuscode==201 || statuscode==304 )
-					{
-						System.out.println("Searched and VIEW leads API = PASSED");
-					}
-					else
-					{
-						System.out.println("Searched and VIEW leads API = FAILED");
-					}
-						
-				}
-								
-				//Searched with "ajay" on campbellsville dashbaord and click on VIEW button and created custom docs
-				@Test(priority=003)
-				public void TC0003_AddCustomDocCreated()
-				{	
-					//specify base URI
-					RestAssured.baseURI="https://services.accessque.com/api/v1";
-								
-					//Request object
-					JSONObject requestpara = new JSONObject();
-					requestpara.put("GUID","75e86332-b7cc-4015-97a5-ebbc622f60a1");
-					requestpara.put("docName","TEST DOCS 1");
-					requestpara.put("Platform","CRM");
-					requestpara.put("MailId","admin.uh@accessque.com");			
-										
-											
-					RequestSpecification httprequest=RestAssured.given();	            	        
-					httprequest.header("x-auth-token","asseccque");
-					httprequest.header("Content-type","application/json");
-					httprequest.body(requestpara.toJSONString());
-						       			
-					//Response object
-					Response response=httprequest.request(Method.POST,"/addCustomDocUpload");
-					//print response in console window
-					String responsebody=response.getBody().asString();
-					System.out.println("Response Body is 1st:"+responsebody);
-					
-					//status code validation
-					int statuscode = response.getStatusCode();	
-					System.out.println("Actual Status Code 1st =" +statuscode);  //Run time 200 received
-					//AssertJUnit.assertEquals(statuscode,201);
-					if(statuscode==200 || statuscode==201 || statuscode==304 )
-					{
-						System.out.println("Add Custom doc Created API = PASSED");
-					}
-					else
-					{
-						System.out.println("Add Custom doc Created API = FAILED");
-					}
-						
-				}
-				
-				//Searched with "ajay" on campbellsville dashbaord and created custom docs & Uploaded file
-				@Test(priority=004)
-				public void TC0004_AddCustomDocUploaded()
-				{	
-					//specify base URI
-					//RestAssured.baseURI="https://services.accessque.com/api/v1";
-								
-					File file = new File("E:\\A\\Dummy_Images\\AMAZON.png");
-
-			        RequestSpecification httprequest = RestAssured.given();
-			        JSONObject requestpara = new JSONObject();
-					//requestpara.put("mailid","admin.uh@accessque.com");
-					//requestpara.put("password", "University@Hub1");
-			        httprequest.header("x-auth-token","asseccque");
-			        Response response =httprequest
-			                .given()
-			                .multiPart("document", file, "multipart/form-data")
-			                .formParam("studentdocid", "14595")
-			                .formParam("Platform", "CRM")
-			                .formParam("MailId", "admin.uh@accessque.com")
-			                .post("https://www.services.accessque.com/api/v1/UploadDocument");
-			               
-			        //System.out.println(response.prettyPrint());
-			        
-			        int statuscode = response.getStatusCode();	
-			        System.out.println("Actual Status Code=" +statuscode);
-			        
-			      
-			        //JSON jsonPathEvaluator = response.jsonPath();
-			        //String mymessage = jsonPathEvaluator.get("Uploaded the file successfully:");
-			        //Assert.assertEquals(mymessage, "Uploaded the file successfully:", "Correct city name received in the Response");
-			        //ResponseBody bodyAsString = response.getBody();
-      			  
-			        if(statuscode==200 || statuscode==201 || statuscode==304 )
-					{
-						System.out.println("Custom Doc uploaded API = PASSED");
-					}
-					else
-					{
-						System.out.println("Custom Doc uploaded API == FAILED");
-					}
-
-					assertTrue(response.asString().contains("Uploaded the file successfully:"));
-
-			    }
-				
-				//Searched with "ajay" on campbellsville dashbaord and click on VIEW button and created custom docs and VALIDATED
-				@Test(priority=005)
-				public void TC0005_DocumentValidat2()
-				{	
-					//specify base URI
-					RestAssured.baseURI="https://services.accessque.com/api/v1";
-								
-					//Request object
-					JSONObject requestpara = new JSONObject();
-					requestpara.put("MailId","admin.uh@accessque.com");
-					requestpara.put("Platform","CRM");
-					requestpara.put("StudentdocId","14595");
-					requestpara.put("admin","false");
-					requestpara.put("validationStatus","validated");
-											
-					RequestSpecification httprequest=RestAssured.given();	            	        
-					httprequest.header("x-auth-token","asseccque");
-					httprequest.header("Content-type","application/json");
-					httprequest.body(requestpara.toJSONString());
-						       			
-					//Response object
-					Response response=httprequest.request(Method.POST,"/campbellsville/documentValidation2");
-					//print response in console window
-					String responsebody=response.getBody().asString();
-					System.out.println("Response Body is :"+responsebody);
-					
-					//status code validation
-					int statuscode = response.getStatusCode();	
-					System.out.println("Actual Status Code  =" +statuscode);  //Run time 200 received
-					//AssertJUnit.assertEquals(statuscode,201);
-					if(statuscode==200 || statuscode==201 || statuscode==304 )
-					{
-						System.out.println("DOCUMENT VALIDATED API = PASSED");
-					}
-					else
-					{
-						System.out.println("DOCUMENT VALIDATED API = FAILED");
-					}
-						
-				}
-				
-				//Searched with "ajay" on campbellsville dashbaord and click on VIEW button and created custom docs and REVALIDATED
-				@Test(priority=006)
-				public void TC0006_DocumentREvalidat2()
-				{	
-					//specify base URI
-					RestAssured.baseURI="https://services.accessque.com/api/v1";
-								
-					//Request object
-					JSONObject requestpara = new JSONObject();
-					requestpara.put("MailId","admin.uh@accessque.com");
-					requestpara.put("Platform","CRM");
-					requestpara.put("StudentdocId","14595");
-					requestpara.put("admin","false");
-					requestpara.put("validationStatus","revalidate");
-											
-					RequestSpecification httprequest=RestAssured.given();	            	        
-					httprequest.header("x-auth-token","asseccque");
-					httprequest.header("Content-type","application/json");
-					httprequest.body(requestpara.toJSONString());
-						       			
-					//Response object
-					Response response=httprequest.request(Method.POST,"/campbellsville/documentValidation2");
-					//print response in console window
-					String responsebody=response.getBody().asString();
-					System.out.println("Response Body is :"+responsebody);
-					
-					//status code validation
-					int statuscode = response.getStatusCode();	
-					System.out.println("Actual Status Code  =" +statuscode);  //Run time 200 received
-					//AssertJUnit.assertEquals(statuscode,201);
-					if(statuscode==200 || statuscode==201 || statuscode==304 )
-					{
-						System.out.println("DOCUMENT REVALIDATED API = PASSED");
-					}
-					else
-					{
-						System.out.println("DOCUMENT REVALIDATED API = FAILED");
-					}
-						
-				}
-				
-				
-				@Test(priority=007)
-				public void TC0007_SendNotifications()
-				{	
-					//specify base URI
-					RestAssured.baseURI="https://services.accessque.com/api/v1";
-								
-					//Request object
-					JSONObject requestpara = new JSONObject();
-					requestpara.put("AgentMail","admin.uh@accessque.com");
-					requestpara.put("GBPAssignedTo","");
-					requestpara.put("GUID","");
-					requestpara.put("LeadId","0");
-					requestpara.put("Platform","CRM");
-					requestpara.put("StudentDocId","14595");
-					requestpara.put("Title","Document Validation");
-					requestpara.put("description","Document status changed to validated by Admin UniversityHub");
-					requestpara.put("notificationType","Validation");
-					requestpara.put("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYWlsaWQiOiJhZG1pbi51aEBhY2Nlc3NxdWUuY29tIiwiaWF0IjoxNjU0NTEzNzc0LCJleHAiOjE2ODYwNDk3NzR9.OO3fOBwnUeVFRFAC3Ec1oE8a-Vhf2B0RTv6tPv3QE5A");
-											
-					RequestSpecification httprequest=RestAssured.given();	            	        
-					httprequest.header("x-auth-token","asseccque");
-					httprequest.header("Content-type","application/json");
-					httprequest.body(requestpara.toJSONString());
-						       			
-					//Response object
-					Response response=httprequest.request(Method.POST,"/sentNotifications");
-					//print response in console window
-					String responsebody=response.getBody().asString();
-					System.out.println("Response Body is :"+responsebody);
-					
-					//status code validation
-					int statuscode = response.getStatusCode();	
-					System.out.println("Actual Status Code  =" +statuscode);  //Run time 200 received
-					//AssertJUnit.assertEquals(statuscode,201);
-					if(statuscode==200 || statuscode==201 || statuscode==304 )
-					{
-						System.out.println("SEND NOTIFICATION API = PASSED");
-					}
-					else
-					{
-						System.out.println("SEND NOTIFICATION API = FAILED");
-					}
-						
-				}
-				
-				//Add Comment APi 
-				@Test(priority=8)
-				public void TC0008_AddComments()
-				{	
-					//specify base URI
-					RestAssured.baseURI="https://services.accessque.com/api/v1";
-								
-					//Request object
-					JSONObject requestpara = new JSONObject();
-					requestpara.put("Admin","true");
-					requestpara.put("AgentMail","admin.uh@accessque.com");
-					requestpara.put("GUID","75e86332-b7cc-4015-97a5-ebbc622f60a1");
-					requestpara.put("LeadId","2554");
-					requestpara.put("Platform","CRM");
-					requestpara.put("ProjectId","9");
-					requestpara.put("StudentDocId","14595");
-					requestpara.put("Text","This is test documents for now ");
-											
-					RequestSpecification httprequest=RestAssured.given();	            	        
-					httprequest.header("x-auth-token","asseccque");
-					httprequest.header("Content-type","application/json");
-					httprequest.body(requestpara.toJSONString());
-						       			
-					//Response object
-					Response response=httprequest.request(Method.POST,"/campbellsville/addComments");
-					//print response in console window
-					String responsebody=response.getBody().asString();
-					System.out.println("Response Body is :"+responsebody);
-					
-					//status code validation
-					int statuscode = response.getStatusCode();	
-					System.out.println("Actual Status Code  =" +statuscode);  //Run time 200 received
-					//AssertJUnit.assertEquals(statuscode,201);
-					if(statuscode==200 || statuscode==201 || statuscode==304 )
-					{
-						System.out.println("ADD COMMENTS API = PASSED");
-					}
-					else
-					{
-						System.out.println("ADD COMMENTS API = FAILED");
-					}
-						
-				}
-				
-				
-				//UNDEFINED API getting with  504 error
-				@Test(priority=9)
-				public void TC0009_LeadsNotDifined()
-				{	
-					//specify base URI
-					RestAssured.baseURI="https://services.accessque.com/api/v1";
-								
-					//Request object
-					JSONObject requestpara = new JSONObject();
-											
-					RequestSpecification httprequest=RestAssured.given();	            	        
-					httprequest.header("x-auth-token","asseccque");
-					httprequest.header("Content-type","application/json");
-					httprequest.body(requestpara.toJSONString());
-						       			
-					//Response object
-					Response response=httprequest.request(Method.POST,"/campbellsville/getLead1/undefined");
-					//print response in console window
-					String responsebody=response.getBody().asString();
-					System.out.println("Response Body is :"+responsebody);
-					
-					//status code validation
-					int statuscode = response.getStatusCode();	
-					System.out.println("Actual Status Code  =" +statuscode);  //Run time 200 received
-					//AssertJUnit.assertEquals(statuscode,201);
-					if(statuscode==200 || statuscode==201 || statuscode==304 )
-					{
-						System.out.println("LEADS UNDEFINED API= PASSED");
-					}
-					else
-					{
-						System.out.println("LEADS UNDEFINED API = ITS FAILED");
-					}
-						
-				}
-				
-				
-				//Send notification on addede Comment 
-				@Test(priority=10)
-				public void TC0010_CommentsSendNotification()
-				{	
-					//specify base URI
-					RestAssured.baseURI="https://services.accessque.com/api/v1";
-								
-					//Request object
-					JSONObject requestpara = new JSONObject();
-					
-					requestpara.put("AgentMail","admin.uh@accessque.com");
-					requestpara.put("GBPAssignedTo","");
-					requestpara.put("GUID","75e86332-b7cc-4015-97a5-ebbc622f60a1");
-					requestpara.put("LeadId","0");
-					requestpara.put("Platform","CRM");
-					requestpara.put("StudentDocId","14595");
-					requestpara.put("Title","Comment");
-					requestpara.put("description","Admin UniversityHub has commented");
-					requestpara.put("notificationType","LeadComments");
-					requestpara.put("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYWlsaWQiOiJhZG1pbi51aEBhY2Nlc3NxdWUuY29tIiwiaWF0IjoxNjU0NTEzNzc0LCJleHAiOjE2ODYwNDk3NzR9.OO3fOBwnUeVFRFAC3Ec1oE8a-Vhf2B0RTv6tPv3QE5A");
-											
-					RequestSpecification httprequest=RestAssured.given();	            	        
-					httprequest.header("x-auth-token","asseccque");
-					httprequest.header("Content-type","application/json");
-					httprequest.body(requestpara.toJSONString());
-						       			
-					//Response object
-					Response response=httprequest.request(Method.POST,"/sentNotifications");
-					//print response in console window
-					String responsebody=response.getBody().asString();
-					System.out.println("Response Body is :"+responsebody);
-					
-					//status code validation
-					int statuscode = response.getStatusCode();	
-					System.out.println("Actual Status Code  =" +statuscode);  //Run time 200 received
-					//AssertJUnit.assertEquals(statuscode,201);
-					if(statuscode==200 || statuscode==201 || statuscode==304 )
-					{
-						System.out.println("ADD COMMENTS API = PASSED");
-					}
-					else
-					{
-						System.out.println("ADD COMMENTS API = FAILED");
-					}
-						
-				}
+	
 				
 		//------------------------------------------------------------------------------------------------------------------
 		@Test(priority=2)
@@ -536,6 +111,9 @@ public class allPagesAPIresponse
 	    	Response response=httprequest.request(Method.GET,"/adminRole/25");
 			//print response in console window
 			String responsebody=response.getBody().asString();
+			
+			
+					
 			System.out.println("Response Body is 1:"+responsebody);
 			
 			//status code validation
@@ -596,8 +174,6 @@ public class allPagesAPIresponse
 			{
 				System.out.println("DASHBOARD PROJECT API API :FAILED");
 			}
-			
-			
 			
 			//validating headers from response
 			String ContentType=response.header("Content-Type");

@@ -72,20 +72,19 @@ public class MyNewSite
 				//WebElement BacTrn=mydriver.findElement(By.xpath("//td[text()=' Bachelors Transcript ']//following-sibling::td/following-sibling::td/button"));
 				String bechlorText=mydriver.findElement(By.xpath("//td[text()=' Bachelors Transcript ']")).getText();
 				System.out.println(bechlorText);
-				
 				String ActBechText ="Bachelors Transcript";
-					
 					if(bechlorText.equals(ActBechText))
 					{
-						mydriver.findElement(By.xpath("//td[text()=' Bachelors Transcript ']//following-sibling::td/following-sibling::td/button[1]")).click();
+						mydriver.findElement(By.xpath("//td[text()=' Bachelors Transcript ']//following-sibling::td/following-sibling::td/button[1]//img")).click();
 						Thread.sleep(4000);
 						//mydriver.findElement(By.xpath("//td[contains(text(),' Bachelors Transcript ')]//following-sibling::td//button[1]")).click();
 					
-						WebElement BachlorTrnscpt= mydriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
+						WebElement BachlorTrnscpt= mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
 						BachlorTrnscpt.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
-						Thread.sleep(4000);
+						Thread.sleep(5000);
 						//Click on Upload button 
 						mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
+						System.out.println("Bachelor Documents Uploaded Successfully");
 						Thread.sleep(7000);
 					
 					}
@@ -99,12 +98,13 @@ public class MyNewSite
 						WebElement CredEve=mydriver.findElement(By.xpath("//td[text()=' Credential Evaluation ']//following-sibling::td/following-sibling::td/button[1]//img"));
 						CredEve.click();
 						Thread.sleep(2000);
-						WebElement CredEvoDoc = mydriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
+						//WebElement CredEvoDoc = mydriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
+						WebElement CredEvoDoc = mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
 						CredEvoDoc.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
-						Thread.sleep(4000);				
+						Thread.sleep(5000);				
 						//Click on Upload button 
 						mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
-						System.out.println(" Credential Evaluation Documents Uploaded Successfully");
+						System.out.println("Credential Evaluation Documents Uploaded Successfully");
 						Thread.sleep(5000);
 					}
 						
@@ -129,7 +129,7 @@ public class MyNewSite
 					
 					
 					String i20Text=mydriver.findElement(By.xpath("//td[text()=' I-20 ']")).getText();
-					String Acti20Text ="Masters Transcript";
+					String Acti20Text =" I-20 ";
 					if(i20Text.equals(Acti20Text))
 					{	
 						//Click on ADD FILE BUTTON and Upload I20 Doc 
@@ -146,7 +146,7 @@ public class MyNewSite
 					}
 					
 					String EngText=mydriver.findElement(By.xpath("//td[text()=' English Proficiency  ']")).getText();
-					String ActEngText ="Masters Transcript";
+					String ActEngText =" English Proficiency  ";
 					if(EngText.equals(ActEngText))
 					{		
 					
@@ -169,8 +169,13 @@ public class MyNewSite
 					//System.out.println("SOMEINTHING COUNT"+j);
 				}
 		  }
-		 // mydriver.close();
-
+		  
+		  SignInAPI AccessQueLogin = new SignInAPI();
+		  AccessQueLogin.LiveAccessque_Login();
+		  
+		  mydriver.manage().window().maximize();
+		  Thread.sleep(3000);
+		  // mydriver.close();
 	}
 	
 }

@@ -14,7 +14,6 @@ public class AccessQueAdminLogin
 	public static void main(String[] args) throws InterruptedException 
 	{
 		
-		
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
 		
@@ -43,13 +42,6 @@ public class AccessQueAdminLogin
 		mydriver.findElement(By.xpath("//button[contains(text(),'Log In')]")).click();
 		Thread.sleep(3000);
 		
-		/*		
-		Alert myalert= mydriver.switchTo().alert();
-		String alrtms =mydriver.switchTo().alert().getText();
-		System.out.println(alrtms);
-		myalert.accept();
-		*/	
-		
 		//mydriver.navigate().refresh();
 		Thread.sleep(3000);
 		System.out.println("ADMIN LOGIN SUCCESSFULLY");
@@ -67,9 +59,6 @@ public class AccessQueAdminLogin
 		 * js.executeScript("document.querySelector(scroll).scrollLeft=1000");
 		 * Thread.sleep(3000);
 		 */
-		
-		//js.executeScript("arguments[].scrollIntoView()",scrollleft);
-		Thread.sleep(4000);	
 					
 		/*
 		 * js.executeScript("arguments[].scrollIntoView()",scrollleft);

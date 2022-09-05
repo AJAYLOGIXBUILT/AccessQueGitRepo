@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Admin\AppData\Local\Temp\testng-eclipse-220212567\testng-customsuite.xml</span>
+                    <span>C:\Users\Admin\AppData\Local\Temp\testng-eclipse--597662895\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">11 methods,   11 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="PackageAccessQue.campBellsVilleDashboardAPI" class="method navigator-link" hash-for-method="uploadFileI20">uploadFileI20</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,57 +118,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="PackageAccessQue.APIaccessque" class="method navigator-link" hash-for-method="AddComments">AddComments</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="PackageAccessQue.APIaccessque" class="method navigator-link" hash-for-method="AddCustomDocCreated">AddCustomDocCreated</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="PackageAccessQue.APIaccessque" class="method navigator-link" hash-for-method="AddCustomDocUploaded">AddCustomDocUploaded</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="PackageAccessQue.APIaccessque" class="method navigator-link" hash-for-method="AgentSIgnIn">AgentSIgnIn</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="PackageAccessQue.APIaccessque" class="method navigator-link" hash-for-method="CommentSendNotification">CommentSendNotification</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="PackageAccessQue.APIaccessque" class="method navigator-link" hash-for-method="GetLeadsVIEW">GetLeadsVIEW</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="PackageAccessQue.APIaccessque" class="method navigator-link" hash-for-method="LeadsUnDifined">LeadsUnDifined</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="PackageAccessQue.APIaccessque" class="method navigator-link" hash-for-method="ReValidateDocument2">ReValidateDocument2</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="PackageAccessQue.APIaccessque" class="method navigator-link" hash-for-method="SendNotifications">SendNotifications</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="PackageAccessQue.APIaccessque" class="method navigator-link" hash-for-method="SerachOnCampBellsvilleDashboard">SerachOnCampBellsvilleDashboard</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="PackageAccessQue.APIaccessque" class="method navigator-link" hash-for-method="ValidateDocument2">ValidateDocument2</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="PackageAccessQue.campBellsVilleDashboardAPI" class="method navigator-link" hash-for-method="TC01_MyAgentSIgnIn">TC01_MyAgentSIgnIn</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -169,87 +133,62 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">PackageAccessQue.APIaccessque</span>
+              <img src="failed.png"/>
+              <span class="class-name">PackageAccessQue.campBellsVilleDashboardAPI</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="AddComments">
-                  </a> <!-- AddComments -->
-                  <span class="method-name">AddComments</span>
+                  <a name="uploadFileI20">
+                  </a> <!-- uploadFileI20 -->
+                  <span class="method-name">uploadFileI20</span>
+                  <div class="stack-trace">java.lang.ClassCastException: class io.restassured.internal.RestAssuredResponseImpl cannot be cast to class java.util.HashMap (io.restassured.internal.RestAssuredResponseImpl is in unnamed module of loader &apos;app&apos;; java.util.HashMap is in module java.base of loader &apos;bootstrap&apos;)
+	at PackageAccessQue.campBellsVilleDashboardAPI.uploadFileI20(campBellsVilleDashboardAPI.java:95)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">PackageAccessQue.campBellsVilleDashboardAPI</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="AddCustomDocCreated">
-                  </a> <!-- AddCustomDocCreated -->
-                  <span class="method-name">AddCustomDocCreated</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="AddCustomDocUploaded">
-                  </a> <!-- AddCustomDocUploaded -->
-                  <span class="method-name">AddCustomDocUploaded</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="AgentSIgnIn">
-                  </a> <!-- AgentSIgnIn -->
-                  <span class="method-name">AgentSIgnIn</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="CommentSendNotification">
-                  </a> <!-- CommentSendNotification -->
-                  <span class="method-name">CommentSendNotification</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="GetLeadsVIEW">
-                  </a> <!-- GetLeadsVIEW -->
-                  <span class="method-name">GetLeadsVIEW</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="LeadsUnDifined">
-                  </a> <!-- LeadsUnDifined -->
-                  <span class="method-name">LeadsUnDifined</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="ReValidateDocument2">
-                  </a> <!-- ReValidateDocument2 -->
-                  <span class="method-name">ReValidateDocument2</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="SendNotifications">
-                  </a> <!-- SendNotifications -->
-                  <span class="method-name">SendNotifications</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="SerachOnCampBellsvilleDashboard">
-                  </a> <!-- SerachOnCampBellsvilleDashboard -->
-                  <span class="method-name">SerachOnCampBellsvilleDashboard</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="ValidateDocument2">
-                  </a> <!-- ValidateDocument2 -->
-                  <span class="method-name">ValidateDocument2</span>
+                  <a name="TC01_MyAgentSIgnIn">
+                  </a> <!-- TC01_MyAgentSIgnIn -->
+                  <span class="method-name">TC01_MyAgentSIgnIn</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -257,7 +196,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Admin\AppData\Local\Temp\testng-eclipse-220212567\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Admin\AppData\Local\Temp\testng-eclipse--597662895\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -266,7 +205,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;PackageAccessQue.APIaccessque&quot;/&gt;
+      &lt;class name=&quot;PackageAccessQue.campBellsVilleDashboardAPI&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -306,56 +245,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(11);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'AddCustomDocUploaded')
-data.setCell(0, 2, 'PackageAccessQue.APIaccessque')
-data.setCell(0, 3, 3708);
+data.setCell(0, 1, 'uploadFileI20')
+data.setCell(0, 2, 'PackageAccessQue.campBellsVilleDashboardAPI')
+data.setCell(0, 3, 3764);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'AgentSIgnIn')
-data.setCell(1, 2, 'PackageAccessQue.APIaccessque')
-data.setCell(1, 3, 3341);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'AddComments')
-data.setCell(2, 2, 'PackageAccessQue.APIaccessque')
-data.setCell(2, 3, 2895);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'SerachOnCampBellsvilleDashboard')
-data.setCell(3, 2, 'PackageAccessQue.APIaccessque')
-data.setCell(3, 3, 1308);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'GetLeadsVIEW')
-data.setCell(4, 2, 'PackageAccessQue.APIaccessque')
-data.setCell(4, 3, 1269);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'SendNotifications')
-data.setCell(5, 2, 'PackageAccessQue.APIaccessque')
-data.setCell(5, 3, 1208);
-data.setCell(6, 0, 6)
-data.setCell(6, 1, 'ValidateDocument2')
-data.setCell(6, 2, 'PackageAccessQue.APIaccessque')
-data.setCell(6, 3, 1191);
-data.setCell(7, 0, 7)
-data.setCell(7, 1, 'ReValidateDocument2')
-data.setCell(7, 2, 'PackageAccessQue.APIaccessque')
-data.setCell(7, 3, 1185);
-data.setCell(8, 0, 8)
-data.setCell(8, 1, 'LeadsUnDifined')
-data.setCell(8, 2, 'PackageAccessQue.APIaccessque')
-data.setCell(8, 3, 1166);
-data.setCell(9, 0, 9)
-data.setCell(9, 1, 'CommentSendNotification')
-data.setCell(9, 2, 'PackageAccessQue.APIaccessque')
-data.setCell(9, 3, 1156);
-data.setCell(10, 0, 10)
-data.setCell(10, 1, 'AddCustomDocCreated')
-data.setCell(10, 2, 'PackageAccessQue.APIaccessque')
-data.setCell(10, 3, 1144);
+data.setCell(1, 1, 'TC01_MyAgentSIgnIn')
+data.setCell(1, 2, 'PackageAccessQue.campBellsVilleDashboardAPI')
+data.setCell(1, 3, 3074);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 19 seconds</span>
+              <span class="suite-total-time">Total running time: 6 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -381,50 +284,16 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">PackageAccessQue.APIaccessque</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">PackageAccessQue.campBellsVilleDashboardAPI</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">AgentSIgnIn</span>
+                <span class="method-name">TC01_MyAgentSIgnIn</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">SerachOnCampBellsvilleDashboard</span>
-                <span class="method-start">3347 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">GetLeadsVIEW</span>
-                <span class="method-start">4659 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">AddCustomDocCreated</span>
-                <span class="method-start">5933 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">AddCustomDocUploaded</span>
-                <span class="method-start">7079 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">ValidateDocument2</span>
-                <span class="method-start">10791 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">ReValidateDocument2</span>
-                <span class="method-start">11985 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">SendNotifications</span>
-                <span class="method-start">13175 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">AddComments</span>
-                <span class="method-start">14384 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">LeadsUnDifined</span>
-                <span class="method-start">17280 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">CommentSendNotification</span>
-                <span class="method-start">18447 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">uploadFileI20</span>
+                <span class="method-start">3077 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

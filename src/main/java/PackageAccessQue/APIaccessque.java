@@ -518,7 +518,6 @@ public class APIaccessque
 							
 				//Request object
 				JSONObject requestpara = new JSONObject();
-				
 				requestpara.put("AgentMail","admin.uh@accessque.com");
 				requestpara.put("GBPAssignedTo","");
 				requestpara.put("GUID","75e86332-b7cc-4015-97a5-ebbc622f60a1");
@@ -560,8 +559,222 @@ public class APIaccessque
 					
 			}
 			
+			//------------------------------------CALL API 
 			
+			//Click on CALL button from Overview ,It get LIST of documents  
+			@Test(priority=12)
+			public void clickOnCALLListOfDoc()
+			{	
+				//specify base URI
+				RestAssured.baseURI="https://services.accessque.com/api/v1";
+							
+				//Request object
+				JSONObject requestpara = new JSONObject();
+														
+				RequestSpecification httprequest=RestAssured.given();	            	        
+				httprequest.header("x-auth-token","asseccque");
+				httprequest.header("Content-type","application/json");
+				httprequest.body(requestpara.toJSONString());
+					       			
+				//Response object
+				Response response=httprequest.request(Method.GET,"/GetListOfDocumentsStatus/75e86332-b7cc-4015-97a5-ebbc622f60a1");
+				//print response in console window
+				String responsebody=response.getBody().asString();
+				System.out.println("CLICK ON CALL LIST OF DOC RESPONSE BODY="+responsebody);
+				
+				//status code validation
+				int statuscode = response.getStatusCode();	
+				System.out.println("Actual Status Code  =" +statuscode);  //Run time 200 received
+				
+				//Load time for this API
+				int loadtime = (int) response.getTime();
+				System.out.println("API LOADING TIME: = "+loadtime);
+				
+				if(statuscode==200 || statuscode==201 || statuscode==304 )
+				{
+					System.out.println("CLICKON CALL LIST OF DOC API = PASSED");
+				}
+				else
+				{
+					System.out.println("CLICKON CALL LIST OF DOC API = FAILED");
+				}
+					
+			}
+			
+			
+			//Click on CALL,and disconnceted at that time calling API   
+			@Test(priority=13)
+			public void updateCallStatus()
+			{	
+				//specify base URI
+				RestAssured.baseURI="https://services.accessque.com/api/v1";
+							
+				//Request object
+				JSONObject requestpara = new JSONObject();
+				requestpara.put("calledBy","undefined undefined");
+				requestpara.put("id","157");
+				requestpara.put("status","answered");
+				
+														
+				RequestSpecification httprequest=RestAssured.given();	            	        
+				httprequest.header("x-auth-token","asseccque");
+				httprequest.header("Content-type","application/json");
+				httprequest.body(requestpara.toJSONString());
+					       			
+				//Response object
+				Response response=httprequest.request(Method.POST,"/campbellsville/updateCallStatus");
+				//print response in console window
+				String responsebody=response.getBody().asString();
+				System.out.println("CLICK ON CALL LIST OF DOC RESPONSE BODY="+responsebody);
+				
+				//status code validation
+				int statuscode = response.getStatusCode();	
+				System.out.println("Actual Status Code  =" +statuscode);  //Run time 200 received
+				
+				//Load time for this API
+				int loadtime = (int) response.getTime();
+				System.out.println("API LOADING TIME: = "+loadtime);
+				
+				if(statuscode==200 || statuscode==201 || statuscode==304 )
+				{
+					System.out.println("UPDATE CALL STATUS  API = PASSED");
+				}
+				else
+				{
+					System.out.println("UPDATE CALL STATUS  API API = FAILED");
+				}
+					
+			}
+			
+			
+			//Click on CALL,and disconnceted at that time calling API   
+			@Test(priority=14)
+			public void updateStatus()
+			{	
+				//specify base URI
+				RestAssured.baseURI="https://services.accessque.com/api/v1";
+							
+				//Request object
+				JSONObject requestpara = new JSONObject();
+				requestpara.put("fcmtoken","undefined undefined");
+				requestpara.put("id","25");
+				requestpara.put("status","Busy");
+				requestpara.put("token","");
+														
+				RequestSpecification httprequest=RestAssured.given();	            	        
+				httprequest.header("x-auth-token","asseccque");
+				httprequest.header("Content-type","application/json");
+				httprequest.body(requestpara.toJSONString());
+					       			
+				//Response object
+				Response response=httprequest.request(Method.POST,"/updateStatus");
+				//print response in console window
+				String responsebody=response.getBody().asString();
+				System.out.println("CLICK ON CALL LIST OF DOC RESPONSE BODY="+responsebody);
+				
+				//status code validation
+				int statuscode = response.getStatusCode();	
+				System.out.println("Actual Status Code  =" +statuscode);  //Run time 200 received
+				
+				//Load time for this API
+				int loadtime = (int) response.getTime();
+				System.out.println("API LOADING TIME: = "+loadtime);
+				
+				if(statuscode==200 || statuscode==201 || statuscode==304 )
+				{
+					System.out.println("UPDATE STATUS API = PASSED");
+				}
+				else
+				{
+					System.out.println("UPDATE STATUS API = FAILED");
+				}
+					
+			}
+			
+			
+			//Click on CALL,and disconnceted at that time calling API   
+			@Test(priority=15)
+			public void updateCallSid()
+			{	
+				//specify base URI
+				RestAssured.baseURI="https://services.accessque.com/api/v1";
+							
+				//Request object
+				JSONObject requestpara = new JSONObject();
+				requestpara.put("id","157");
+				requestpara.put("sid","CA1ef4f6cc82317dc38d094d40b7c94a3d");
+			
+														
+				RequestSpecification httprequest=RestAssured.given();	            	        
+				httprequest.header("x-auth-token","asseccque");
+				httprequest.header("Content-type","application/json");
+				httprequest.body(requestpara.toJSONString());
+					       			
+				//Response object
+				Response response=httprequest.request(Method.POST,"/campbellsville/updateCallSid");
+				//print response in console window
+				String responsebody=response.getBody().asString();
+				System.out.println("CLICK ON CALL LIST OF DOC RESPONSE BODY="+responsebody);
+				
+				//status code validation
+				int statuscode = response.getStatusCode();	
+				System.out.println("Actual Status Code  =" +statuscode);  //Run time 200 received
+				
+				//Load time for this API
+				int loadtime = (int) response.getTime();
+				System.out.println("API LOADING TIME: = "+loadtime);
+				
+				if(statuscode==200 || statuscode==201 || statuscode==304 )
+				{
+					System.out.println("UPDATE CALL SID API = PASSED");
+				}
+				else
+				{
+					System.out.println("UPDATE CALL SID API = FAILED");
+				}
+					
+			}
 			
 	
+			//Click on CALL,and disconnceted at that time calling API   
+			@Test(priority=16)
+			public void getAgentName()
+			{	
+				//specify base URI
+				RestAssured.baseURI="https://services.accessque.com/api/v1";
+							
+				//Request object
+				JSONObject requestpara = new JSONObject();
+																		
+				RequestSpecification httprequest=RestAssured.given();	            	        
+				httprequest.header("x-auth-token","asseccque");
+				httprequest.header("Content-type","application/json");
+				httprequest.body(requestpara.toJSONString());
+					       			
+				//Response object
+				Response response=httprequest.request(Method.GET,"/getAgentNames");
+				//print response in console window
+				String responsebody=response.getBody().asString();
+				System.out.println("CLICK ON CALL LIST OF DOC RESPONSE BODY="+responsebody);
+				
+				//status code validation
+				int statuscode = response.getStatusCode();	
+				System.out.println("Actual Status Code  =" +statuscode);  //Run time 200 received
+				
+				//Load time for this API
+				int loadtime = (int) response.getTime();
+				System.out.println("API LOADING TIME: = "+loadtime);
+				
+				if(statuscode==200 || statuscode==201 || statuscode==304 )
+				{
+					System.out.println("GET AGENT NAME API = PASSED");
+				}
+				else
+				{
+					System.out.println("GET AGENT NAME  API = FAILED");
+				}
+					
+			}
+			
 
 }

@@ -154,9 +154,9 @@ public class fileUploadDocs
 	        
 	        int statuscode = response.getStatusCode();	
 	        System.out.println("Actual Status Code=" +statuscode);
-//	       
+      
 	        
-//	        String sMessag = response.jsonPath().get("message");
+			// String sMessag = response.jsonPath().get("message");
  			//AssertJUnit.assertEquals(sMessag,"Uploaded the file successfully: ");
 	        // Assert.assertEquals(bodyAsString.contains("message","Uploaded the file successfully:") ;
 	        
