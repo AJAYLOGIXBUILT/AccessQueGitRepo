@@ -270,9 +270,10 @@ public class TigerNetApplicationFormSubmit extends MyNewSite
 			
 			WebElement nxt55 =mydriver.findElement(By.xpath("//input[@id='Buttonccde2265-e973-484c-b410-5d6ffccf6b2b']"));
 			nxt55.click();
+			System.out.println("CANDIDACY EXECUTED SUCCESSFULLY ");
 			Thread.sleep(5000);	
 		
-			System.out.println("CANDIDACY EXECUTED SUCCESSFULLY ");
+			
 			
 			
 			//ACADAMIC INFORMATION on STEP 6 TAB
