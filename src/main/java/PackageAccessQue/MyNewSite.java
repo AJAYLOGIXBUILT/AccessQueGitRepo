@@ -24,6 +24,7 @@ public class MyNewSite
 	@Test
 	public static void main(String[] args) throws InterruptedException, MalformedURLException, IOException
 	{		
+		//NEED TO TEST JENKIN SERVER
 		//System.setProperty("webdriver.chrome.driver","E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver104\\chromedriver.exe");
 		WebDriverManager.chromedriver().setup();
 		WebDriver mydriver = new ChromeDriver();
