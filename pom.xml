@@ -8,6 +8,7 @@
 
 	<properties>
 		<java.version>17.0.4</java.version>
+		 <mavenVersion>3.2.5</mavenVersion>
 	</properties>
 
 	<dependencies>
