@@ -63,11 +63,11 @@ public class MyNewSite extends allPagesAPIresponse
 		  System.out.println("NEW Size of ArrayList After: " + arlTest.size());
 		  
 		  //for(WebElement myele:arlTest)
-		  for (int j = 0;j <arlTest.size() ; j++)
-		  {
+		  //for (int j = 0;j <arlTest.size() ; j++)
+		  //{
 			try
 			{
-				System.out.println("List of Array elements: " + arlTest.get(j));
+				//System.out.println("List of Array elements: " + arlTest.get(j));
 								
 				//Click on ADD FILE BUTTON and Uploaded BECHELOR DOC file 
 				//WebElement BacTrn=mydriver.findElement(By.xpath("//td[text()=' Bachelors Transcript ']//following-sibling::td/following-sibling::td/button"));
@@ -169,7 +169,7 @@ public class MyNewSite extends allPagesAPIresponse
 					System.out.println("SOMEINTHING ERROR "+e);				
 					//System.out.println("SOMEINTHING COUNT"+j);
 				}
-		  }
+		  //}
 		  
 			
 			allPagesAPIresponse accQAPI = new allPagesAPIresponse();
