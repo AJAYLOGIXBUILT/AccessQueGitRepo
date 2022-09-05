@@ -17,7 +17,7 @@ public class gradBussinessLive
 	public static void main(String args[]) throws InterruptedException, NoSuchFieldException, SecurityException
 	{
 		
-		//NEED TO TEST JENKIN SERVER
+			//NEED TO TEST JENKIN SERVER
 				//System.setProperty("webdriver.chrome.driver","E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver104\\chromedriver.exe");
 				WebDriverManager.chromedriver().setup();
 				WebDriver mydriver = new ChromeDriver();
@@ -179,8 +179,25 @@ public class gradBussinessLive
 								JavascriptExecutor js=(JavascriptExecutor)mydriver;
 								js.executeScript("document.querySelector(\"tbody\").scrollTop=1500");
 								
+								mydriver.findElement(By.xpath("//body/app-root[1]/app-pages[1]/mat-sidenav-container[1]/mat-sidenav-content[1]/div[1]/div[1]/app-document[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/button[1]")).click();
+								Thread.sleep(2000);
 								
 								
+								//CREATED NEW CUSZTOM DOC 
+								WebElement custDoc=mydriver.findElement(By.xpath("//body/ngb-modal-window[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/input[1]"));
+								custDoc.sendKeys("My Personal NewDoc1");
+								Thread.sleep(2000);
+								
+								//WebElement clkkk=mydriver.findElement(By.xpath("//form//div[2]//button//img"));
+								
+								WebElement mydoc= mydriver.findElement(By.xpath("//form//div[2]//button//img"));
+								mydoc.sendKeys("E:\\A\\Dummy_Images\\Aus1.jpg"); //Uploading the file using sendKeys
+								Thread.sleep(5000);	
+								
+								mydriver.findElement(By.xpath("//form//div[2]")).click();
+								Thread.sleep(5000);	
+								
+								mydriver.navigate().refresh();
 								
 								
 							}

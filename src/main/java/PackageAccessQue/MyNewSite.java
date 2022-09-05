@@ -28,14 +28,15 @@ public class MyNewSite extends allPagesAPIresponse
 		//System.setProperty("webdriver.chrome.driver","E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver104\\chromedriver.exe");
 		WebDriverManager.chromedriver().setup();
 		WebDriver mydriver = new ChromeDriver();
-
 		//mydriver.manage().deleteAllCookies();
 		Thread.sleep(3000);
-
+		
 		//mydriver.get("https://accessque.com");
-		mydriver.get("https://www.gradbusinesstest.accessque.com/redirect/49c44628-1423-46e0-bf97-568bd4e34a07/MSCS/N");
+		//mydriver.get("https://www.gradbusinesstest.accessque.com/redirect/49c44628-1423-46e0-bf97-568bd4e34a07/MSCS/N");
+		//mydriver.get("https://www.gradbusiness.campbellsville.edu/redirect/519dd26b-9ad9-4f6c-9a94-771a8d5fb992/ITM/N");
 		mydriver.manage().window().maximize();
 		Thread.sleep(3000);
+		mydriver.navigate().refresh();
 		
 		SessionId gradsession = ((RemoteWebDriver) mydriver).getSessionId();
 	     System.out.println("Session Id is for method1: " + gradsession);
@@ -46,8 +47,7 @@ public class MyNewSite extends allPagesAPIresponse
 		System.out.println("GRABUSINESS URL IS ="+strUrl);
 		Thread.sleep(4000);
 				
-		//tbody//tr/td[2]
-		//arralist nakine -> iterate- gettext  == 5 
+		
 		
 		ArrayList<String> arlTest = new ArrayList<String>();
 		  //Size of arrayList
@@ -63,16 +63,15 @@ public class MyNewSite extends allPagesAPIresponse
 		  System.out.println("NEW Size of ArrayList After: " + arlTest.size());
 		  
 		  //for(WebElement myele:arlTest)
-		  //for (int j = 0;j <arlTest.size() ; j++)
-		  //{
-			try
-			{
+		  for (int j = 0;j <1 ; j++)
+		  {
+			//try
+			//{
 				//System.out.println("List of Array elements: " + arlTest.get(j));
 								
 				//Click on ADD FILE BUTTON and Uploaded BECHELOR DOC file 
 				//WebElement BacTrn=mydriver.findElement(By.xpath("//td[text()=' Bachelors Transcript ']//following-sibling::td/following-sibling::td/button"));
 				String bechlorText=mydriver.findElement(By.xpath("//td[text()=' Bachelors Transcript ']")).getText();
-				System.out.println(bechlorText);
 				String ActBechText ="Bachelors Transcript";
 					if(bechlorText.equals(ActBechText))
 					{
@@ -85,8 +84,11 @@ public class MyNewSite extends allPagesAPIresponse
 						Thread.sleep(5000);
 						//Click on Upload button 
 						mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
+						Thread.sleep(5000);
+						
 						System.out.println("Bachelor Documents Uploaded Successfully");
-						Thread.sleep(7000);
+						mydriver.navigate().refresh();
+						Thread.sleep(2000);
 					
 					}
 					
@@ -101,12 +103,14 @@ public class MyNewSite extends allPagesAPIresponse
 						Thread.sleep(2000);
 						//WebElement CredEvoDoc = mydriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
 						WebElement CredEvoDoc = mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
-						CredEvoDoc.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
+						CredEvoDoc.sendKeys("E:\\A\\Dummy_Images\\b4.jpg"); //Uploading the file using sendKeys
 						Thread.sleep(5000);				
 						//Click on Upload button 
 						mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
-						System.out.println("Credential Evaluation Documents Uploaded Successfully");
 						Thread.sleep(5000);
+						System.out.println("Credential Evaluation Documents Uploaded Successfully");
+						mydriver.navigate().refresh();
+						Thread.sleep(2000);
 					}
 						
 					
@@ -120,17 +124,20 @@ public class MyNewSite extends allPagesAPIresponse
 						masTrn.click();
 						Thread.sleep(4000);
 						WebElement MastrTrnscpt= mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
-						MastrTrnscpt.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
-						Thread.sleep(4000);
+						MastrTrnscpt.sendKeys("E:\\A\\Dummy_Images\\B1.jpg"); //Uploading the file using sendKeys
+						Thread.sleep(5000);		
 						//Click on Upload button 
 						mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
-						System.out.println("MASTER TRANSCRIPT DOC uploaded Successfully");
 						Thread.sleep(5000);
+						
+						System.out.println("MASTER TRANSCRIPT DOC uploaded Successfully");
+						mydriver.navigate().refresh();
+						Thread.sleep(2000);
 					}			
 					
 					
 					String i20Text=mydriver.findElement(By.xpath("//td[text()=' I-20 ']")).getText();
-					String Acti20Text =" I-20 ";
+					String Acti20Text ="I-20";
 					if(i20Text.equals(Acti20Text))
 					{	
 						//Click on ADD FILE BUTTON and Upload I20 Doc 
@@ -138,16 +145,24 @@ public class MyNewSite extends allPagesAPIresponse
 						i20doc.click();
 						Thread.sleep(4000);
 						WebElement i20document= mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
-						i20document.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
-						Thread.sleep(4000);
+						i20document.sendKeys("E:\\A\\Dummy_Images\\A.jpg"); //Uploading the file using sendKeys
+						Thread.sleep(5000);		
 						//Click on Upload button 
 						mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
-						System.out.println("I-20 DOC uploaded Successfully");
 						Thread.sleep(5000);
+						System.out.println("I-20 DOC uploaded Successfully");
+						mydriver.navigate().refresh();
+						Thread.sleep(3000);
+						
+						
+						//SCROLL DOWN INNER TABLE 
+						JavascriptExecutor js=(JavascriptExecutor)mydriver;
+						js.executeScript("document.querySelector(\"tbody\").scrollTop=1500");
+						
 					}
 					
 					String EngText=mydriver.findElement(By.xpath("//td[text()=' English Proficiency  ']")).getText();
-					String ActEngText =" English Proficiency  ";
+					String ActEngText ="English Proficiency";
 					if(EngText.equals(ActEngText))
 					{		
 					
@@ -156,20 +171,31 @@ public class MyNewSite extends allPagesAPIresponse
 						ENGLISH.click();
 						Thread.sleep(4000);
 						WebElement englishDoc= mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
-						englishDoc.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
-						Thread.sleep(4000);
+						englishDoc.sendKeys("E:\\A\\Dummy_Images\\Aus1.jpg"); //Uploading the file using sendKeys
+						Thread.sleep(5000);		
 						//Click on Upload button 
 						mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
+						Thread.sleep(5000);	
 						System.out.println("ENGLISH PROFICIENCY DOC uploaded Successfully");
-						Thread.sleep(6000);	
+						mydriver.navigate().refresh();
+						Thread.sleep(2000);
+						
+						//SCROLL DOWN INNER TABLE 
+						JavascriptExecutor js=(JavascriptExecutor)mydriver;
+						js.executeScript("document.querySelector(\"tbody\").scrollTop=1500");
+						
+						
+						
+						
+						
 					}
-				}			
-				catch(Exception e)
+				//}			
+				/*catch(Exception e)
 				{
 					System.out.println("SOMEINTHING ERROR "+e);				
 					//System.out.println("SOMEINTHING COUNT"+j);
-				}
-		  //}
+				}*/
+		  }
 		  
 			
 			allPagesAPIresponse accQAPI = new allPagesAPIresponse();
@@ -179,13 +205,7 @@ public class MyNewSite extends allPagesAPIresponse
 		  // mydriver.close();
 	}
 			
-}			
-			/*
-			AccessQueAdminLogin redirctonlive =new AccessQueAdminLogin();
-			redirctonlive.liveadminLOGIN();
-			Thread.sleep(6000);		
-			*/
-						
+}	
 		
 
 
