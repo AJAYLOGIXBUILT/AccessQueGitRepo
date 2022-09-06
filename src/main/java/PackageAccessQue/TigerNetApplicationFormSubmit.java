@@ -5,6 +5,7 @@ import static org.testng.Assert.assertTrue;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.json.simple.JSONObject;
@@ -14,6 +15,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.SessionId;
 import org.openqa.selenium.support.ui.Select;
 //import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -24,9 +27,8 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 
-public class TigerNetApplicationFormSubmit extends MyNewSite
+public class TigerNetApplicationFormSubmit 
 {
-	static WebDriver mydriver;
 
 	@Test
 	public static void main(String[] args) throws InterruptedException, MalformedURLException, IOException, NoSuchFieldException, SecurityException
@@ -34,6 +36,8 @@ public class TigerNetApplicationFormSubmit extends MyNewSite
 		//System.setProperty("webdriver.chrome.driver","E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver104\\chromedriver.exe");
 		WebDriverManager.chromedriver().setup();
 		WebDriver mydriver = new ChromeDriver();
+		
+		
 
 		mydriver.manage().deleteAllCookies();
 		Thread.sleep(3000);
@@ -90,7 +94,7 @@ public class TigerNetApplicationFormSubmit extends MyNewSite
 
 		WebElement mobile =mydriver.findElement(By.xpath("//input[@id='Textbox58479ac0-4bbd-4ba7-ac6e-d540f59431fc']"));
 		mobile.clear();
-		mobile.sendKeys("8527834283");  //8527834283 mobile number is EMPTY NOW
+		mobile.sendKeys("8527834284");  //8527834283 mobile number is EMPTY NOW
 		Thread.sleep(2000);
 		
 
@@ -392,158 +396,223 @@ public class TigerNetApplicationFormSubmit extends MyNewSite
 			
 			WebElement FinalSubmit=mydriver.findElement(By.id("Buttonb336e053-6ddd-4b0d-af49-711fb146e3a0"));
 			FinalSubmit.click();
+			//Thread.sleep(15000);
 			
-			
-			try
-			{
-				WebElement actulerror=mydriver.findElement(By.xpath("//body/div[@id='siteWrapper']/form[@id='MAINFORM']/div[@id='mainLayout']/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]"));		
-				System.out.println("ERROR MESSAGE ="+actulerror);
-				String erromessg="Please answer all required questions before submitting the form.";
-			
-				if(actulerror.equals(erromessg))
+				try
 				{
-					System.out.println("SOME OF REQUIRED FIELDS ARE MISSING INSIDE FORM,PLEASE CHECK ALL REQUIRED FIELDS ONCE TO MOVE ON NEXT PAGE !");
-					//CLOSE HERE 
-					//mydriver.close();
-				}
-			}
-			catch(Exception e)
-			{
-				System.out.println("SOME REQUIRED FIELDS ARE MISSING,PLEASE CHECK ONCE !"); 
-			}
+					WebElement actulerror=mydriver.findElement(By.xpath("//body/div[@id='siteWrapper']/form[@id='MAINFORM']/div[@id='mainLayout']/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]"));		
+					System.out.println("ERROR MESSAGE ="+actulerror);
+					String erromessg="Please answer all required questions before submitting the form.";
 				
-			Thread.sleep(15000);
-			
-			//REDIRCTED ON GRADBUSINESS 		
-			String strUrl = mydriver.getCurrentUrl();
-			System.out.println("GRABUSINESS URL IS ="+strUrl);
-			Thread.sleep(15000);	
-			System.out.println("APPLICATION FORM SUBMITTED SUCCESSFULLY");
-			//3rd leads URL live
-			//GRABUSINESS URL IS =https://tigernet.campbellsville.edu/ICS/Apply/Apply_Now.jnz?portlet=EX_FormFlow_-_Forms&screen=FormView&screenType=change&form=49c44628-1423-46e0-bf97-568bd4e34a07
+					if(actulerror.equals(erromessg))
+					{
+						System.out.println("SOME OF REQUIRED FIELDS ARE MISSING INSIDE FORM,PLEASE CHECK ALL REQUIRED FIELDS ONCE TO MOVE ON NEXT PAGE !");
+						//CLOSE HERE 
+						//mydriver.close();
+					}
+				}
+				catch(Exception e)
+				{
+					System.out.println("SOME REQUIRED FIELDS ARE MISSING,PLEASE CHECK ONCE !"); 
+				}
+		
+				Thread.sleep(15000);
+			}
+		
+		
+		//REDIRCTED ON GRADBUSINESS 		
+		String strUrl = mydriver.getCurrentUrl();
+		System.out.println("GRABUSINESS URL IS ="+strUrl);
+		System.out.println("APPLICATION FORM SUBMITTED SUCCESSFULLY");
+		Thread.sleep(15000);	
+		
+		//3rd leads URL live
+		//GRABUSINESS URL IS =https://tigernet.campbellsville.edu/ICS/Apply/Apply_Now.jnz?portlet=EX_FormFlow_-_Forms&screen=FormView&screenType=change&form=49c44628-1423-46e0-bf97-568bd4e34a07
+	
+		//Call gradbussiness method	
+		//MyNewSite calltograd=new MyNewSite();
+		//calltograd.gradUploadFile();
+	
+		//uploadFileBachlor(); 
+		Thread.sleep(2000);
+		System.out.println("GRADBUSSINESS METHOD CALLED SUCCESSFULLY");
+		
+		//GRABUSINESS URL IS =https://tigernet.campbellsville.edu/ICS/Apply/Apply_Now.jnz?portlet=EX_FormFlow_-_Forms&screen=FormView&screenType=change&form=49c44628-1423-46e0-bf97-568bd4e34a07
+		//GUID =49c44628-1423-46e0-bf97-568bd4e34a07
+		
+		//mydriver.get("https://www.gradbusiness.campbellsville.edu/redirect/519dd26b-9ad9-4f6c-9a94-771a8d5fb992/ITM/N");
+	//mydriver.get("https://www.gradbusiness.campbellsville.edu/redirect/84d08f99-2c5d-4961-889b-6c76d5fe3007/ITM/N");
+		//89400ce8-e3ac-4f6e-87eb-dda5a9c8b4a9
+		//MyNewSite mns = new MyNewSite();
+		//mns.gradUploadFile(mydriver);
+		
+		mydriver.navigate().refresh();
+		
+		
+		//SessionId gradsession = ((RemoteWebDriver) mydriver).getSessionId();
+	    //System.out.println("Session Id is for method1: " + gradsession);
+	    Thread.sleep(3000);
+		
+		//REDIRCTED ON GRADBUSINESS 		
+		String strUrl1 = mydriver.getCurrentUrl();
+		System.out.println("GRABUSINESS URL IS ="+strUrl1);
+		Thread.sleep(4000);
+				
+			ArrayList<String> arlTest = new ArrayList<String>();
+			  //Size of arrayList
+			  System.out.println("Size of ArrayList Before: " + arlTest.size());
+			  //Lets add some elements to it
+			  arlTest.add("Bachelors Transcript");
+			  arlTest.add("Credential Evaluation");
+			  arlTest.add("Masters Transcript");
+			  arlTest.add("English Proficiency ");
+			  arlTest.add("I-20");
+
+			  System.out.println(arlTest);
+			  System.out.println("NEW Size of ArrayList After: " + arlTest.size());
+			  
+			  //for(WebElement myele:arlTest)
+			  for (int j = 0;j <1 ; j++)
+			  {
+				//try
+				//{
+					//System.out.println("List of Array elements: " + arlTest.get(j));
+									
+					//Click on ADD FILE BUTTON and Uploaded BECHELOR DOC file 
+					//WebElement BacTrn=mydriver.findElement(By.xpath("//td[text()=' Bachelors Transcript ']//following-sibling::td/following-sibling::td/button"));
+				  String bechlorText=mydriver.findElement(By.xpath("//td[text()=' Bachelors Transcript ']")).getText();
+				  String ActBechText ="Bachelors Transcript";
+				  if(bechlorText.equals(ActBechText))
+				  {
+							mydriver.findElement(By.xpath("//td[text()=' Bachelors Transcript ']//following-sibling::td/following-sibling::td/button[1]//img")).click();
+							Thread.sleep(4000);
+							//mydriver.findElement(By.xpath("//td[contains(text(),' Bachelors Transcript ')]//following-sibling::td//button[1]")).click();
 						
-			MyNewSite calltograd=new MyNewSite();
-			calltograd.gradUploadFile();
-			Thread.sleep(2000);
-			
-		/*	//Call gradbussiness method
-		 * 
-		 * 
-			fileUploadDoc graddocuuplod=new fileUploadDoc();
-			graddocuuplod.uploadFileBachlor();
-			Thread.sleep(3000);	
-			graddocuuplod.uploadFileMaster();
-			Thread.sleep(3000);
-			graddocuuplod.uploadFileI20() ;
-			Thread.sleep(3000);
-			graddocuuplod.uploadFileCredEvelution();
-			Thread.sleep(3000);
-			graddocuuplod.uploadFileIELTS();
-			Thread.sleep(3000);
-			
-			*/			
-			/*
-			 * gradBussinessAPI myfile=new gradBussinessAPI(); myfile.getAllDOcumentList();
-			 * Thread.sleep(15000);
-			 */
-			//System.out.println("GRADBUSSINESS METHOD CALLED SUCCESSFULLY");
-			
-			
-			//GRABUSINESS URL IS =https://tigernet.campbellsville.edu/ICS/Apply/Apply_Now.jnz?portlet=EX_FormFlow_-_Forms&screen=FormView&screenType=change&form=49c44628-1423-46e0-bf97-568bd4e34a07
-			//GUID =49c44628-1423-46e0-bf97-568bd4e34a07
-			
-		
-			//---------------------------------------------GRADBUSINESS CODE WILL EXECUTE--------------------------------------------------------
-			
-			/*
-			 * //Click on ADD FILE BUTTON and Uploaded BACHELOR TRANSCRPT Doc WebElement
-			 * BacTrn=mydriver.findElement(By.xpath("//tbody/tr[1]/td[4]/button[1]/img[1]"))
-			 * ; BacTrn.click(); Thread.sleep(4000);
-			 * 
-			 * WebElement BachlorTrnscpt= mydriver.findElement(By.xpath(
-			 * "/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"
-			 * )); BachlorTrnscpt.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the
-			 * file using sendKeys Thread.sleep(4000); //Click on Upload button
-			 * mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click()
-			 * ; Thread.sleep(6000);
-			 * System.out.println("BACHELOR  TRANSCRIPT DOC uploaded Successfully");
-			 */
-			
-		}	
-		
-	//mydriver.close();
-	}
-	
+							WebElement BachlorTrnscpt= mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
+							BachlorTrnscpt.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
+							Thread.sleep(5000);
+							//Click on Upload button 
+							mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
+							Thread.sleep(5000);
+							
+							System.out.println("Bachelor Documents Uploaded Successfully");
+							mydriver.navigate().refresh();
+							Thread.sleep(2000);
+						
+						}
+						
+						String credText=mydriver.findElement(By.xpath("//td[text()=' Credential Evaluation ']")).getText();
+						String actCredText ="Credential Evaluation";
+						if(credText.equals(actCredText))
+						{
+						
+							//Click on ADD FILE BUTTON and Uploaded Credential Evaluation file 
+							WebElement CredEve=mydriver.findElement(By.xpath("//td[text()=' Credential Evaluation ']//following-sibling::td/following-sibling::td/button[1]//img"));
+							CredEve.click();
+							Thread.sleep(2000);
+							//WebElement CredEvoDoc = mydriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
+							WebElement CredEvoDoc = mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
+							CredEvoDoc.sendKeys("E:\\A\\Dummy_Images\\b4.jpg"); //Uploading the file using sendKeys
+							Thread.sleep(5000);				
+							//Click on Upload button 
+							mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
+							Thread.sleep(5000);
+							System.out.println("Credential Evaluation Documents Uploaded Successfully");
+							mydriver.navigate().refresh();
+							Thread.sleep(2000);
+						}
+							
+						
+						String mstText=mydriver.findElement(By.xpath("//td[text()=' Masters Transcript ']")).getText();
+						String ActMstText ="Masters Transcript";
+						if(mstText.equals(ActMstText))
+						{
+						
+							//Click on ADD FILE BUTTON and Upload MASTER TRANSCRPT Doc 
+							WebElement masTrn=mydriver.findElement(By.xpath("//td[text()=' Masters Transcript ']//following-sibling::td/following-sibling::td/button[1]//img"));
+							masTrn.click();
+							Thread.sleep(4000);
+							WebElement MastrTrnscpt= mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
+							MastrTrnscpt.sendKeys("E:\\A\\Dummy_Images\\B1.jpg"); //Uploading the file using sendKeys
+							Thread.sleep(5000);		
+							//Click on Upload button 
+							mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
+							Thread.sleep(5000);
+							
+							System.out.println("MASTER TRANSCRIPT DOC uploaded Successfully");
+							mydriver.navigate().refresh();
+							Thread.sleep(2000);
+						}			
+						
+						
+						String i20Text=mydriver.findElement(By.xpath("//td[text()=' I-20 ']")).getText();
+						String Acti20Text ="I-20";
+						if(i20Text.equals(Acti20Text))
+						{	
+							//Click on ADD FILE BUTTON and Upload I20 Doc 
+							WebElement i20doc=mydriver.findElement(By.xpath("//td[text()=' I-20 ']//following-sibling::td/following-sibling::td/button[1]//img"));
+							i20doc.click();
+							Thread.sleep(4000);
+							WebElement i20document= mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
+							i20document.sendKeys("E:\\A\\Dummy_Images\\A.jpg"); //Uploading the file using sendKeys
+							Thread.sleep(5000);		
+							//Click on Upload button 
+							mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
+							Thread.sleep(5000);
+							System.out.println("I-20 DOC uploaded Successfully");
+							mydriver.navigate().refresh();
+							Thread.sleep(3000);
+							
+							
+							//SCROLL DOWN INNER TABLE 
+							JavascriptExecutor js1=(JavascriptExecutor)mydriver;
+							js1.executeScript("document.querySelector(\"tbody\").scrollTop=1500");
+							
+						}
+						
+						String EngText=mydriver.findElement(By.xpath("//td[text()=' English Proficiency  ']")).getText();
+						String ActEngText ="English Proficiency";
+						if(EngText.equals(ActEngText))
+						{		
+						
+							//Click on ADD FILE BUTTON and Upload ENGLISH Doc 
+							WebElement ENGLISH=mydriver.findElement(By.xpath("//td[text()=' English Proficiency  ']//following-sibling::td/following-sibling::td/button[1]//img"));
+							ENGLISH.click();
+							Thread.sleep(4000);
+							WebElement englishDoc= mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
+							englishDoc.sendKeys("E:\\A\\Dummy_Images\\Aus1.jpg"); //Uploading the file using sendKeys
+							Thread.sleep(5000);		
+							//Click on Upload button 
+							mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
+							Thread.sleep(5000);	
+							System.out.println("ENGLISH PROFICIENCY DOC uploaded Successfully");
+							mydriver.navigate().refresh();
+							Thread.sleep(2000);
+							
+							//SCROLL DOWN INNER TABLE 
+							JavascriptExecutor js1=(JavascriptExecutor)mydriver;
+							js1.executeScript("document.querySelector(\"tbody\").scrollTop=1500");
+						}
+						
+					}			
+					/*catch(Exception e)
+					{
+						System.out.println("SOMEINTHING ERROR "+e);				
+						//System.out.println("SOMEINTHING COUNT"+j);
+					}*/
+			  
+			}	
 }
-
-/*
-public void uploadFileBachlor() throws InterruptedException 
-{
-	
-	//REDIRCTED ON GRADBUSINESS 		
-	String strUrl = mydriver.getCurrentUrl();
-	System.out.println("GRABUSINESS URL IS ="+strUrl);
-	Thread.sleep(3000);	
 	
 	
-	List<WebElement> allheaders=mydriver.findElements(By.xpath("//th[contains(text(),'Document Name')]"));
 	
-	//Click on Upload Documents 
-	WebElement BacTrn=mydriver.findElement(By.xpath("//tbody/tr[1]/td[4]/button[1]/img[1]"));
-	BacTrn.click();
-	Thread.sleep(4000);
-	
-	WebElement BachlorTrnscpt= mydriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
-	BachlorTrnscpt.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
-	Thread.sleep(4000);
-	//Click on Upload button 
-	mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
-	Thread.sleep(6000);	
-	System.out.println("BACHELOR  TRANSCRIPT DOC uploaded Successfully");
+
 	
 	
-        File file = new File("E:\\A\\Dummy_Images\\AMAZON.png");
+	
 
-        RequestSpecification httprequest = RestAssured.given();
-        JSONObject requestpara = new JSONObject();
-		requestpara.put("mailid","admin.uh@accessque.com");
-		requestpara.put("password", "University@Hub1");
-        httprequest.header("x-auth-token","asseccque");
-        Response response =httprequest
-                .given()
-                .multiPart("document", file, "multipart/form-data")
-                .formParam("studentdocid", "14113")
-                .formParam("Platform", "Student")
-                .formParam("MailId", "ajaytestuser@spambox.xyz")
-                .post("https://www.services.accessque.com/api/v1/UploadDocument");
-               
-        System.out.println(response.prettyPrint());
-        
-        int statuscode = response.getStatusCode();	
-        System.out.println("Actual Status Code=" +statuscode);
-//       
-        
-//        String sMessag = response.jsonPath().get("message");
-			//AssertJUnit.assertEquals(sMessag,"Uploaded the file successfully: ");
-        // Assert.assertEquals(bodyAsString.contains("message","Uploaded the file successfully:") ;
-        
-		if(statuscode==200 || statuscode==201 || statuscode==304 )
-		{
-			System.out.println("Bachloar document uploaded API success");
-		}
-		else
-		{
-			System.out.println("API NOT WORKING");
-		}
-
-		assertTrue(response.asString().contains("Uploaded the file successfully:"));
-
-
-    }
-
-
-
-}
-*/
+	
+	
+		
 
 

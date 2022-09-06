@@ -27,7 +27,8 @@ public class gradBussinessLive
 
 				//mydriver.get("https://accessque.com");
 				//mydriver.get("https://www.gradbusinesstest.accessque.com/redirect/49c44628-1423-46e0-bf97-568bd4e34a07/MSCS/N");
-				mydriver.get("https://www.gradbusiness.campbellsville.edu/redirect/519dd26b-9ad9-4f6c-9a94-771a8d5fb992/ITM/N");
+				//mydriver.get("https://www.gradbusiness.campbellsville.edu/redirect/519dd26b-9ad9-4f6c-9a94-771a8d5fb992/ITM/N");
+				mydriver.get("https://www.gradbusiness.campbellsville.edu/redirect/89400ce8-e3ac-4f6e-87eb-dda5a9c8b4a9/ITM/N");
 				mydriver.manage().window().maximize();
 				Thread.sleep(3000);
 				mydriver.navigate().refresh();

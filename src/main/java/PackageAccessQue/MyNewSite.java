@@ -19,34 +19,41 @@ import org.testng.annotations.Test;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class MyNewSite extends allPagesAPIresponse
+public class MyNewSite extends TigerNetApplicationFormSubmit
 {
 	@Test
-	public void gradUploadFile() throws InterruptedException, MalformedURLException, IOException, NoSuchFieldException, SecurityException
+	public void gradUploadFile(WebDriver mydriver) throws InterruptedException, MalformedURLException, IOException, NoSuchFieldException, SecurityException
 	{		
+		
+		
+		
 		//NEED TO TEST JENKIN SERVER
 		//System.setProperty("webdriver.chrome.driver","E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver104\\chromedriver.exe");
-		WebDriverManager.chromedriver().setup();
-		WebDriver mydriver = new ChromeDriver();
+		
+		//WebDriverManager.chromedriver().setup();
+		//WebDriver mydriver = new ChromeDriver();
+		
 		//mydriver.manage().deleteAllCookies();
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		
-		//mydriver.get("https://accessque.com");
-		//mydriver.get("https://www.gradbusinesstest.accessque.com/redirect/49c44628-1423-46e0-bf97-568bd4e34a07/MSCS/N");
-		//mydriver.get("https://www.gradbusiness.campbellsville.edu/redirect/519dd26b-9ad9-4f6c-9a94-771a8d5fb992/ITM/N");
-		mydriver.manage().window().maximize();
-		Thread.sleep(3000);
-		mydriver.navigate().refresh();
+		//WebDriver mydriver;
+				//mydriver.get("https://accessque.com");
+				//mydriver.get("https://www.gradbusinesstest.accessque.com/redirect/49c44628-1423-46e0-bf97-568bd4e34a07/MSCS/N");
+				
+		//mydriver.manage().window().maximize();
+		//Thread.sleep(3000);
+		//mydriver.navigate().refresh();
 		
-		SessionId gradsession = ((RemoteWebDriver) mydriver).getSessionId();
-	     System.out.println("Session Id is for method1: " + gradsession);
-	     Thread.sleep(3000);
+		//SessionId gradsession = ((RemoteWebDriver) mydriver).getSessionId();
+	     //System.out.println("Session Id is for method1: " + gradsession);
+	     //Thread.sleep(3000);
 			
 		//REDIRCTED ON GRADBUSINESS 		
 		String strUrl = mydriver.getCurrentUrl();
 		System.out.println("GRABUSINESS URL IS ="+strUrl);
 		Thread.sleep(4000);
-				
+			
+		mydriver.navigate().refresh();
 		
 		
 		ArrayList<String> arlTest = new ArrayList<String>();
@@ -185,9 +192,6 @@ public class MyNewSite extends allPagesAPIresponse
 						js.executeScript("document.querySelector(\"tbody\").scrollTop=1500");
 						
 						
-						
-						
-						
 					}
 				//}			
 				/*catch(Exception e)
@@ -197,10 +201,13 @@ public class MyNewSite extends allPagesAPIresponse
 				}*/
 		  }
 		  
+		  
+		  AccessQueAdminLogin mylogin=new AccessQueAdminLogin();
+		  mylogin.adminlogin();	  
+		  Thread.sleep(3000);
+		  
 			
-			allPagesAPIresponse accQAPI = new allPagesAPIresponse();
-			accQAPI.TC01_AgentSIgnIn();
-			Thread.sleep(3000);
+			
 
 		  // mydriver.close();
 	}
