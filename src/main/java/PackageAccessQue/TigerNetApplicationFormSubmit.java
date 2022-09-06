@@ -75,7 +75,7 @@ public class TigerNetApplicationFormSubmit
 		fname.sendKeys("TESTQA");
 
 		WebElement lname =mydriver.findElement(By.xpath("//input[@id='Textboxc970d803-7f5d-4362-9dff-2bb8624363ba']"));
-		lname.sendKeys("TEST");
+		lname.sendKeys("TESTQA");
 
 
 		WebElement midname =mydriver.findElement(By.xpath("//input[@id='Textbox88c2720a-bf3e-4669-9609-e452d75495a0']"));
@@ -88,13 +88,13 @@ public class TigerNetApplicationFormSubmit
 
 		//Preferred name 
 		WebElement prefname =mydriver.findElement(By.xpath("//input[@id='Textbox1743a95f-c7b0-49c6-a3b7-02aaa6dd8758']"));
-		prefname.sendKeys("TESTER");
+		prefname.sendKeys("TESTERQA");
 		Thread.sleep(2000);
 
 
 		WebElement mobile =mydriver.findElement(By.xpath("//input[@id='Textbox58479ac0-4bbd-4ba7-ac6e-d540f59431fc']"));
 		mobile.clear();
-		mobile.sendKeys("8527834284");  //8527834283 mobile number is EMPTY NOW
+		mobile.sendKeys("8527834285");  //8527834283 mobile number is EMPTY NOW
 		Thread.sleep(2000);
 		
 
@@ -443,6 +443,8 @@ public class TigerNetApplicationFormSubmit
 		//mydriver.get("https://www.gradbusiness.campbellsville.edu/redirect/519dd26b-9ad9-4f6c-9a94-771a8d5fb992/ITM/N");
 	//mydriver.get("https://www.gradbusiness.campbellsville.edu/redirect/84d08f99-2c5d-4961-889b-6c76d5fe3007/ITM/N");
 		//89400ce8-e3ac-4f6e-87eb-dda5a9c8b4a9
+		//f81977d7-c710-4841-8f53-d18029ec6c41
+
 		//MyNewSite mns = new MyNewSite();
 		//mns.gradUploadFile(mydriver);
 		
@@ -489,7 +491,7 @@ public class TigerNetApplicationFormSubmit
 							//mydriver.findElement(By.xpath("//td[contains(text(),' Bachelors Transcript ')]//following-sibling::td//button[1]")).click();
 						
 							WebElement BachlorTrnscpt= mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
-							BachlorTrnscpt.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Uploading the file using sendKeys
+							BachlorTrnscpt.sendKeys("E:\\A\\Dummy_Images\\mex2.jpg"); //Here File Path need to set 
 							Thread.sleep(5000);
 							//Click on Upload button 
 							mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
@@ -512,7 +514,7 @@ public class TigerNetApplicationFormSubmit
 							Thread.sleep(2000);
 							//WebElement CredEvoDoc = mydriver.findElement(By.xpath("/html[1]/body[1]/ngb-modal-window[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/input[1]"));
 							WebElement CredEvoDoc = mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
-							CredEvoDoc.sendKeys("E:\\A\\Dummy_Images\\b4.jpg"); //Uploading the file using sendKeys
+							CredEvoDoc.sendKeys("E:\\A\\Dummy_Images\\b4.jpg"); //Here File Path need to set 
 							Thread.sleep(5000);				
 							//Click on Upload button 
 							mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
@@ -533,7 +535,7 @@ public class TigerNetApplicationFormSubmit
 							masTrn.click();
 							Thread.sleep(4000);
 							WebElement MastrTrnscpt= mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
-							MastrTrnscpt.sendKeys("E:\\A\\Dummy_Images\\B1.jpg"); //Uploading the file using sendKeys
+							MastrTrnscpt.sendKeys("E:\\A\\Dummy_Images\\B1.jpg"); //Here File Path need to set 
 							Thread.sleep(5000);		
 							//Click on Upload button 
 							mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
@@ -554,7 +556,7 @@ public class TigerNetApplicationFormSubmit
 							i20doc.click();
 							Thread.sleep(4000);
 							WebElement i20document= mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
-							i20document.sendKeys("E:\\A\\Dummy_Images\\A.jpg"); //Uploading the file using sendKeys
+							i20document.sendKeys("E:\\A\\Dummy_Images\\A.jpg"); //Here File Path need to set 
 							Thread.sleep(5000);		
 							//Click on Upload button 
 							mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();
@@ -580,7 +582,7 @@ public class TigerNetApplicationFormSubmit
 							ENGLISH.click();
 							Thread.sleep(4000);
 							WebElement englishDoc= mydriver.findElement(By.xpath("//div//input[@id='filesInput']"));
-							englishDoc.sendKeys("E:\\A\\Dummy_Images\\Aus1.jpg"); //Uploading the file using sendKeys
+							englishDoc.sendKeys("E:\\A\\Dummy_Images\\Aus1.jpg"); //Here File Path need to set 
 							Thread.sleep(5000);		
 							//Click on Upload button 
 							mydriver.findElement(By.xpath("//button[contains(text(),'Upload')]")).click();

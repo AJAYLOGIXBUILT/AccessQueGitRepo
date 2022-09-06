@@ -5,6 +5,7 @@ import static org.testng.Assert.assertTrue;
 import java.io.File;
 
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -106,7 +107,7 @@ public class APIaccessque
 				requestpara.put("leadType","All");
 				requestpara.put("mail","All");
 				requestpara.put("page","1");
-				requestpara.put("search","ajaytestuser");
+				requestpara.put("search","ajaytestuser@spambox.xyz");
 				requestpara.put("start","2021-08-02 09:40:25+00");
 									
 										
@@ -157,10 +158,14 @@ public class APIaccessque
 				httprequest.body(requestpara.toJSONString());
 					       			
 				//Response object
-				Response response=httprequest.request(Method.GET,"/campbellsville/getLead1/2554");
+				Response response=httprequest.request(Method.GET,"/campbellsville/getLead1/2765");
 				//print response in console window
 				String responsebody=response.getBody().asString();
 				System.out.println("VIEW LEADS RESPONSE BODY="+responsebody);
+				
+				 JSONParser jsonParser = new JSONParser();
+				  jsonParser.parse(response);
+				
 				
 				//status code validation
 				int statuscode = response.getStatusCode();	
@@ -190,8 +195,8 @@ public class APIaccessque
 							
 				//Request object
 				JSONObject requestpara = new JSONObject();
-				requestpara.put("GUID","75e86332-b7cc-4015-97a5-ebbc622f60a1");
-				requestpara.put("docName","2ndAugustDoc");
+				requestpara.put("GUID","f81977d7-c710-4841-8f53-d18029ec6c41");
+				requestpara.put("docName","6th Sep Doc");
 				requestpara.put("Platform","CRM");
 				requestpara.put("MailId","admin.uh@accessque.com");			
 									
@@ -207,10 +212,15 @@ public class APIaccessque
 				String responsebody=response.getBody().asString();
 				System.out.println(" ADD CUSTOM DOC RESPONSE BODY= "+responsebody);
 				
+				
+				
+				
 				//status code validation
 				int statuscode = response.getStatusCode();	
 				System.out.println("Actual Status Code =" +statuscode);  //Run time 200 received
 								
+				
+				
 				//Load time for this API
 				int loadtime = (int) response.getTime();
 				System.out.println("API LOADING TIME: = "+loadtime);
