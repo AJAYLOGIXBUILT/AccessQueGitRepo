@@ -15,6 +15,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;
 import org.openqa.selenium.support.ui.Select;
@@ -34,11 +35,11 @@ public class TigerNetApplicationFormSubmit
 	public static void main(String[] args) throws InterruptedException, MalformedURLException, IOException, NoSuchFieldException, SecurityException
 	{		
 		//System.setProperty("webdriver.chrome.driver","E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver104\\chromedriver.exe");
-		WebDriverManager.chromedriver().setup();
-		WebDriver mydriver = new ChromeDriver();
+		//WebDriverManager.chromedriver().setup();
+		//WebDriver mydriver = new ChromeDriver();
+		WebDriverManager.firefoxdriver().setup();
+		WebDriver mydriver = new FirefoxDriver();
 		
-		
-
 		mydriver.manage().deleteAllCookies();
 		Thread.sleep(3000);
 
@@ -276,7 +277,6 @@ public class TigerNetApplicationFormSubmit
 			nxt55.click();
 			System.out.println("CANDIDACY EXECUTED SUCCESSFULLY ");
 			Thread.sleep(5000);	
-		
 			
 			
 			
