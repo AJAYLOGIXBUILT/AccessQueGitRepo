@@ -19,7 +19,7 @@
       <class name="PackageAccessQue.TigerNetApplicationWithoutMethod"/>
       <class name="PackageAccessQue.LoginTestCases"/>
       <class name="PackageAccessQue.LoginPageTest"/>
-      
+      <class name="PackageAccessQue.SimplePrint"/>  
     </classes>
   </test> <!-- AccessqueApiResponseReport -->
 </suite> <!-- Suite -->
