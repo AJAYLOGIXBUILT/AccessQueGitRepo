@@ -3564,7 +3564,7 @@ public class allPagesAPIresponse
 						//specify base URI
 						//RestAssured.baseURI="https://services.accessque.com/api/v1";
 									
-						File file = new File("E:\\A\\Dummy_Images\\AMAZON.png");
+						//File file = new File("E:\\A\\Dummy_Images\\AMAZON.png");
 
 				        RequestSpecification httprequest = RestAssured.given();
 				        JSONObject requestpara = new JSONObject();
@@ -3573,12 +3573,13 @@ public class allPagesAPIresponse
 				        httprequest.header("x-auth-token","asseccque");
 				        Response response =httprequest
 				                .given()
-				                .multiPart("document", file, "multipart/form-data")
+				                .multiPart("document", new File("E:\\A\\Dummy_Images\\AMAZON.png"))
 				                .formParam("studentdocid", "14851")
 				                .formParam("Platform", "CRM")
 				                .formParam("MailId", "admin.uh@accessque.com")
 				                .post("https://www.services.accessque.com/api/v1/UploadDocument");
-				               
+				        
+				        //.multiPart("document", file, "multipart/form-data")
 				        //System.out.println(response.prettyPrint());
 				        
 				        String responsebody=response.getBody().asString();
