@@ -3,6 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="AccessqueApiResponseReport">
     <classes>
+      <class name="PackageAccessQue.SimplePrint"/>  
       <class name="PackageAccessQue.allPagesAPIresponse"/>
       <class name="PackageAccessQue.campBellsVilleDashboardAPI"/>
       <class name="PackageAccessQue.TigerNetApplicationForm"/>
@@ -19,7 +20,6 @@
       <class name="PackageAccessQue.TigerNetApplicationWithoutMethod"/>
       <class name="PackageAccessQue.LoginTestCases"/>
       <class name="PackageAccessQue.LoginPageTest"/>
-      <class name="PackageAccessQue.SimplePrint"/>  
     </classes>
   </test> <!-- AccessqueApiResponseReport -->
 </suite> <!-- Suite -->
