@@ -1,12 +1,14 @@
 package PackageAccessQue;
 
-import org.junit.Test;
+//import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class SimplePrint
 {
 
 	@Test
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		// TODO Auto-generated method stub
 		System.out.println("HI, DEPLOYED CODE ON SERVER !");
 
