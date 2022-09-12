@@ -8,9 +8,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
 
 public class AccessQueAdminLogin extends MyNewSite
 {
+	@Test
 	public  void adminlogin() throws InterruptedException, NoSuchFieldException, SecurityException 
 	{
 		

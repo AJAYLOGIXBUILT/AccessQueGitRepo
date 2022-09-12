@@ -45,33 +45,6 @@ public class logsAPI
 		Thread.sleep(7000);
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		/*
-		 * ChromeOptions options = new ChromeOptions();
-		 * options.addArguments("start-maximized"); DesiredCapabilities capabilities =
-		 * DesiredCapabilities.chrome();
-		 * capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-		 * 
-		 * 
-		 * WebDriver driver = new ChromeDriver();
-		 * driver.get("https://accessque.com/account/login");
-		 */
-		
-		/*
-		 * String scriptToExecute =
-		 * "var performance = window.performance || window.mozPerformance || window.msPerformance || window.webkitPerformance || {}; var network = performance.getEntries() || {}; return network;"
-		 * ; String netData =
-		 * ((JavascriptExecutor)mydriver).executeScript(scriptToExecute).toString();
-		 * System.out.println(netData);
-		 */
-		
-		
 	}
 
 
