@@ -3,7 +3,6 @@ import org.testng.annotations.Test;
 
 public class SimplePrint
 {
-
 	@Test
 	//public static void main(String[] args) throws InterruptedException
 	public void mymain() throws InterruptedException
