@@ -8,7 +8,7 @@ public class SimplePrint
 	//public void mymain() throws InterruptedException
 	{
 		// TODO Auto-generated method stub
-		System.out.println("HI,JENKINS AND GIT CODE CONFIGURATIONE ON SERVER !");
+		System.out.println("HI,JENKINS AND GIT CODE CONFIGURATIONE ON SERVER OKAY!");
 		
 	}
 
