@@ -106,7 +106,7 @@
 			<dependency>
     			<groupId>org.testng</groupId>
     			<artifactId>testng</artifactId>
-    			<version>7.6.1</version>
+    			<version>6.9.12</version>
 			    <scope>test</scope>
 			</dependency>
 
