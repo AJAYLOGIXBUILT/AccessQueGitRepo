@@ -107,7 +107,7 @@
     		<groupId>org.testng</groupId>
     			<artifactId>testng</artifactId>
     			<version>6.14.3</version>
-    			<scope>compile</scope>
+    			<scope>Test</scope>
 		</dependency>
 
 	<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
