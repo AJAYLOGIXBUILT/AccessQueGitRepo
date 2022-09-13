@@ -1,77 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="16" passed="16" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-06T16:29:02 IST" name="Default suite" finished-at="2022-09-06T16:29:29 IST" duration-ms="27356">
+  <suite started-at="2022-09-13T10:41:50 IST" name="Default suite" finished-at="2022-09-13T10:41:50 IST" duration-ms="43">
     <groups>
     </groups>
-    <test started-at="2022-09-06T16:29:02 IST" name="Default test" finished-at="2022-09-06T16:29:29 IST" duration-ms="27356">
-      <class name="PackageAccessQue.APIaccessque">
-        <test-method signature="AgentSIgnIn()[pri:1, instance:PackageAccessQue.APIaccessque@771a660]" started-at="2022-09-06T16:29:02 IST" name="AgentSIgnIn" finished-at="2022-09-06T16:29:06 IST" duration-ms="3491" status="PASS">
+    <test started-at="2022-09-13T10:41:50 IST" name="Default test" finished-at="2022-09-13T10:41:50 IST" duration-ms="43">
+      <class name="PackageAccessQue.SimplePrint">
+        <test-method signature="mymain()[pri:0, instance:PackageAccessQue.SimplePrint@5b8dfcc1]" started-at="2022-09-13T10:41:50 IST" name="mymain" finished-at="2022-09-13T10:41:50 IST" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AgentSIgnIn -->
-        <test-method signature="SerachOnCampBellsvilleDashboard()[pri:2, instance:PackageAccessQue.APIaccessque@771a660]" started-at="2022-09-06T16:29:06 IST" name="SerachOnCampBellsvilleDashboard" finished-at="2022-09-06T16:29:07 IST" duration-ms="1199" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SerachOnCampBellsvilleDashboard -->
-        <test-method signature="GetLeadsVIEW()[pri:3, instance:PackageAccessQue.APIaccessque@771a660]" started-at="2022-09-06T16:29:07 IST" name="GetLeadsVIEW" finished-at="2022-09-06T16:29:08 IST" duration-ms="1242" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GetLeadsVIEW -->
-        <test-method signature="AddCustomDocCreated()[pri:4, instance:PackageAccessQue.APIaccessque@771a660]" started-at="2022-09-06T16:29:08 IST" name="AddCustomDocCreated" finished-at="2022-09-06T16:29:09 IST" duration-ms="1155" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AddCustomDocCreated -->
-        <test-method signature="AddCustomDocUploaded()[pri:5, instance:PackageAccessQue.APIaccessque@771a660]" started-at="2022-09-06T16:29:09 IST" name="AddCustomDocUploaded" finished-at="2022-09-06T16:29:13 IST" duration-ms="3729" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AddCustomDocUploaded -->
-        <test-method signature="ValidateDocument2()[pri:6, instance:PackageAccessQue.APIaccessque@771a660]" started-at="2022-09-06T16:29:13 IST" name="ValidateDocument2" finished-at="2022-09-06T16:29:14 IST" duration-ms="1168" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ValidateDocument2 -->
-        <test-method signature="ReValidateDocument2()[pri:7, instance:PackageAccessQue.APIaccessque@771a660]" started-at="2022-09-06T16:29:14 IST" name="ReValidateDocument2" finished-at="2022-09-06T16:29:15 IST" duration-ms="1200" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReValidateDocument2 -->
-        <test-method signature="SendNotifications()[pri:8, instance:PackageAccessQue.APIaccessque@771a660]" started-at="2022-09-06T16:29:15 IST" name="SendNotifications" finished-at="2022-09-06T16:29:17 IST" duration-ms="1164" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SendNotifications -->
-        <test-method signature="AddComments()[pri:9, instance:PackageAccessQue.APIaccessque@771a660]" started-at="2022-09-06T16:29:17 IST" name="AddComments" finished-at="2022-09-06T16:29:19 IST" duration-ms="2943" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AddComments -->
-        <test-method signature="LeadsUnDifined()[pri:10, instance:PackageAccessQue.APIaccessque@771a660]" started-at="2022-09-06T16:29:19 IST" name="LeadsUnDifined" finished-at="2022-09-06T16:29:21 IST" duration-ms="1158" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LeadsUnDifined -->
-        <test-method signature="CommentSendNotification()[pri:11, instance:PackageAccessQue.APIaccessque@771a660]" started-at="2022-09-06T16:29:21 IST" name="CommentSendNotification" finished-at="2022-09-06T16:29:22 IST" duration-ms="1197" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CommentSendNotification -->
-        <test-method signature="clickOnCALLListOfDoc()[pri:12, instance:PackageAccessQue.APIaccessque@771a660]" started-at="2022-09-06T16:29:22 IST" name="clickOnCALLListOfDoc" finished-at="2022-09-06T16:29:25 IST" duration-ms="2950" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickOnCALLListOfDoc -->
-        <test-method signature="updateCallStatus()[pri:13, instance:PackageAccessQue.APIaccessque@771a660]" started-at="2022-09-06T16:29:25 IST" name="updateCallStatus" finished-at="2022-09-06T16:29:26 IST" duration-ms="1150" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- updateCallStatus -->
-        <test-method signature="updateStatus()[pri:14, instance:PackageAccessQue.APIaccessque@771a660]" started-at="2022-09-06T16:29:26 IST" name="updateStatus" finished-at="2022-09-06T16:29:27 IST" duration-ms="1198" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- updateStatus -->
-        <test-method signature="updateCallSid()[pri:15, instance:PackageAccessQue.APIaccessque@771a660]" started-at="2022-09-06T16:29:27 IST" name="updateCallSid" finished-at="2022-09-06T16:29:28 IST" duration-ms="1181" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- updateCallSid -->
-        <test-method signature="getAgentName()[pri:16, instance:PackageAccessQue.APIaccessque@771a660]" started-at="2022-09-06T16:29:28 IST" name="getAgentName" finished-at="2022-09-06T16:29:29 IST" duration-ms="1142" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getAgentName -->
-      </class> <!-- PackageAccessQue.APIaccessque -->
+        </test-method> <!-- mymain -->
+      </class> <!-- PackageAccessQue.SimplePrint -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
