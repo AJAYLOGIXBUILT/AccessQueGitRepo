@@ -4,8 +4,6 @@
   <test thread-count="5" name="AccessqueApiResponseReport">
     <classes>
       <class name="PackageAccessQue.SimplePrint"/>  
-     
-    
     </classes>
   </test> <!-- AccessqueApiResponseReport -->
 </suite> <!-- Suite -->
