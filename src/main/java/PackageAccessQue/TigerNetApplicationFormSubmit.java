@@ -32,7 +32,8 @@ public class TigerNetApplicationFormSubmit
 {
 
 	@Test
-	public static void main(String[] args) throws InterruptedException, MalformedURLException, IOException, NoSuchFieldException, SecurityException
+	public void tigernet() throws InterruptedException, MalformedURLException, IOException, NoSuchFieldException, SecurityException
+	//public static void main(String[] args) throws InterruptedException, MalformedURLException, IOException, NoSuchFieldException, SecurityException
 	{		
 		//System.setProperty("webdriver.chrome.driver","E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver104\\chromedriver.exe");
 		WebDriverManager.chromedriver().setup();

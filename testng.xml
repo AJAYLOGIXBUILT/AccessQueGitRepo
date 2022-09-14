@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="AccessqueApiResponseReport">
     <classes>
-      <class name="PackageAccessQue.LoginTestCases"/>  
+      <class name="PackageAccessQue.TigerNetApplicationFormSubmit"/>  
     </classes>
   </test> <!-- AccessqueApiResponseReport -->
 </suite> <!-- Suite -->
