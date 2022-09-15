@@ -22,6 +22,7 @@ import io.restassured.http.Header;
 import io.restassured.http.Method;
 //import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
 
 
@@ -49,15 +50,27 @@ public class SignInAPI
 		//Response object
     	Response myResponse=httprequest.request(Method.POST,"/agentsignin");
 		
+    	System.out.println("MY STATUS LINE ="+myResponse.statusLine());
+    	
     	//print response in console window
-		String responsebody=myResponse.getBody().asString();
-		System.out.println("RESPONSE BODY IS: "+responsebody);
+    	ResponseBody body =myResponse.getBody();
+    	System.out.println("MY RESPONSE BODY ="+body.asString());
+    	
+    	
+		//String responsebody=myResponse.getBody().asString();
+		//System.out.println("RESPONSE BODY IS: "+responsebody);
 		
 		
 		//status code validation
 		int statuscode = myResponse.getStatusCode();
 		int loadting = (int) myResponse.getTime();
-		System.out.println("API LOADING TIME: = "+loadting);
+		
+		System.out.println("API LOADING TIME=" +loadting);
+		
+		
+		JsonPath jsonpth= myResponse.jsonPath(); 
+		Assert.assertEquals(jsonpth.get("message"), "Uploaded the file successfully");
+		
 		
 		//Assert.assertEquals(statuscode,400);
 		
