@@ -1,23 +1,32 @@
 package PackageAccessQue;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SimplePrint
 {
+	WebDriver driver;
 	@Test
-	public void opnebrowser() 
+	public static void main(String[] args)  
 	{
-		
-		WebDriverManager.chromedriver().setup();
-		WebDriver ajdriver= new ChromeDriver();
+		 
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("headless");
+		// Must maximize Chrome by `start-maximized`
+		options.addArguments("start-maximized");
 
-		ajdriver.get("https://services.accessque.com");
+		//Dont maximize Chrome by below line, because has no display
+		driver.manage().window().maximize();
+//		WebDriverManager.chromedriver().setup();
+//		WebDriver ajdriver= new ChromeDriver();
+
+		driver.get("https://services.accessque.com");
 
 		System.out.println("HI,ACCESSQUE SITE LOGIN FORM OPEN IN BROWSER!");
-		ajdriver.quit();
+		driver.quit();
 		
 	}
 
