@@ -22,7 +22,6 @@ import io.restassured.http.Header;
 import io.restassured.http.Method;
 //import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
 
 
@@ -50,27 +49,17 @@ public class SignInAPI
 		//Response object
     	Response myResponse=httprequest.request(Method.POST,"/agentsignin");
 		
-    	System.out.println("MY STATUS LINE ="+myResponse.statusLine());
-    	
     	//print response in console window
-    	ResponseBody body =myResponse.getBody();
-    	System.out.println("MY RESPONSE BODY ="+body.asString());
-    	
-    	
-		//String responsebody=myResponse.getBody().asString();
-		//System.out.println("RESPONSE BODY IS: "+responsebody);
+		String responsebody=myResponse.getBody().asString();
+		System.out.println("RESPONSE BODY IS: "+responsebody);
 		
 		
 		//status code validation
 		int statuscode = myResponse.getStatusCode();
+		System.out.println("STATUS  CODE =" +statuscode);
+		
 		int loadting = (int) myResponse.getTime();
-		
-		System.out.println("API LOADING TIME=" +loadting);
-		
-		
-		JsonPath jsonpth= myResponse.jsonPath(); 
-		Assert.assertEquals(jsonpth.get("message"), "Uploaded the file successfully");
-		
+		System.out.println("API LOAD TIME: = "+loadting);
 		
 		//Assert.assertEquals(statuscode,400);
 		
@@ -84,8 +73,8 @@ public class SignInAPI
 		}
 		
 		//validating headers from response
-		String ContentType=myResponse.header("Content-Type");
-		Assert.assertEquals(ContentType,"application/json; charset=utf-8");
+		//String ContentType=myResponse.header("Content-Type");
+		//Assert.assertEquals(ContentType,"application/json; charset=utf-8");
 		       
 	}
 	
