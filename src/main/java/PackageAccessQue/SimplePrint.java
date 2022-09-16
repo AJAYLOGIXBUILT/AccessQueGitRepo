@@ -4,7 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+//import io.github.bonigarcia.wdm.WebDrive?rManager;
 
 public class SimplePrint
 {
@@ -15,11 +15,11 @@ public class SimplePrint
 		//WebDriverManager.chromedriver().setup();
 		
 		ChromeOptions options = new ChromeOptions();
-		//options.addArguments("headless");
-		options.addArguments("start-maximized");
+		options.addArguments("headless");
+		//options.addArguments("start-maximized");
 		//hromeDriver driver = new ChromeDriver(options);
 		
-		//Dont maximize Chrome by below line, because has no display
+		//Dont maximize Chrome by below line, because has no displa	y
 		//driver.manage().window().maximize();
 		
 		//river.get("https://services.accessque.com");
