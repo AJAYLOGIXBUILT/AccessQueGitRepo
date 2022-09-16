@@ -17,7 +17,7 @@ public class SimplePrint
 		ChromeOptions options = new ChromeOptions();
 		//options.addArguments("headless");
 		options.addArguments("start-maximized");
-	//hromeDriver driver = new ChromeDriver(options);
+		//hromeDriver driver = new ChromeDriver(options);
 		
 		//Dont maximize Chrome by below line, because has no display
 		//driver.manage().window().maximize();
