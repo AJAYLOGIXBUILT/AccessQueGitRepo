@@ -8,7 +8,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SimplePrint
 {
-	WebDriver driver;
+	//WebDriver driver;
 	@Test
 	public static void main(String[] args)  
 	{
@@ -21,6 +21,7 @@ public class SimplePrint
 		
 		//Dont maximize Chrome by below line, because has no display
 		//driver.manage().window().maximize();
+		
 		 driver.get("https://services.accessque.com");
 
 		System.out.println("HI,ACCESSQUE SITE LOGIN FORM OPEN IN BROWSER!");
