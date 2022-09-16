@@ -1,6 +1,6 @@
 package PackageAccessQue;
 
-import java.net.MalformedURLException;
+
 import java.net.URL;
 
 import org.openqa.selenium.By;
@@ -10,35 +10,46 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.BeforeTest;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class logsAPI
 {
-	public void loginbro()
-	{
+	//public void loginbro()
+	//{
 	//ChromeOptions options = new ChromeOptions();
 	//options.addArguments("headless");
 	// Must maximize Chrome by `start-maximized`
 	//options.addArguments("start-maximized");
 	
-	// choose which driver to use
-	WebDriver webDriver = getWebDriver(ChromeDriver);
+		WebDriver driver;
 
-	// run test
-	webDriver.get("http://www.google.com");
-	// identify search textbox
-	WebElement element = webDriver.findElement(By.name("q"));
-	// do search
-	element.sendKeys("fabianlee.org blog");
-	element.submit();
+	    @BeforeTest
+	    static void setupAll()
+	    {
+	        WebDriverManager.chromedriver().setup();
+	    }
+		
+	    @BeforeEach
+	    void setup() {
+	        driver = new ChromeDriver();
+	    }
+		
+	    @AfterEach
+	    void teardown() {
+	        driver.quit();
+	    }
 
-	// wait and then check the page title of the results page
-	Thread.sleep(2000);
-	System.out.println("******************************************");
-	System.out.println("Page title of results using " + ChromeDriver + ":" + webDriver.getTitle());
-	System.out.println("******************************************");
-
-	// close browser
-	webDriver.quit();
+	    @Test
+	    void test() 
+	    {
+	        // Your test logic here
+	    }
+	 // close browser
+		webDriver.quit();
+	}
+	
 
 	}
 

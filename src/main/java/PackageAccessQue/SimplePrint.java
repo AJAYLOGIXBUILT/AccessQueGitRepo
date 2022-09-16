@@ -12,7 +12,8 @@ public class SimplePrint
 	@Test
 	public static void main(String[] args)  
 	{
-		 
+		
+		//System.setProperty("webdriver.chrome.driver", "System.setProperty(\"webdriver.chrome.driver\",\"E:\\\\A\\\\SOFTWARE\\\\ChromeDriver\\\\ChromeDriver104\\\\chromedriver.exe\");");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("headless");
 		// Must maximize Chrome by `start-maximized`
