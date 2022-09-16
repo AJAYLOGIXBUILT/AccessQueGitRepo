@@ -163,8 +163,8 @@ public class APIaccessque
 				String responsebody=response.getBody().asString();
 				System.out.println("VIEW LEADS RESPONSE BODY="+responsebody);
 				
-				 JSONParser jsonParser = new JSONParser();
-				  jsonParser.parse(response);
+				 //JSONParser jsonParser = new JSONParser();
+				  //jsonParser.parse(response);
 				
 				
 				//status code validation

@@ -18,7 +18,7 @@ import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertTrue;
-import io.restassured.path.json.JsonPath;
+//import io.restassured.path.json.JsonPath;
 
 public class simple
 {
