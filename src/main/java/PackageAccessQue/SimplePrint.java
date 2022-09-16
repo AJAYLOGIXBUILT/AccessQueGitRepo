@@ -4,7 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
-//import io.github.bonigarcia.wdm.WebDrive?rManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SimplePrint
 {
@@ -12,7 +12,7 @@ public class SimplePrint
 	@Test
 	public static void main(String[] args)  
 	{
-		//WebDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver().setup();
 		
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("headless");
