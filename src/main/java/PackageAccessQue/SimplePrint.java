@@ -12,7 +12,7 @@ public class SimplePrint
 	@Test
 	public static void main(String[] args)  
 	{
-		WebDriverManager.chromedriver().setup();
+		//WebDriverManager.chromedriver().setup();
 		
 		ChromeOptions options = new ChromeOptions();
 		//options.addArguments("headless");
