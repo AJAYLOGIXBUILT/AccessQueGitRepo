@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="AccessqueApiResponseReport">
     <classes>
-      <class name="PackageAccessQue.SimplePrint"/>  
+      <class name="PackageAccessQue.LiveAccessque_Login"/>  
     </classes>
   </test> <!-- AccessqueApiResponseReport -->
 </suite> <!-- Suite -->
