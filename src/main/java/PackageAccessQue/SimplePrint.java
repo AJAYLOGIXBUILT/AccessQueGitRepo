@@ -21,8 +21,8 @@ public class SimplePrint
 
 		//Dont maximize Chrome by below line, because has no display
 		//driver.manage().window().maximize();
-//		WebDriverManager.chromedriver().setup();
-//		WebDriver ajdriver= new ChromeDriver();
+		//WebDriverManager.chromedriver().setup();
+		//WebDriver ajdriver= new ChromeDriver();
 
 		//driver.get("https://services.accessque.com");
 
