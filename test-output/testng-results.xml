@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="3" passed="1" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-15T15:01:03 IST" name="Default suite" finished-at="2022-09-15T15:02:29 IST" duration-ms="85729">
+  <suite started-at="2022-09-16T14:22:03 IST" name="Default suite" finished-at="2022-09-16T14:23:16 IST" duration-ms="72865">
     <groups>
     </groups>
-    <test started-at="2022-09-15T15:01:03 IST" name="Default test" finished-at="2022-09-15T15:02:29 IST" duration-ms="85729">
+    <test started-at="2022-09-16T14:22:03 IST" name="Default test" finished-at="2022-09-16T14:23:16 IST" duration-ms="72865">
       <class name="PackageAccessQue.AccessQueAdminLogin">
-        <test-method signature="adminlogin()[pri:0, instance:PackageAccessQue.AccessQueAdminLogin@3c19aaa5]" started-at="2022-09-15T15:01:03 IST" name="adminlogin" finished-at="2022-09-15T15:01:47 IST" duration-ms="43669" status="PASS">
+        <test-method signature="adminlogin()[pri:0, instance:PackageAccessQue.AccessQueAdminLogin@4135c3b]" started-at="2022-09-16T14:22:03 IST" name="adminlogin" finished-at="2022-09-16T14:22:44 IST" duration-ms="41032" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adminlogin -->
-        <test-method signature="gradUploadFile(org.openqa.selenium.WebDriver)[pri:0, instance:PackageAccessQue.AccessQueAdminLogin@3c19aaa5]" started-at="2022-09-15T15:01:47 IST" name="gradUploadFile" finished-at="2022-09-15T15:01:47 IST" duration-ms="0" status="FAIL">
+        <test-method signature="gradUploadFile(org.openqa.selenium.WebDriver)[pri:0, instance:PackageAccessQue.AccessQueAdminLogin@4135c3b]" started-at="2022-09-16T14:22:44 IST" name="gradUploadFile" finished-at="2022-09-16T14:22:44 IST" duration-ms="0" status="FAIL">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
@@ -55,7 +55,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- gradUploadFile -->
-        <test-method signature="tigernet()[pri:0, instance:PackageAccessQue.AccessQueAdminLogin@3c19aaa5]" started-at="2022-09-15T15:01:47 IST" name="tigernet" finished-at="2022-09-15T15:02:29 IST" duration-ms="42002" status="FAIL">
+        <test-method signature="tigernet()[pri:0, instance:PackageAccessQue.AccessQueAdminLogin@4135c3b]" started-at="2022-09-16T14:22:44 IST" name="tigernet" finished-at="2022-09-16T14:23:16 IST" duration-ms="31783" status="FAIL">
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
               <![CDATA[chrome not reachable
@@ -63,9 +63,9 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 Build info: version: '4.4.0', revision: 'e5c75ed026a'
 System info: host: 'DESKTOP-R7VTC6A', ip: '192.168.0.78', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1f5c9c925bc51ee41fbf9bb107bea048, findElement {using=xpath, value=//input[@id='Textbox2d2a1492-53dc-45ce-bfe7-2313a924c3b3']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53009}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53009/devtoo..., se:cdpVersion: 105.0.5195.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 1f5c9c925bc51ee41fbf9bb107bea048]]>
+Command: [1d076f9109c2889949fa25c05e389d1e, executeScript {script=window.scrollBy(0,500), args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60133}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60133/devtoo..., se:cdpVersion: 105.0.5195.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 1d076f9109c2889949fa25c05e389d1e]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
@@ -73,9 +73,9 @@ Session ID: 1f5c9c925bc51ee41fbf9bb107bea048]]>
 Build info: version: '4.4.0', revision: 'e5c75ed026a'
 System info: host: 'DESKTOP-R7VTC6A', ip: '192.168.0.78', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1f5c9c925bc51ee41fbf9bb107bea048, findElement {using=xpath, value=//input[@id='Textbox2d2a1492-53dc-45ce-bfe7-2313a924c3b3']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53009}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53009/devtoo..., se:cdpVersion: 105.0.5195.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 1f5c9c925bc51ee41fbf9bb107bea048
+Command: [1d076f9109c2889949fa25c05e389d1e, executeScript {script=window.scrollBy(0,500), args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60133}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60133/devtoo..., se:cdpVersion: 105.0.5195.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 1d076f9109c2889949fa25c05e389d1e
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -88,11 +88,8 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-at PackageAccessQue.TigerNetApplicationFormSubmit.tigernet(TigerNetApplicationFormSubmit.java:76)
+at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:481)
+at PackageAccessQue.TigerNetApplicationFormSubmit.tigernet(TigerNetApplicationFormSubmit.java:62)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
