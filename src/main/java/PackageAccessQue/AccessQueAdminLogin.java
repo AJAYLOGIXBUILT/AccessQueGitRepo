@@ -16,11 +16,11 @@ public class AccessQueAdminLogin extends MyNewSite
 	public  void adminlogin() throws InterruptedException, NoSuchFieldException, SecurityException 
 	{
 		
+		//System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--disable-notifications");
+		options.setHeadless(true);
 		
 		System.setProperty("webdriver.chrome.driver","E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver104\\chromedriver.exe");
-		
 		WebDriver mydriver = new ChromeDriver(options);
 				
 		//mydriver.get("https://accessque.com");

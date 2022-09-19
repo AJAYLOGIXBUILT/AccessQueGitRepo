@@ -12,17 +12,18 @@ public class SimplePrint
 	@Test
 	public static void main(String[] args)  
 	{
-		WebDriverManager.chromedriver().setup();
 		
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("headless");
+		options.setHeadless(true);
+		
+		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+		WebDriver mydriver = new ChromeDriver(options);
+		
+		//options.addArguments("headless");
 		//options.addArguments("start-maximized");
 		//hromeDriver driver = new ChromeDriver(options);
 		
-		//Dont maximize Chrome by below line, because has no displa	y
-		//driver.manage().window().maximize();
-		
-		//river.get("https://services.accessque.com");
+		mydriver.get("https://services.accessque.com");
 
 		System.out.println("HI,ACCESSQUE SITE LOGIN FORM OPEN IN BROWSER!");
 		//driver.quit();
