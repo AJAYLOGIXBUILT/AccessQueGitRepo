@@ -13,10 +13,13 @@ public class SimplePrint
 	public static void main(String[] args)  
 	{
 		
+		
 		ChromeOptions options = new ChromeOptions();
 		options.setHeadless(true);
 		
-		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+		System.setProperty("webdriver.chrome.driver","E:\\A\\SOFTWARE\\ChromeDriver\\ChromeDriver104\\chromedriver.exe");
+		
+		//System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 		WebDriver mydriver = new ChromeDriver(options);
 		
 		//options.addArguments("headless");
