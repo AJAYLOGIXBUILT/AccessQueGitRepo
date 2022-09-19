@@ -1,82 +1,413 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="100" passed="100" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-19T16:41:08 IST" name="Default suite" finished-at="2022-09-19T16:42:06 IST" duration-ms="57653">
+  <suite started-at="2022-09-19T17:57:19 IST" name="Default suite" finished-at="2022-09-19T18:01:56 IST" duration-ms="276432">
     <groups>
     </groups>
-    <test started-at="2022-09-19T16:41:08 IST" name="Default test" finished-at="2022-09-19T16:42:06 IST" duration-ms="57653">
-      <class name="PackageAccessQue.TigerNetApplicationFormSubmit">
-        <test-method signature="tigernet()[pri:0, instance:PackageAccessQue.TigerNetApplicationFormSubmit@4c371370]" started-at="2022-09-19T16:41:08 IST" name="tigernet" finished-at="2022-09-19T16:42:06 IST" duration-ms="57596" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[chrome not reachable
-  (Session info: chrome=105.0.5195.127)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'DESKTOP-R7VTC6A', ip: '192.168.0.78', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e41c57f4595f6b810484ade3397e52de, executeScript {script=window.scrollBy(0,450), args=[]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59761}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59761/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: e41c57f4595f6b810484ade3397e52de]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=105.0.5195.127)
-Build info: version: '4.4.0', revision: 'e5c75ed026a'
-System info: host: 'DESKTOP-R7VTC6A', ip: '192.168.0.78', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e41c57f4595f6b810484ade3397e52de, executeScript {script=window.scrollBy(0,450), args=[]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59761}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59761/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: e41c57f4595f6b810484ade3397e52de
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:481)
-at PackageAccessQue.TigerNetApplicationFormSubmit.tigernet(TigerNetApplicationFormSubmit.java:120)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+    <test started-at="2022-09-19T17:57:19 IST" name="Default test" finished-at="2022-09-19T18:01:56 IST" duration-ms="276432">
+      <class name="PackageAccessQue.allPagesAPIresponse">
+        <test-method signature="TC01_AgentSIgnIn()[pri:1, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:57:19 IST" name="TC01_AgentSIgnIn" finished-at="2022-09-19T17:57:23 IST" duration-ms="3955" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tigernet -->
-      </class> <!-- PackageAccessQue.TigerNetApplicationFormSubmit -->
+        </test-method> <!-- TC01_AgentSIgnIn -->
+        <test-method signature="TC02_AdminRole()[pri:2, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:57:23 IST" name="TC02_AdminRole" finished-at="2022-09-19T17:57:26 IST" duration-ms="2682" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC02_AdminRole -->
+        <test-method signature="TC03_DashboardProject()[pri:3, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:57:26 IST" name="TC03_DashboardProject" finished-at="2022-09-19T17:57:27 IST" duration-ms="1177" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC03_DashboardProject -->
+        <test-method signature="TC04_CallsByAgent()[pri:4, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:57:27 IST" name="TC04_CallsByAgent" finished-at="2022-09-19T17:57:28 IST" duration-ms="1204" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC04_CallsByAgent -->
+        <test-method signature="TC05_PasswordVerifcation()[pri:5, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:57:28 IST" name="TC05_PasswordVerifcation" finished-at="2022-09-19T17:57:30 IST" duration-ms="1175" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC05_PasswordVerifcation -->
+        <test-method signature="TC06_GetAgentNames()[pri:6, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:57:30 IST" name="TC06_GetAgentNames" finished-at="2022-09-19T17:57:31 IST" duration-ms="1119" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC06_GetAgentNames -->
+        <test-method signature="TC07_ListOfMyNotifications()[pri:7, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:57:31 IST" name="TC07_ListOfMyNotifications" finished-at="2022-09-19T17:57:32 IST" duration-ms="1289" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC07_ListOfMyNotifications -->
+        <test-method signature="TC08_ListOfMyNotifications()[pri:8, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:57:32 IST" name="TC08_ListOfMyNotifications" finished-at="2022-09-19T17:57:33 IST" duration-ms="1170" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC08_ListOfMyNotifications -->
+        <test-method signature="TC09_GetRoleAgents()[pri:9, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:57:33 IST" name="TC09_GetRoleAgents" finished-at="2022-09-19T17:57:34 IST" duration-ms="1104" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC09_GetRoleAgents -->
+        <test-method signature="TC010_GetProjectIDUHUB()[pri:10, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:57:34 IST" name="TC010_GetProjectIDUHUB" finished-at="2022-09-19T17:57:35 IST" duration-ms="1239" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC010_GetProjectIDUHUB -->
+        <test-method signature="TC011_AGENTS()[pri:11, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:57:35 IST" name="TC011_AGENTS" finished-at="2022-09-19T17:57:37 IST" duration-ms="1313" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC011_AGENTS -->
+        <test-method signature="TC012_RoleCompany()[pri:12, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:57:37 IST" name="TC012_RoleCompany" finished-at="2022-09-19T17:57:38 IST" duration-ms="1197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC012_RoleCompany -->
+        <test-method signature="TC013_ProjectAdmin()[pri:13, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:57:38 IST" name="TC013_ProjectAdmin" finished-at="2022-09-19T17:57:39 IST" duration-ms="1179" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC013_ProjectAdmin -->
+        <test-method signature="TC014_GetGBPAgents()[pri:14, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:57:39 IST" name="TC014_GetGBPAgents" finished-at="2022-09-19T17:57:40 IST" duration-ms="1163" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC014_GetGBPAgents -->
+        <test-method signature="TC015_GetSideMenuRole()[pri:15, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:57:40 IST" name="TC015_GetSideMenuRole" finished-at="2022-09-19T17:57:41 IST" duration-ms="1136" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC015_GetSideMenuRole -->
+        <test-method signature="TC016_GetTopBarCRM()[pri:16, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:57:41 IST" name="TC016_GetTopBarCRM" finished-at="2022-09-19T17:57:48 IST" duration-ms="6845" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC016_GetTopBarCRM -->
+        <test-method signature="TC017_GetDashboardLeads2()[pri:17, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:57:48 IST" name="TC017_GetDashboardLeads2" finished-at="2022-09-19T17:58:49 IST" duration-ms="61129" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC017_GetDashboardLeads2 -->
+        <test-method signature="TC018_CRMAgents()[pri:18, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:58:49 IST" name="TC018_CRMAgents" finished-at="2022-09-19T17:58:51 IST" duration-ms="1258" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC018_CRMAgents -->
+        <test-method signature="TC019_GetAWSSignInUrlCampBellsVille()[pri:19, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:58:51 IST" name="TC019_GetAWSSignInUrlCampBellsVille" finished-at="2022-09-19T17:58:52 IST" duration-ms="1141" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC019_GetAWSSignInUrlCampBellsVille -->
+        <test-method signature="TC020_UnReadNotificationCount()[pri:20, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:58:52 IST" name="TC020_UnReadNotificationCount" finished-at="2022-09-19T17:58:53 IST" duration-ms="1223" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC020_UnReadNotificationCount -->
+        <test-method signature="TC021_GetCompanies()[pri:21, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:58:53 IST" name="TC021_GetCompanies" finished-at="2022-09-19T17:58:54 IST" duration-ms="1160" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC021_GetCompanies -->
+        <test-method signature="TC022_AgentLogin()[pri:22, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:58:54 IST" name="TC022_AgentLogin" finished-at="2022-09-19T17:58:55 IST" duration-ms="1107" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC022_AgentLogin -->
+        <test-method signature="TC023_WSchannels()[pri:23, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:58:55 IST" name="TC023_WSchannels" finished-at="2022-09-19T17:58:57 IST" duration-ms="1174" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC023_WSchannels -->
+        <test-method signature="TC024_AgentChatAgentChannels()[pri:24, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:58:57 IST" name="TC024_AgentChatAgentChannels" finished-at="2022-09-19T17:58:58 IST" duration-ms="1258" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC024_AgentChatAgentChannels -->
+        <test-method signature="TC025_UpdateStatus()[pri:25, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:58:58 IST" name="TC025_UpdateStatus" finished-at="2022-09-19T17:58:59 IST" duration-ms="1279" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC025_UpdateStatus -->
+        <test-method signature="TC026_ListofUniversities()[pri:26, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:58:59 IST" name="TC026_ListofUniversities" finished-at="2022-09-19T17:59:00 IST" duration-ms="1120" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC026_ListofUniversities -->
+        <test-method signature="TC027_RefGetTopBarReferers()[pri:27, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:00 IST" name="TC027_RefGetTopBarReferers" finished-at="2022-09-19T17:59:01 IST" duration-ms="1122" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC027_RefGetTopBarReferers -->
+        <test-method signature="TC028_GetRefereredLeads()[pri:28, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:01 IST" name="TC028_GetRefereredLeads" finished-at="2022-09-19T17:59:03 IST" duration-ms="1752" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC028_GetRefereredLeads -->
+        <test-method signature="TC029_GetRunReports()[pri:29, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:03 IST" name="TC029_GetRunReports" finished-at="2022-09-19T17:59:04 IST" duration-ms="1403" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC029_GetRunReports -->
+        <test-method signature="TC030_GetRealTimeCountryReports()[pri:30, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:04 IST" name="TC030_GetRealTimeCountryReports" finished-at="2022-09-19T17:59:06 IST" duration-ms="1427" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC030_GetRealTimeCountryReports -->
+        <test-method signature="TC031_GetRealTimeCountryReportsCHART()[pri:31, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:06 IST" name="TC031_GetRealTimeCountryReportsCHART" finished-at="2022-09-19T17:59:07 IST" duration-ms="1444" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC031_GetRealTimeCountryReportsCHART -->
+        <test-method signature="TC032_BiAnaReportsProjectList()[pri:32, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:07 IST" name="TC032_BiAnaReportsProjectList" finished-at="2022-09-19T17:59:08 IST" duration-ms="1087" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC032_BiAnaReportsProjectList -->
+        <test-method signature="TC033_BiAnaGetListOfPrograms()[pri:33, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:08 IST" name="TC033_BiAnaGetListOfPrograms" finished-at="2022-09-19T17:59:10 IST" duration-ms="1199" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC033_BiAnaGetListOfPrograms -->
+        <test-method signature="TC034_EnrollmentsTermsList()[pri:34, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:10 IST" name="TC034_EnrollmentsTermsList" finished-at="2022-09-19T17:59:11 IST" duration-ms="1131" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC034_EnrollmentsTermsList -->
+        <test-method signature="TC035_ApplicationList()[pri:35, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:11 IST" name="TC035_ApplicationList" finished-at="2022-09-19T17:59:12 IST" duration-ms="1092" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC035_ApplicationList -->
+        <test-method signature="TC035_EnrollmentsYearsList()[pri:35, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:12 IST" name="TC035_EnrollmentsYearsList" finished-at="2022-09-19T17:59:13 IST" duration-ms="1138" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC035_EnrollmentsYearsList -->
+        <test-method signature="TC036_GetListOfAgentNew()[pri:36, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:13 IST" name="TC036_GetListOfAgentNew" finished-at="2022-09-19T17:59:14 IST" duration-ms="1131" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC036_GetListOfAgentNew -->
+        <test-method signature="TC037_StatusCounts()[pri:37, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:14 IST" name="TC037_StatusCounts" finished-at="2022-09-19T17:59:15 IST" duration-ms="1088" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC037_StatusCounts -->
+        <test-method signature="TC038_AssignedCounts()[pri:38, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:15 IST" name="TC038_AssignedCounts" finished-at="2022-09-19T17:59:16 IST" duration-ms="1162" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC038_AssignedCounts -->
+        <test-method signature="TC039_CourseCounts()[pri:39, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:16 IST" name="TC039_CourseCounts" finished-at="2022-09-19T17:59:17 IST" duration-ms="1095" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC039_CourseCounts -->
+        <test-method signature="TC040_IncominCompleted()[pri:40, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:17 IST" name="TC040_IncominCompleted" finished-at="2022-09-19T17:59:19 IST" duration-ms="1127" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC040_IncominCompleted -->
+        <test-method signature="TC041_TopPerformers()[pri:41, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:19 IST" name="TC041_TopPerformers" finished-at="2022-09-19T17:59:20 IST" duration-ms="1146" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC041_TopPerformers -->
+        <test-method signature="TC042_ProcessTimeMax10()[pri:42, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:20 IST" name="TC042_ProcessTimeMax10" finished-at="2022-09-19T17:59:21 IST" duration-ms="1161" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC042_ProcessTimeMax10 -->
+        <test-method signature="TC043_ValidationTimeMax10()[pri:43, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:21 IST" name="TC043_ValidationTimeMax10" finished-at="2022-09-19T17:59:22 IST" duration-ms="1151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC043_ValidationTimeMax10 -->
+        <test-method signature="TC044_CallsPerDay()[pri:44, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:22 IST" name="TC044_CallsPerDay" finished-at="2022-09-19T17:59:23 IST" duration-ms="1135" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC044_CallsPerDay -->
+        <test-method signature="TC045_CallsInboundOutbound()[pri:45, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:23 IST" name="TC045_CallsInboundOutbound" finished-at="2022-09-19T17:59:24 IST" duration-ms="1160" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC045_CallsInboundOutbound -->
+        <test-method signature="TC046_CallsInVsOut()[pri:46, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:24 IST" name="TC046_CallsInVsOut" finished-at="2022-09-19T17:59:26 IST" duration-ms="1214" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC046_CallsInVsOut -->
+        <test-method signature="TC047_CallStatus()[pri:47, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:26 IST" name="TC047_CallStatus" finished-at="2022-09-19T17:59:27 IST" duration-ms="1110" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC047_CallStatus -->
+        <test-method signature="TC048_ProjectAdminUHUB()[pri:48, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:27 IST" name="TC048_ProjectAdminUHUB" finished-at="2022-09-19T17:59:28 IST" duration-ms="1123" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC048_ProjectAdminUHUB -->
+        <test-method signature="TC049_DashboardTicketsUHUB()[pri:49, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:28 IST" name="TC049_DashboardTicketsUHUB" finished-at="2022-09-19T17:59:29 IST" duration-ms="1164" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC049_DashboardTicketsUHUB -->
+        <test-method signature="TC050_DashboardAdminTrueUHUB()[pri:50, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:29 IST" name="TC050_DashboardAdminTrueUHUB" finished-at="2022-09-19T17:59:30 IST" duration-ms="1144" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC050_DashboardAdminTrueUHUB -->
+        <test-method signature="TC051_DashboardTicketsCAMPBELLSVILLE()[pri:51, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:30 IST" name="TC051_DashboardTicketsCAMPBELLSVILLE" finished-at="2022-09-19T17:59:31 IST" duration-ms="1131" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC051_DashboardTicketsCAMPBELLSVILLE -->
+        <test-method signature="TC052_DashboardAdminTrueCAMPBELLSVILLE()[pri:52, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:31 IST" name="TC052_DashboardAdminTrueCAMPBELLSVILLE" finished-at="2022-09-19T17:59:32 IST" duration-ms="1146" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC052_DashboardAdminTrueCAMPBELLSVILLE -->
+        <test-method signature="TC053_ProjectAdminREFERRALS()[pri:53, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:32 IST" name="TC053_ProjectAdminREFERRALS" finished-at="2022-09-19T17:59:34 IST" duration-ms="1133" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC053_ProjectAdminREFERRALS -->
+        <test-method signature="TC054_DashboardTicketsREFFERRALS()[pri:54, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:34 IST" name="TC054_DashboardTicketsREFFERRALS" finished-at="2022-09-19T17:59:35 IST" duration-ms="1142" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC054_DashboardTicketsREFFERRALS -->
+        <test-method signature="TC055_DashboardAdminTrueREFERRALS()[pri:55, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:35 IST" name="TC055_DashboardAdminTrueREFERRALS" finished-at="2022-09-19T17:59:36 IST" duration-ms="1125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC055_DashboardAdminTrueREFERRALS -->
+        <test-method signature="TC056_CreateNewIncidentTicket()[pri:56, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:36 IST" name="TC056_CreateNewIncidentTicket" finished-at="2022-09-19T17:59:37 IST" duration-ms="1152" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC056_CreateNewIncidentTicket -->
+        <test-method signature="TC057_AgentGroupsID()[pri:57, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:37 IST" name="TC057_AgentGroupsID" finished-at="2022-09-19T17:59:38 IST" duration-ms="1144" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC057_AgentGroupsID -->
+        <test-method signature="TC058_Priority()[pri:58, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:38 IST" name="TC058_Priority" finished-at="2022-09-19T17:59:39 IST" duration-ms="1158" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC058_Priority -->
+        <test-method signature="TC059_Urgency()[pri:59, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:39 IST" name="TC059_Urgency" finished-at="2022-09-19T17:59:40 IST" duration-ms="1118" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC059_Urgency -->
+        <test-method signature="TC060_GetCompanyGroupsID()[pri:60, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:40 IST" name="TC060_GetCompanyGroupsID" finished-at="2022-09-19T17:59:42 IST" duration-ms="1140" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC060_GetCompanyGroupsID -->
+        <test-method signature="TC061_GetTemplateIDTikcet()[pri:61, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:42 IST" name="TC061_GetTemplateIDTikcet" finished-at="2022-09-19T17:59:43 IST" duration-ms="1095" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC061_GetTemplateIDTikcet -->
+        <test-method signature="TC062_ConfByNameDisplayColumnname()[pri:62, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:43 IST" name="TC062_ConfByNameDisplayColumnname" finished-at="2022-09-19T17:59:44 IST" duration-ms="1141" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC062_ConfByNameDisplayColumnname -->
+        <test-method signature="TC063_RemainingColumns()[pri:63, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:44 IST" name="TC063_RemainingColumns" finished-at="2022-09-19T17:59:45 IST" duration-ms="1089" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC063_RemainingColumns -->
+        <test-method signature="TC064_GetActiveAgentsID()[pri:64, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:45 IST" name="TC064_GetActiveAgentsID" finished-at="2022-09-19T17:59:46 IST" duration-ms="1058" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC064_GetActiveAgentsID -->
+        <test-method signature="TC065_GetCustomTicketsOPEN()[pri:65, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:46 IST" name="TC065_GetCustomTicketsOPEN" finished-at="2022-09-19T17:59:47 IST" duration-ms="1144" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC065_GetCustomTicketsOPEN -->
+        <test-method signature="TC066_GetCustomTicketsCLOSED()[pri:66, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:47 IST" name="TC066_GetCustomTicketsCLOSED" finished-at="2022-09-19T17:59:48 IST" duration-ms="1132" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC066_GetCustomTicketsCLOSED -->
+        <test-method signature="TC067_GetAWSSignInUrlACCESSQUE()[pri:67, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:48 IST" name="TC067_GetAWSSignInUrlACCESSQUE" finished-at="2022-09-19T17:59:49 IST" duration-ms="1174" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC067_GetAWSSignInUrlACCESSQUE -->
+        <test-method signature="TC068_AllCountries()[pri:68, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:49 IST" name="TC068_AllCountries" finished-at="2022-09-19T17:59:51 IST" duration-ms="1165" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC068_AllCountries -->
+        <test-method signature="TC069_SmsMarketingUHUB()[pri:69, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:51 IST" name="TC069_SmsMarketingUHUB" finished-at="2022-09-19T17:59:52 IST" duration-ms="1196" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC069_SmsMarketingUHUB -->
+        <test-method signature="TC070_GetProjectIDCAMPBELLSVILLE()[pri:70, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:52 IST" name="TC070_GetProjectIDCAMPBELLSVILLE" finished-at="2022-09-19T17:59:53 IST" duration-ms="1205" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC070_GetProjectIDCAMPBELLSVILLE -->
+        <test-method signature="TC071_SmsMarketingCAMPBELLSVILLE()[pri:71, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:53 IST" name="TC071_SmsMarketingCAMPBELLSVILLE" finished-at="2022-09-19T17:59:54 IST" duration-ms="1109" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC071_SmsMarketingCAMPBELLSVILLE -->
+        <test-method signature="TC072_SmsMarketingREFERRALS()[pri:72, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:54 IST" name="TC072_SmsMarketingREFERRALS" finished-at="2022-09-19T17:59:55 IST" duration-ms="1161" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC072_SmsMarketingREFERRALS -->
+        <test-method signature="TC073_GetProjectIDREFERRALS()[pri:73, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:55 IST" name="TC073_GetProjectIDREFERRALS" finished-at="2022-09-19T17:59:56 IST" duration-ms="1100" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC073_GetProjectIDREFERRALS -->
+        <test-method signature="TC074_CallDataUHUB()[pri:74, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T17:59:56 IST" name="TC074_CallDataUHUB" finished-at="2022-09-19T18:00:14 IST" duration-ms="17526" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC074_CallDataUHUB -->
+        <test-method signature="TC075_CallDataCAMPBELLSVILLE()[pri:75, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:00:14 IST" name="TC075_CallDataCAMPBELLSVILLE" finished-at="2022-09-19T18:00:15 IST" duration-ms="1119" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC075_CallDataCAMPBELLSVILLE -->
+        <test-method signature="TC076_CallDataREFERRALS()[pri:76, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:00:15 IST" name="TC076_CallDataREFERRALS" finished-at="2022-09-19T18:00:16 IST" duration-ms="1099" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC076_CallDataREFERRALS -->
+        <test-method signature="TC077_GetRoleCompaniesID()[pri:77, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:00:16 IST" name="TC077_GetRoleCompaniesID" finished-at="2022-09-19T18:00:17 IST" duration-ms="1136" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC077_GetRoleCompaniesID -->
+        <test-method signature="TC078_TemplateByNameTicket()[pri:78, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:00:17 IST" name="TC078_TemplateByNameTicket" finished-at="2022-09-19T18:00:18 IST" duration-ms="1147" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC078_TemplateByNameTicket -->
+        <test-method signature="TC079_GetActiveAgentsIDCAMPBELLSVILLE()[pri:79, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:00:18 IST" name="TC079_GetActiveAgentsIDCAMPBELLSVILLE" finished-at="2022-09-19T18:00:20 IST" duration-ms="1189" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC079_GetActiveAgentsIDCAMPBELLSVILLE -->
+        <test-method signature="TC080_GetActiveAgentsIDREFERRALS()[pri:80, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:00:20 IST" name="TC080_GetActiveAgentsIDREFERRALS" finished-at="2022-09-19T18:00:21 IST" duration-ms="1124" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC080_GetActiveAgentsIDREFERRALS -->
+        <test-method signature="TC081_AllTemplatesIDDREFERRALS()[pri:81, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:00:21 IST" name="TC081_AllTemplatesIDDREFERRALS" finished-at="2022-09-19T18:00:22 IST" duration-ms="1161" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC081_AllTemplatesIDDREFERRALS -->
+        <test-method signature="TC082_AllTemplatesIDCAMPBELLSVILLE()[pri:82, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:00:22 IST" name="TC082_AllTemplatesIDCAMPBELLSVILLE" finished-at="2022-09-19T18:00:23 IST" duration-ms="1211" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC082_AllTemplatesIDCAMPBELLSVILLE -->
+        <test-method signature="TC083_AllTemplatesIDREFERRALS()[pri:83, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:00:23 IST" name="TC083_AllTemplatesIDREFERRALS" finished-at="2022-09-19T18:00:30 IST" duration-ms="7019" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC083_AllTemplatesIDREFERRALS -->
+        <test-method signature="TC084_GetCallLogsByCompany()[pri:84, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:00:30 IST" name="TC084_GetCallLogsByCompany" finished-at="2022-09-19T18:01:31 IST" duration-ms="61182" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC084_GetCallLogsByCompany -->
+        <test-method signature="SerachOnCampBellsvilleDashboard()[pri:85, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:01:31 IST" name="SerachOnCampBellsvilleDashboard" finished-at="2022-09-19T18:01:32 IST" duration-ms="1168" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SerachOnCampBellsvilleDashboard -->
+        <test-method signature="GetLeadsVIEW()[pri:86, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:01:32 IST" name="GetLeadsVIEW" finished-at="2022-09-19T18:01:34 IST" duration-ms="1235" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetLeadsVIEW -->
+        <test-method signature="AddCustomDocCreated()[pri:87, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:01:34 IST" name="AddCustomDocCreated" finished-at="2022-09-19T18:01:35 IST" duration-ms="1151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddCustomDocCreated -->
+        <test-method signature="AddCustomDocUploaded()[pri:88, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:01:35 IST" name="AddCustomDocUploaded" finished-at="2022-09-19T18:01:39 IST" duration-ms="3958" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddCustomDocUploaded -->
+        <test-method signature="ValidateDocument2()[pri:89, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:01:39 IST" name="ValidateDocument2" finished-at="2022-09-19T18:01:40 IST" duration-ms="1141" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateDocument2 -->
+        <test-method signature="ReValidateDocument2()[pri:90, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:01:40 IST" name="ReValidateDocument2" finished-at="2022-09-19T18:01:41 IST" duration-ms="1219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReValidateDocument2 -->
+        <test-method signature="SendNotifications()[pri:91, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:01:41 IST" name="SendNotifications" finished-at="2022-09-19T18:01:42 IST" duration-ms="1207" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SendNotifications -->
+        <test-method signature="AddComments()[pri:92, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:01:42 IST" name="AddComments" finished-at="2022-09-19T18:01:45 IST" duration-ms="3144" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddComments -->
+        <test-method signature="LeadsUnDifined()[pri:93, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:01:45 IST" name="LeadsUnDifined" finished-at="2022-09-19T18:01:47 IST" duration-ms="1188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LeadsUnDifined -->
+        <test-method signature="CommentSendNotification()[pri:94, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:01:47 IST" name="CommentSendNotification" finished-at="2022-09-19T18:01:48 IST" duration-ms="1219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CommentSendNotification -->
+        <test-method signature="clickOnCALLListOfDoc()[pri:95, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:01:48 IST" name="clickOnCALLListOfDoc" finished-at="2022-09-19T18:01:51 IST" duration-ms="3155" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnCALLListOfDoc -->
+        <test-method signature="updateCallStatus()[pri:96, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:01:51 IST" name="updateCallStatus" finished-at="2022-09-19T18:01:52 IST" duration-ms="1123" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateCallStatus -->
+        <test-method signature="updateStatus()[pri:97, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:01:52 IST" name="updateStatus" finished-at="2022-09-19T18:01:53 IST" duration-ms="1140" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateStatus -->
+        <test-method signature="updateCallSid()[pri:98, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:01:53 IST" name="updateCallSid" finished-at="2022-09-19T18:01:54 IST" duration-ms="1132" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateCallSid -->
+        <test-method signature="getAgentName()[pri:99, instance:PackageAccessQue.allPagesAPIresponse@2d1ef81a]" started-at="2022-09-19T18:01:54 IST" name="getAgentName" finished-at="2022-09-19T18:01:56 IST" duration-ms="1251" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getAgentName -->
+      </class> <!-- PackageAccessQue.allPagesAPIresponse -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
