@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="PackageAccessQue.AccessQueAdminLogin">
+      <class name="PackageAccessQue.TigerNetApplicationFormSubmit">
         <methods>
-          <include name="gradUploadFile"/>
           <include name="tigernet"/>
         </methods>
-      </class> <!-- PackageAccessQue.AccessQueAdminLogin -->
+      </class> <!-- PackageAccessQue.TigerNetApplicationFormSubmit -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
